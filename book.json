@@ -1,0 +1,26 @@
+{
+    "title": "Analysis",
+    "language": "en",
+
+    "root": "./docs",
+
+    "plugins": ["include-html", "wide-page"],
+
+    "pluginsConfig": {
+        "intopic-toc": {
+          "selector": ".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6",
+          "mode": "nested",
+          "maxDepth": 6,
+          "isCollapsed": true,
+          "isScrollspyActive": true,
+          "visible": true,
+          "label": "Content"
+        }
+      },
+
+    "structure": {
+        "readme": "README.md",
+        "summary": "SUMMARY.md",
+        "glossary": "GLOSSARY.md"
+    }
+}

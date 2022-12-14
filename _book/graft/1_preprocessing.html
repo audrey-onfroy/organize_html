@@ -1,0 +1,1855 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Preprocessing · Analysis</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-wide-page/wide.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="README.md" />
+    
+    
+    <link rel="prev" href="../tuto/make_singularity_container.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Chapters</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../tuto/README.md">
+            
+                <span>
+            
+                    
+                    Tuto
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../tuto/add_hash_title.html">
+            
+                <a href="../tuto/add_hash_title.html">
+            
+                    
+                    Hash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../tuto/make_singularity_container.html">
+            
+                <a href="../tuto/make_singularity_container.html">
+            
+                    
+                    Singularity + R
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Graft experiment</li>
+        
+        
+    
+        <li class="chapter active" data-level="3.1" data-path="1_preprocessing.html">
+            
+                <a href="1_preprocessing.html">
+            
+                    
+                    Preprocessing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="README.md">
+            
+                <span>
+            
+                    
+                    Zoom on tumor cells
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="2_make_tumor_dataset.html">
+            
+                <a href="2_make_tumor_dataset.html">
+            
+                    
+                    Make dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="3_run_trajectory_tinga.html">
+            
+                <a href="3_run_trajectory_tinga.html">
+            
+                    
+                    Trajectory using TInGa
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="4_run_trajectory_slingshot.html">
+            
+                <a href="4_run_trajectory_slingshot.html">
+            
+                    
+                    Trajectory using slingshot
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../pages/example_file.html">
+            
+                <a href="../pages/example_file.html">
+            
+                    
+                    Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../hack/do_everything.html">
+            
+                <a href="../hack/do_everything.html">
+            
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../hack/include_html.html">
+            
+                <a href="../hack/include_html.html">
+            
+                    
+                    Good one
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Preprocessing</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <style>
+body {
+text-align: justify}
+</style>
+
+
+
+<!-- Set default parameters for all chunks -->
+<h1 id="context">Context</h1>
+<p>The goal of this script is to compare single-cell RNA sequencing (scRNA-Seq) data from two mouse tumors :</p>
+<ul>
+<li>The first mouse was carrying a dNF. This tumor has been split. One part has been used to generate scRNA-Seq data : dataset <strong>2020_18</strong>. The other has been processed in order to be grafted on a nude recipient.</li>
+<li>The nude recipient developed a MPNST from the grafted tumor cells. scRNA-Seq data has been generated from cells from this tumor : dataset <strong>2020_23</strong>.</li>
+</ul>
+<p>In this file, we generate a Seurat object containing both datasets, from their respective raw count matrices. We will run the following steps :</p>
+<ul>
+<li>merge the dataset using the <code>base::merge</code> function</li>
+<li>removal of cells with few genes or few UMI</li>
+<li>removal of genes having counts in less than 5 cells</li>
+<li>normalization with <code>LogNormalize</code>, then doublets detection using <code>scran hybrid</code> and <code>scDblFinder</code> method, and doublet cells removal</li>
+<li>normalization with <code>LogNormalize</code>, for only the remaining cells</li>
+<li>cell cycle and cell type annotation</li>
+<li>dimensionality reduction using <code>PCA</code></li>
+<li>batch-effect removal using <code>harmony</code></li>
+</ul>
+<h1 id="set-environment">Set environment</h1>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(dplyr)
+<span class="hljs-keyword">library</span>(ggplot2)
+<span class="hljs-keyword">library</span>(patchwork)
+</code></pre>
+<p>We load the parameters :</p>
+<pre><code class="lang-r">input_dir = params$input_dir
+out_dir = params$out_dir
+</code></pre>
+<p>Data are stored there : .
+Input count matrices come from there : /home/aurelien/Documents/Audrey/git_analysis/MPNST_paper/analysis/nextflow/graft/input/</p>
+<pre><code class="lang-r">save_name = <span class="hljs-string">&quot;donor18_recipient23&quot;</span>
+</code></pre>
+<p>We will load two datasets :</p>
+<pre><code class="lang-r">sample_info = data.frame(project_name = c(<span class="hljs-string">&quot;2020_18&quot;</span>, <span class="hljs-string">&quot;2020_23&quot;</span>), 
+                         tumor_type = c(<span class="hljs-string">&quot;dyNF&quot;</span>, <span class="hljs-string">&quot;MPNST&quot;</span>),
+                         sample_identifiant = c(<span class="hljs-string">&quot;donor&quot;</span>, <span class="hljs-string">&quot;recipient&quot;</span>),
+                         color = c(<span class="hljs-string">&quot;#1B9E77&quot;</span>, <span class="hljs-string">&quot;#D95F02&quot;</span>), <span class="hljs-comment"># from RColorBrewer::brewer.pal(&quot;Dark2&quot;, n = 3)</span>
+                         stringsAsFactors = <span class="hljs-literal">FALSE</span>)
+
+save(sample_info, file = paste0(out_dir, <span class="hljs-string">&quot;/&quot;</span>, save_name, <span class="hljs-string">&quot;_sample_info.rda&quot;</span>))
+
+ggplot2::ggplot(sample_info) +
+  ggplot2::geom_label(aes(x = project_name, y = <span class="hljs-number">0</span>, label = project_name, fill = project_name)) +
+  ggplot2::geom_text(aes(x = project_name, y = <span class="hljs-number">1</span>, label = sample_identifiant)) +
+  ggplot2::lims(y = c(-<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)) +
+  ggplot2::scale_fill_manual(values = sample_info$color, breaks = sample_info$project_name) +
+  ggplot2::theme_void() +
+  ggplot2::theme(legend.position = <span class="hljs-string">&quot;none&quot;</span>)
+</code></pre>
+<p><img src="files/notebook_MyYVJBQbf1/sample_info-1.png" style="display: block; margin: auto;"></p>
+<p>We load the markers and specific colors for each cell type :</p>
+<pre><code class="lang-r">cell_markers = aquarius:::cell_markers
+cell_markers[[<span class="hljs-string">&quot;keratinocytes&quot;</span>]] = <span class="hljs-literal">NULL</span>
+
+lengths(cell_markers)
+</code></pre>
+<pre><code>##           tumor cells           macrophages                   cDC 
+##                   129                    51                    66 
+##                   mDC                   pDC               T cells 
+##                    25                    99                    26 
+##              NK cells           neutrophils            mast cells 
+##                    24                    12                    26 
+##               B cells     endothelial cells           fibroblasts 
+##                    22                    60                   109 
+##           mural cells skeletal muscle cells 
+##                    59                    42
+</code></pre><p>Here are custom colors for each cell type :</p>
+<p>```{.r .fold-hide}
+color_markers = aquarius:::color_markers
+color_markers = color_markers[names(cell_markers)]</p>
+<p>save(color_markers, file = paste0(out_dir, &quot;/color_markers.rda&quot;))</p>
+<p>data.frame(cell_type = names(color_markers),
+           color = unlist(color_markers)) %&gt;%
+  ggplot2::ggplot(., aes(x = cell_type, y = 0, fill = cell_type)) +
+  ggplot2::geom_point(pch = 21, size = 5) +
+  ggplot2::scale_fill_manual(values = unlist(color_markers), breaks = names(color_markers)) +
+  ggplot2::theme_classic() +
+  ggplot2::theme(legend.position = &quot;none&quot;,
+                 axis.line = element_blank(),
+                 axis.title = element_blank(),
+                 axis.ticks = element_blank(),
+                 axis.text.y = element_blank())</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/color_markers-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+Here a the markers to make a dotplot :
+
+
+```r
+dotplot_markers = list(&quot;pDC&quot; = c(&quot;Siglech&quot;, &quot;Ly6d&quot;),
+                       &quot;mDC&quot; = c(&quot;Cd209a&quot;, &quot;Mgl2&quot;, &quot;Olfm1&quot;),
+                       &quot;cDC&quot; = c(&quot;Xcr1&quot;, &quot;Itgae&quot;),
+                       &quot;mast cells&quot; = c(&quot;Tpsb2&quot;, &quot;Cpa3&quot;, &quot;Cma1&quot;, &quot;Mcpt4&quot;),
+                       &quot;neutrophils&quot; = c(&quot;S100a8&quot;, &quot;S100a9&quot;, &quot;Cxcl2&quot;),
+                       &quot;B cells&quot; = c(&quot;Cd79a&quot;, &quot;Cd79b&quot;, &quot;Ly6d&quot;),
+                       &quot;NK cells&quot; = c(&quot;Xcl1&quot;, &quot;Klre1&quot;, &quot;Klrb1c&quot;),
+                       &quot;T cells&quot; = c(&quot;Cd4&quot;, &quot;Cd8a&quot;, &quot;Cd3e&quot;, &quot;Cd3d&quot;),
+                       &quot;macrophages&quot; = c(&quot;Adgre1&quot;, &quot;Csf1r&quot;, &quot;Mafb&quot;),
+                       &quot;skeletal muscle cells&quot; = c(&quot;Acta1&quot;, &quot;Tnnc2&quot;, &quot;Tnnt3&quot;, &quot;Myl1&quot;),
+                       &quot;mural cells&quot; = c(&quot;Notch3&quot;, &quot;Rgs5&quot;, &quot;Pdgfrb&quot;),
+                       &quot;endothelial cells&quot; = c(&quot;Egfl7&quot;, &quot;Cdh5&quot;, &quot;Pecam1&quot;),
+                       &quot;fibroblasts&quot; = c(&quot;Dcn&quot;, &quot;Mgp&quot;),
+                       &quot;tumor cells&quot; = c(&quot;Plp1&quot;, &quot;Ank3&quot;, &quot;Gas1&quot;, &quot;Pdgfrb&quot;, &quot;Kcna1&quot;, &quot;Sox10&quot;, &quot;Sox9&quot;, &quot;Pdgfra&quot;))
+cell_type_levels = names(dotplot_markers)
+</code></pre><p>These is a parameter for different functions :</p>
+<pre><code class="lang-r">cl = aquarius::create_parallel_instance(nthreads = <span class="hljs-number">3L</span>)
+</code></pre>
+<h1 id="combine-datasets">Combine datasets</h1>
+<p>In this section, we load the raw count matrix for each sample. Then, we applied an empty droplets filtering. Then, we use <code>base::merge</code> function to make a combined Seurat object containing all datasets. For each sample, identifier corresponds to the <code>sample_info$sample_identifiant</code> value.</p>
+<pre><code class="lang-r">data_paths = paste0(input_dir, <span class="hljs-string">&quot;/&quot;</span>, sample_info$project_name)
+names(data_paths) = sample_info$sample_identifiant
+
+sobj = aquarius::integration_combine_datasets_from_matrices(data_paths = data_paths,
+                                                            save_sobj = paste0(out_dir, <span class="hljs-string">&quot;/all_DietSeurat_objects.rda&quot;</span>))
+</code></pre>
+<pre><code>## [1]   28000 6794880
+## [1] 35313328
+## [1] 28000  3851
+## [1] 31219611
+## [1] 0.8840744
+## [1]   28000 6794880
+## [1] 47814763
+## [1] 28000  4576
+## [1] 44214901
+## [1] 0.9247123
+</code></pre><pre><code class="lang-r">sobj
+</code></pre>
+<pre><code>## An object of class Seurat 
+## 28000 features across 8427 samples within 1 assay 
+## Active assay: RNA (28000 features, 0 variable features)
+</code></pre><p>(Time to run : 336.25 s)</p>
+<p>This is the number of cells for each dataset :</p>
+<pre><code class="lang-r">table(sobj$orig.ident)
+</code></pre>
+<p>We set the levels of orig.ident :</p>
+<pre><code class="lang-r">sobj$orig.ident = factor(sobj$orig.ident,
+                         levels = sample_info$sample_identifiant)
+</code></pre>
+<p>We add a tumor type column :</p>
+<pre><code class="lang-r">sobj$tumor_type = dplyr::left_join(x = sobj@meta.data,
+                                   y = sample_info,
+                                   by = c(<span class="hljs-string">&quot;orig.ident&quot;</span> = <span class="hljs-string">&quot;sample_identifiant&quot;</span>)) %&gt;%
+  dplyr::pull(tumor_type) %&gt;%
+  as.character() %&gt;% factor(., levels = c(<span class="hljs-string">&quot;dyNF&quot;</span>, <span class="hljs-string">&quot;MPNST&quot;</span>))
+</code></pre>
+<p>We add a project name column :</p>
+<pre><code class="lang-r">sobj$project_name = dplyr::left_join(x = sobj@meta.data,
+                                     y = sample_info,
+                                     by = c(<span class="hljs-string">&quot;orig.ident&quot;</span> = <span class="hljs-string">&quot;sample_identifiant&quot;</span>)) %&gt;%
+  dplyr::pull(project_name)
+</code></pre>
+<p>We save the combined dataset. It is not annotated and not filtered, except for empty droplets.</p>
+<pre><code class="lang-r">saveRDS(sobj, paste0(out_dir, <span class="hljs-string">&quot;/&quot;</span>, save_name, <span class="hljs-string">&quot;_sobj_unfiltered.rds&quot;</span>))
+</code></pre>
+<h1 id="before-filtering">Before filtering</h1>
+<h2 id="gene-expression-normalization">Gene expression normalization</h2>
+<pre><code class="lang-r">sobj = aquarius::sc_normalization(sobj = sobj,
+                                  assay = <span class="hljs-string">&quot;RNA&quot;</span>,
+                                  method = <span class="hljs-string">&quot;LogNormalize&quot;</span>,
+                                  verbose = <span class="hljs-literal">FALSE</span>)
+</code></pre>
+<h2 id="cell-type">Cell type</h2>
+<p>We annotate cells for cell type using <code>Seurat::AddModuleScore</code> function.</p>
+<pre><code class="lang-r">sobj = aquarius::cell_annot_custom(sobj,
+                                   newname = <span class="hljs-string">&quot;cell_type&quot;</span>,
+                                   markers = cell_markers,
+                                   use_negative = <span class="hljs-literal">TRUE</span>,
+                                   add_score = <span class="hljs-literal">TRUE</span>,
+                                   verbose = <span class="hljs-literal">TRUE</span>)
+
+colnames(sobj@meta.data) = stringr::str_replace_all(string = colnames(sobj@meta.data),
+                                                    pattern = <span class="hljs-string">&quot; &quot;</span>,
+                                                    replacement = <span class="hljs-string">&quot;_&quot;</span>)
+
+sobj$cell_type = factor(sobj$cell_type, levels = cell_type_levels)
+
+table(sobj$cell_type)
+</code></pre>
+<pre><code>## 
+##                   pDC                   mDC                   cDC 
+##                    31                   172                   108 
+##            mast cells           neutrophils               B cells 
+##                    21                   492                    50 
+##              NK cells               T cells           macrophages 
+##                    46                   136                  1267 
+## skeletal muscle cells           mural cells     endothelial cells 
+##                    70                    58                   201 
+##           fibroblasts           tumor cells 
+##                   605                  5170
+</code></pre><p>(Time to run : 46.17 s)</p>
+<p>To justify cell type annotation, we can make a dotplot :</p>
+<pre><code class="lang-r">markers = unique(unlist(dotplot_markers[levels(sobj$cell_type)]))
+
+aquarius::plot_dotplot(sobj, assay = <span class="hljs-string">&quot;RNA&quot;</span>,
+                       column_name = <span class="hljs-string">&quot;cell_type&quot;</span>,
+                       markers = c(<span class="hljs-string">&quot;Ptprc&quot;</span>, markers, <span class="hljs-string">&quot;dtTomato&quot;</span>),
+                       nb_hline = <span class="hljs-number">0</span>) +
+  ggplot2::scale_color_gradientn(colors = c(<span class="hljs-string">&quot;lightgray&quot;</span>, <span class="hljs-string">&quot;#FDBB84&quot;</span>, <span class="hljs-string">&quot;#EF6548&quot;</span>, <span class="hljs-string">&quot;#7F0000&quot;</span>, <span class="hljs-string">&quot;black&quot;</span>)) +
+  ggplot2::labs(x = <span class="hljs-string">&quot;Cell type&quot;</span>, y = <span class="hljs-string">&quot;&quot;</span>) +
+  ggplot2::theme(legend.position = <span class="hljs-string">&quot;right&quot;</span>,
+                 legend.box = <span class="hljs-string">&quot;vertical&quot;</span>,
+                 legend.direction = <span class="hljs-string">&quot;vertical&quot;</span>) +
+  ggplot2::geom_vline(xintercept = <span class="hljs-number">0.5</span> + c(<span class="hljs-number">8</span>, <span class="hljs-number">12</span>, <span class="hljs-number">16</span>, <span class="hljs-number">17</span>, <span class="hljs-number">20</span>, <span class="hljs-number">23</span>, <span class="hljs-number">26</span>, <span class="hljs-number">29</span>,
+                                           <span class="hljs-number">33</span>, <span class="hljs-number">36</span>, <span class="hljs-number">38</span>, <span class="hljs-number">41</span>, <span class="hljs-number">43</span>, <span class="hljs-number">46</span>, <span class="hljs-number">47</span>),
+                      color = <span class="hljs-string">&quot;gray92&quot;</span>)
+</code></pre>
+<p><img src="files/notebook_MyYVJBQbf1/dotplot_cell_type-1.png" style="display: block; margin: auto;"></p>
+<p>We can make a barplot to see the composition of each dataset.</p>
+<pre><code class="lang-r">df_proportion = as.data.frame(prop.table(table(sobj$orig.ident,
+                                               sobj$cell_type)))
+colnames(df_proportion) = c(<span class="hljs-string">&quot;orig.ident&quot;</span>, <span class="hljs-string">&quot;cell_type&quot;</span>, <span class="hljs-string">&quot;freq&quot;</span>)
+
+quantif = table(sobj$orig.ident) %&gt;%
+  as.data.frame.table() %&gt;%
+  `colnames&lt;-`(c(<span class="hljs-string">&quot;orig.ident&quot;</span>, <span class="hljs-string">&quot;nb_cells&quot;</span>))
+
+aquarius::plot_barplot(df = df_proportion,
+                       x = <span class="hljs-string">&quot;orig.ident&quot;</span>,
+                       y = <span class="hljs-string">&quot;freq&quot;</span>,
+                       fill = <span class="hljs-string">&quot;cell_type&quot;</span>,
+                       position = ggplot2::position_fill()) +
+  ggplot2::scale_fill_manual(name = <span class="hljs-string">&quot;Cell type&quot;</span>,
+                             values = color_markers[levels(df_proportion$cell_type)],
+                             breaks = levels(df_proportion$cell_type)) +
+  ggplot2::geom_label(data = quantif, inherit.aes = <span class="hljs-literal">FALSE</span>,
+                      aes(x = orig.ident, y = <span class="hljs-number">1.05</span>, label = nb_cells),
+                      label.size = <span class="hljs-number">0</span>)
+</code></pre>
+<p><img src="files/notebook_MyYVJBQbf1/barplot_celltype-1.png" style="display: block; margin: auto;"></p>
+<h2 id="cell-cycle-phase">Cell cycle phase</h2>
+<p>We annotate cells for cell cycle phase using <code>Seurat</code> and <code>cyclone</code>.</p>
+<pre><code class="lang-r">cc_columns = aquarius::add_cell_cycle(sobj = sobj,
+                                      assay = <span class="hljs-string">&quot;RNA&quot;</span>,
+                                      species_rdx = <span class="hljs-string">&quot;mm&quot;</span>,
+                                      BPPARAM = cl)@meta.data[, c(<span class="hljs-string">&quot;Seurat.Phase&quot;</span>, <span class="hljs-string">&quot;Phase&quot;</span>)]
+</code></pre>
+<pre><code>## 
+##   G1  G2M    S 
+## 7810  541   64
+</code></pre><pre><code class="lang-r">sobj$Seurat.Phase = cc_columns$Seurat.Phase
+sobj$cyclone.Phase = cc_columns$Phase
+
+table(sobj$Seurat.Phase, sobj$cyclone.Phase)
+</code></pre>
+<pre><code>##      
+##         G1  G2M    S
+##   G1  5158   75   25
+##   G2M  868  423   27
+##   S   1784   43   12
+</code></pre><h2 id="quality-control">Quality control</h2>
+<p>In this section, we look at the number of genes expressed by each cell, the number of UMI, the percentage of mitochondrial genes expressed, and the percentage of ribosomal genes expressed. Then, without taking into account the cells expressing low number of genes or have low number of UMI, we identify doublet cells.</p>
+<p>We compute four quality metrics :</p>
+<pre><code class="lang-r">sobj = aquarius::add_QC_metrics(sobj = sobj,
+                                species_rdx = <span class="hljs-string">&quot;mm&quot;</span>,
+                                BPPARAM = cl)
+</code></pre>
+<h3 id="visualization">Visualization</h3>
+<h4 id="number-of-umi">Number of UMI</h4>
+<p>To visualize the threshold for number of UMI, we can make a histogram :</p>
+<p>```{.r .fold-hide}
+ggplot(sobj@meta.data, aes(x = log_nCount_RNA)) +
+  geom_histogram(aes(y = ..density..), colour = &quot;black&quot;, fill = &quot;white&quot;, bins = 200) +
+  geom_density(alpha = 0.2, fill = &quot;#FF6666&quot;) +
+  ggplot2::theme_classic()</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/qc_umi_hist-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+We can also visualize these as a violin plot :
+
+
+```r
+Seurat::VlnPlot(sobj, features = &quot;log_nCount_RNA&quot;, pt.size = 0.001,
+                group.by = &quot;orig.ident&quot;, cols = sample_info$color) +
+  ggplot2::labs(x = &quot;&quot;)
+</code></pre><p><img src="files/notebook_MyYVJBQbf1/vln_umi_orig.ident-1.png" style="display: block; margin: auto;"></p>
+<pre><code class="lang-r">Seurat::VlnPlot(sobj, features = <span class="hljs-string">&quot;log_nCount_RNA&quot;</span>, pt.size = <span class="hljs-number">0.001</span>,
+                group.by = <span class="hljs-string">&quot;cell_type&quot;</span>, cols = color_markers) +
+  ggplot2::scale_fill_manual(values = color_markers, breaks = names(color_markers)) +
+  ggplot2::labs(x = <span class="hljs-string">&quot;&quot;</span>)
+</code></pre>
+<p><img src="files/notebook_MyYVJBQbf1/vln_umi_cell_type-1.png" style="display: block; margin: auto;"></p>
+<h4 id="number-of-features">Number of features</h4>
+<p>To visualize the threshold for number of features, we can make a histogram :</p>
+<p>```{.r .fold-hide}
+ggplot(sobj@meta.data, aes(x = nFeature_RNA)) +
+  geom_histogram(aes(y = ..density..), colour = &quot;black&quot;, fill = &quot;white&quot;, bins = 200) +
+  geom_density(alpha = 0.2, fill = &quot;#FF6666&quot;) +
+  ggplot2::theme_classic()</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/qc_features_hist-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+We can also visualize these as a violin plot :
+
+
+```r
+Seurat::VlnPlot(sobj, features = &quot;nFeature_RNA&quot;, pt.size = 0.001,
+                group.by = &quot;orig.ident&quot;, cols = sample_info$color) +
+  ggplot2::labs(x = &quot;&quot;)
+</code></pre><p><img src="files/notebook_MyYVJBQbf1/vln_features_orig.ident-1.png" style="display: block; margin: auto;"></p>
+<pre><code class="lang-r">Seurat::VlnPlot(sobj, features = <span class="hljs-string">&quot;nFeature_RNA&quot;</span>, pt.size = <span class="hljs-number">0.001</span>,
+                group.by = <span class="hljs-string">&quot;cell_type&quot;</span>, cols = color_markers) +
+  ggplot2::scale_fill_manual(values = color_markers, breaks = names(color_markers)) +
+  ggplot2::labs(x = <span class="hljs-string">&quot;&quot;</span>)
+</code></pre>
+<p><img src="files/notebook_MyYVJBQbf1/vln_features_cell_type-1.png" style="display: block; margin: auto;"></p>
+<h4 id="mitochondrial-genes-expression">Mitochondrial genes expression</h4>
+<p>To identify a threshold for mitochondrial gene expression, we can make a histogram :</p>
+<p>```{.r .fold-hide}
+ggplot(sobj@meta.data, aes(x = percent.mt)) +
+  geom_histogram(aes(y = ..density..), colour = &quot;black&quot;, fill = &quot;white&quot;, bins = 200) +
+  geom_density(alpha = 0.2, fill = &quot;#FF6666&quot;) +
+  ggplot2::theme_classic()</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/qc_mito_hist-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+We can also visualize these as a violin plot :
+
+
+```r
+Seurat::VlnPlot(sobj, features = &quot;percent.mt&quot;, pt.size = 0.001,
+                group.by = &quot;orig.ident&quot;, cols = sample_info$color) +
+  ggplot2::labs(x = &quot;&quot;)
+</code></pre><p><img src="files/notebook_MyYVJBQbf1/vln_percentmt_orig.ident-1.png" style="display: block; margin: auto;"></p>
+<pre><code class="lang-r">Seurat::VlnPlot(sobj, features = <span class="hljs-string">&quot;percent.mt&quot;</span>, pt.size = <span class="hljs-number">0.001</span>,
+                group.by = <span class="hljs-string">&quot;cell_type&quot;</span>, cols = color_markers) +
+  ggplot2::scale_fill_manual(values = color_markers, breaks = names(color_markers)) +
+  ggplot2::labs(x = <span class="hljs-string">&quot;&quot;</span>)
+</code></pre>
+<p><img src="files/notebook_MyYVJBQbf1/vln_percentmt_cell_type-1.png" style="display: block; margin: auto;"></p>
+<h4 id="ribosomal-genes-expression">Ribosomal genes expression</h4>
+<p>To identify a threshold for ribosomal gene expression, we can make a histogram :</p>
+<p>```{.r .fold-hide}
+ggplot(sobj@meta.data, aes(x = percent.rb)) +
+  geom_histogram(aes(y = ..density..), colour = &quot;black&quot;, fill = &quot;white&quot;, bins = 200) +
+  geom_density(alpha = 0.2, fill = &quot;#FF6666&quot;) +
+  ggplot2::theme_classic() </p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/qc_ribo_hist-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+We can also visualize these as a violin plot :
+
+
+```r
+Seurat::VlnPlot(sobj, features = &quot;percent.rb&quot;, pt.size = 0.001,
+                group.by = &quot;orig.ident&quot;, cols = sample_info$color) +
+  ggplot2::labs(x = &quot;&quot;)
+</code></pre><p><img src="files/notebook_MyYVJBQbf1/vln_percentrb_orig.ident-1.png" style="display: block; margin: auto;"></p>
+<pre><code class="lang-r">Seurat::VlnPlot(sobj, features = <span class="hljs-string">&quot;percent.rb&quot;</span>, pt.size = <span class="hljs-number">0.001</span>,
+                group.by = <span class="hljs-string">&quot;cell_type&quot;</span>, cols = color_markers) +
+  ggplot2::scale_fill_manual(values = color_markers, breaks = names(color_markers)) +
+  ggplot2::labs(x = <span class="hljs-string">&quot;&quot;</span>)
+</code></pre>
+<p><img src="files/notebook_MyYVJBQbf1/vln_percentrb_cell_type-1.png" style="display: block; margin: auto;"></p>
+<h3 id="qc-thresholds">QC thresholds</h3>
+<p>We set threshold for each metric :</p>
+<pre><code class="lang-r">sobj$all_cells = <span class="hljs-literal">TRUE</span>
+
+cut_log_nCount_RNA = <span class="hljs-number">6.34</span>
+cut_nFeature_RNA = <span class="hljs-number">626</span>
+cut_percent.mt = <span class="hljs-number">0.1</span>
+cut_percent.rb = <span class="hljs-number">0.3</span>
+</code></pre>
+<p>We get the cell barcodes for the failing cells :</p>
+<pre><code class="lang-r">fail_percent.mt = sobj@meta.data %&gt;% dplyr::filter(percent.mt &gt; cut_percent.mt) %&gt;% rownames()
+fail_percent.rb = sobj@meta.data %&gt;% dplyr::filter(percent.rb &gt; cut_percent.rb) %&gt;% rownames()
+fail_log_nCount_RNA = sobj@meta.data %&gt;% dplyr::filter(log_nCount_RNA &lt; cut_log_nCount_RNA) %&gt;% rownames()
+fail_nFeature_RNA = sobj@meta.data %&gt;% dplyr::filter(nFeature_RNA &lt; cut_nFeature_RNA) %&gt;% rownames()
+</code></pre>
+<p>We can visualize the 4 cells quality with a Venn diagram : </p>
+<p>```{.r .fold-hide}
+ggvenn::ggvenn(list(percent.mt = fail_percent.mt,
+                    percent.rb = fail_percent.rb,
+                    log_nCount_RNA = fail_log_nCount_RNA,
+                    nFeature_RNA = fail_nFeature_RNA), 
+               fill_color = c(&quot;#0073C2FF&quot;, &quot;#EFC000FF&quot;, &quot;orange&quot;, &quot;pink&quot;),
+               stroke_size = 0.5, set_name_size = 4) +
+  ggplot2::ggtitle(label = &quot;Filtered out cells&quot;) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;))</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/qc_venn-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+### Doublet cells
+
+#### Detection
+
+Without taking into account the low UMI and low number of features cells, we identify doublets.
+
+
+```r
+fsobj = subset(sobj, invert = TRUE,
+               cells = unique(c(fail_log_nCount_RNA, fail_nFeature_RNA)))
+fsobj
+</code></pre><pre><code>## An object of class Seurat 
+## 28000 features across 7353 samples within 1 assay 
+## Active assay: RNA (28000 features, 3000 variable features)
+</code></pre><p>On this filtered dataset, we apply doublet cells detection. Just before, we run the normalization, taking into account only the remaining cells.</p>
+<pre><code class="lang-r">fsobj = aquarius::sc_normalization(sobj = fsobj,
+                                   assay = <span class="hljs-string">&quot;RNA&quot;</span>,
+                                   method = <span class="hljs-string">&quot;LogNormalize&quot;</span>,
+                                   verbose = <span class="hljs-literal">FALSE</span>)
+</code></pre>
+<p>We identify doublet cells :</p>
+<pre><code class="lang-r">fsobj = aquarius::find_doublets(sobj = fsobj,
+                                BPPARAM = cl)
+</code></pre>
+<pre><code>## [1] 28000  7353
+## 
+## FALSE  TRUE 
+##  6837   516 
+## [16:20:36] WARNING: amalgamation/../src/learner.cc:1095: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective &apos;binary:logistic&apos; was changed from &apos;error&apos; to &apos;logloss&apos;. Explicitly set eval_metric if you&apos;d like to restore the old behavior.
+## 
+## FALSE  TRUE 
+##  6779   574 
+## 
+## FALSE  TRUE 
+##  6482   871
+</code></pre><pre><code class="lang-r">fail_doublets_consensus = Seurat::WhichCells(fsobj, expression = doublets_consensus.class)
+fail_doublets_scDblFinder = Seurat::WhichCells(fsobj, expression = scDblFinder.class)
+fail_doublets_hybrid = Seurat::WhichCells(fsobj, expression = hybrid_score.class)
+</code></pre>
+<p>(Time to run : 139.58 s)</p>
+<p>We add the information in the non filtered Seurat object :</p>
+<pre><code class="lang-r">sobj$doublets_consensus.class = dplyr::case_when(!(colnames(sobj) %<span class="hljs-keyword">in</span>% colnames(fsobj)) ~ <span class="hljs-literal">NA</span>,
+                                                 colnames(sobj) %<span class="hljs-keyword">in</span>% fail_doublets_consensus ~ <span class="hljs-literal">TRUE</span>,
+                                                 !(colnames(sobj) %<span class="hljs-keyword">in</span>% fail_doublets_consensus) ~ <span class="hljs-literal">FALSE</span>)
+
+sobj$scDblFinder.class = dplyr::case_when(!(colnames(sobj) %<span class="hljs-keyword">in</span>% colnames(fsobj)) ~ <span class="hljs-literal">NA</span>,
+                                          colnames(sobj) %<span class="hljs-keyword">in</span>% fail_doublets_scDblFinder ~ <span class="hljs-literal">TRUE</span>,
+                                          !(colnames(sobj) %<span class="hljs-keyword">in</span>% fail_doublets_scDblFinder) ~ <span class="hljs-literal">FALSE</span>)
+
+sobj$hybrid_score.class = dplyr::case_when(!(colnames(sobj) %<span class="hljs-keyword">in</span>% colnames(fsobj)) ~ <span class="hljs-literal">NA</span>,
+                                           colnames(sobj) %<span class="hljs-keyword">in</span>% fail_doublets_hybrid ~ <span class="hljs-literal">TRUE</span>,
+                                           !(colnames(sobj) %<span class="hljs-keyword">in</span>% fail_doublets_hybrid) ~ <span class="hljs-literal">FALSE</span>)
+</code></pre>
+<h4 id="visualization">Visualization</h4>
+<p>We can compare doublet detection methods with a Venn diagram : </p>
+<p>```{.r .fold-hide}
+ggvenn::ggvenn(list(hybrid = fail_doublets_hybrid,
+                    scDblFinder = fail_doublets_scDblFinder), 
+               fill_color = c(&quot;#0073C2FF&quot;, &quot;#EFC000FF&quot;),
+               stroke_size = 0.5, set_name_size = 4) +
+  ggplot2::ggtitle(label = &quot;Doublet cells&quot;) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;))</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/qc_venn_doublet-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+How many doublet are detected for each sample of origin ?
+
+
+```r
+round(100*prop.table(table(sobj$doublets_consensus.class, sobj$orig.ident), margin = 2), 2)
+</code></pre><pre><code>##        
+##         donor recipient
+##   FALSE 89.21     87.30
+##   TRUE  10.79     12.70
+</code></pre><p>What is the composition of doublet cells ?</p>
+<p>```{.r .fold-hide}
+sobj$orig.ident.doublets = case_when(is.na(sobj$doublets_consensus.class) ~ &quot;bad quality&quot;,
+                                     sobj$doublets_consensus.class == TRUE ~ paste0(sobj$orig.ident, &quot; doublets&quot;),
+                                     sobj$doublets_consensus.class == FALSE ~ &quot;not doublet&quot;)
+sobj$orig.ident.doublets = factor(sobj$orig.ident.doublets,
+                                  levels = c(paste0(as.character(sample_info$sample_identifiant), &quot; doublets&quot;),
+                                             &quot;bad quality&quot;, &quot;not doublet&quot;))</p>
+<p>doublets<em>compo = function(score1, score2) {
+  type1 = unlist(lapply(stringr::str_split(score1, pattern = &quot;score</em>&quot;), <code>[[</code>, 2))
+  type2 = unlist(lapply(stringr::str<em>split(score2, pattern = &quot;score</em>&quot;), <code>[[</code>, 2))</p>
+<p>  if (type1 == type2) {
+    the_title = &quot;Homotypic doublet&quot;
+    the_subtitle = type1
+    score1 = &quot;log_nCount_RNA&quot;
+  } else {
+    the_title = &quot;Heterotypic doublet&quot;
+    the_subtitle = paste(type1, type2, sep = &quot; + &quot;)
+  }</p>
+<p>  p = sobj@meta.data %&gt;%
+    dplyr::arrange(desc(orig.ident.doublets)) %&gt;%
+    ggplot2::ggplot(., aes(x = eval(parse(text = score1)),
+                           y = eval(parse(text = score2)),
+                           col = orig.ident.doublets)) +
+    ggplot2::geom_point(size = 0.25) +
+    ggplot2::scale_color_manual(values = c(sample_info$color, &quot;gray90&quot;, &quot;gray60&quot;),
+                                breaks = c(paste0(as.character(sample_info$sample_identifiant), &quot; doublets&quot;),
+                                           &quot;bad quality&quot;, &quot;not doublet&quot;)) +
+    ggplot2::labs(x = score1, y = score2,
+                  title = the_title, subtitle = the_subtitle) +
+    ggplot2::theme_classic() +
+    ggplot2::theme(aspect.ratio = 1,
+                   plot.title = element_text(hjust = 0.5),
+                   plot.subtitle = element_text(hjust = 0.5))</p>
+<p>  return(p)
+}</p>
+<pre><code>
+
+On the plots below, we visualize all cells. Cells with low count and low number of features are in light gray. Single cells are in dark gray. Droplets annotated as doublet cells are colored by sample of origin. To investigate **homotypic doublet cells**, we represent the cell type score as a function of the number of UMI If there is a homotypic doublet, there will be a cloud of cells with a high score for the cell type, a high number of UMI. To investigate **heterotypic doublet cells**, we represent the two cell type scores. If doublet cells between the two cell types exists, we will observe single cell with one high score and one low score (top left corner or bottom right corner), and a cloud of cells with two high scores (top right corner). A cloud of cells with two low scores (bottom left corner) means that cells are not from the two cell types. If there is not top left or bottom right corner, but only top right and / or bottom left, it means that the two cell types are correlated, and cannot be interpreted as doublet cells.
+
+
+
+```{.r .fold-hide}
+score_columns = grep(x = colnames(sobj@meta.data),
+                     pattern = &quot;^score&quot;,
+                     value = TRUE)
+combinations = expand.grid(score_columns, score_columns) %&gt;%
+  apply(., 1, sort) %&gt;% t() %&gt;%
+  as.data.frame()
+combinations = combinations[!duplicated(combinations), ]
+
+plot_list = apply(combinations, 1, FUN = function(elem) {
+  doublets_compo(elem[1], elem[2])
+})
+
+sobj$orig.ident.doublets = NULL
+</code></pre><pre><code class="lang-r">patchwork::wrap_plots(plot_list, ncol = <span class="hljs-number">4</span>) +
+  patchwork::plot_layout(guides = <span class="hljs-string">&quot;collect&quot;</span>) &amp;
+  ggplot2::theme(legend.position = <span class="hljs-string">&quot;right&quot;</span>)
+</code></pre>
+<details><summary>show</summary>
+
+<img src="files/notebook_MyYVJBQbf1/doublets_patchwork-1.png" style="display: block; margin: auto;">
+
+</details>
+
+
+<h3 id="facs-like-figure">FACS-like figure</h3>
+<p>We would like to see if the number of feature expressed by cell, and the number of UMI is correlated with the cell type, the percentage of mitonchondrial and ribosomal gene detected, and the doublet status. We build the <code>log_nCount_RNA</code> by <code>nFeature_RNA</code> figure, where cells (dots) are colored by these different metrics.</p>
+<p>We prepare the figure :</p>
+<p>```{.r .fold-hide}
+pass_log_nCount_RNA = sobj@meta.data$log_nCount_RNA &gt; cut_log_nCount_RNA
+pass_nFeature_RNA = sobj@meta.data$nFeature_RNA &gt; cut_nFeature_RNA</p>
+<p>minus_minus = intersect(which(!(pass_log_nCount_RNA)), which(!pass_nFeature_RNA)) %&gt;% length()
+minus_plus = intersect(which(pass_log_nCount_RNA), which(!pass_nFeature_RNA)) %&gt;% length()
+plus_minus = intersect(which(!pass_log_nCount_RNA), which(pass_nFeature_RNA)) %&gt;% length()
+plus_plus = intersect(which(pass_log_nCount_RNA), which(pass_nFeature_RNA)) %&gt;% length()</p>
+<p>grobTable = data.frame(x = c(minus_plus, 100<em>round(minus_plus/ncol(sobj),4),
+                             minus_minus, 100</em>round(minus_minus/ncol(sobj),4)),
+                       y = c(plus_plus, 100<em>round(plus_plus/ncol(sobj),4),
+                             plus_minus, 100</em>round(plus_minus/ncol(sobj),4)))
+grobTable$x = as.character(grobTable$x)
+grobTable$y = as.character(grobTable$y)
+grobTable[c(2,4), ] = lapply(grobTable[c(2,4), ], FUN = function(x) paste(x, &quot;%&quot;)) %&gt;%
+  as.data.frame(., stringsAsFactors = FALSE)</p>
+<p>grobTable = gridExtra::tableGrob(grobTable,
+                                 theme = gridExtra::ttheme_minimal(
+                                   core = list(fg_params = list(cex = 0.80))),
+                                 rows = NULL, cols = NULL) %&gt;%
+  gtable::gtable_add_grob(., grobs = grid::segmentsGrob(x0 = unit(0,&quot;npc&quot;),
+                                                        y0 = unit(0,&quot;npc&quot;),
+                                                        x1 = unit(1,&quot;npc&quot;),
+                                                        y1 = unit(0,&quot;npc&quot;),
+                                                        gp = grid::gpar(lwd = 2.0)),
+                          t = 2, b = 2, l = 1, r = 2) %&gt;%
+  gtable::gtable_add_grob(., grobs = grid::segmentsGrob(x0 = unit(0,&quot;npc&quot;),
+                                                        y0 = unit(0,&quot;npc&quot;),
+                                                        x1 = unit(0,&quot;npc&quot;),
+                                                        y1 = unit(1,&quot;npc&quot;),
+                                                        gp = grid::gpar(lwd = 2.0)),
+                          t = 1, b = 4, l = 2, r = 2)</p>
+<pre><code>
+
+
+
+
+We will make three figures representing both main quality metrics, with different colors :
+
+
+```{.r .fold-hide}
+# With orig.ident
+p_scat_ident = ggplot(sobj@meta.data,
+                      aes(x = nFeature_RNA, y = log_nCount_RNA, col = orig.ident)) +
+  ggplot2::scale_color_manual(breaks = sample_info$sample_identifiant,
+                              values = sample_info$color)
+
+# With percent.mt
+p_scat_mito = ggplot(sobj@meta.data,
+                     aes(x = nFeature_RNA, y = log_nCount_RNA, col = percent.mt)) +
+  ggplot2::scale_color_gradientn(breaks = c(0, 0.05, 0.10, 0.20, 0.30, 1),
+                                 colours = c(&quot;green4&quot;, &quot;yellow&quot;, &quot;orange&quot;, &quot;red&quot;, &quot;black&quot;, &quot;black&quot;))
+
+# With percent.rb
+p_scat_ribo = ggplot(sobj@meta.data,
+                     aes(x = nFeature_RNA, y = log_nCount_RNA, col = percent.rb)) +
+  ggplot2::scale_color_gradientn(breaks = c(0, 0.05, 0.10, 0.20, 0.30, 1),
+                                 colours = c(&quot;green4&quot;, &quot;yellow&quot;, &quot;orange&quot;, &quot;red&quot;, &quot;black&quot;, &quot;black&quot;))
+
+# With doublet consensus
+p_scat_doublet_both = ggplot(sobj@meta.data,
+                             aes(x = nFeature_RNA, y = log_nCount_RNA, col = doublets_consensus.class)) +
+  ggplot2::scale_color_manual(breaks = c(TRUE, FALSE, NA),
+                              values = c(aquarius::gg_color_hue(2), &quot;lightgray&quot;))
+
+# With doublet from scDblFinder
+p_scat_scdblfinder = ggplot(sobj@meta.data,
+                            aes(x = nFeature_RNA, y = log_nCount_RNA, col = scDblFinder.class)) +
+  ggplot2::scale_color_manual(breaks = c(TRUE, FALSE, NA),
+                              values = c(aquarius::gg_color_hue(2), &quot;lightgray&quot;))
+
+# With doublet from hybrid
+p_scat_hybrid = ggplot(sobj@meta.data,
+                       aes(x = nFeature_RNA, y = log_nCount_RNA, col = hybrid_score.class)) +
+  ggplot2::scale_color_manual(breaks = c(TRUE, FALSE, NA),
+                              values = c(aquarius::gg_color_hue(2), &quot;lightgray&quot;))
+
+# With cell type
+p_scat_cell_type = ggplot(sobj@meta.data,
+                          aes(x = nFeature_RNA, y = log_nCount_RNA, col = cell_type)) +
+  ggplot2::scale_color_manual(values = color_markers,
+                              breaks = names(color_markers))
+
+# Complete p_scat
+complete_p_scat = function(p_scat) {
+  p_scat = p_scat +
+    ggplot2::geom_point(size = 0.25) +
+    ggplot2::geom_hline(yintercept = cut_log_nCount_RNA, col = &quot;red&quot;) +
+    ggplot2::geom_vline(xintercept = cut_nFeature_RNA, col = &quot;red&quot;)
+  x_text = ggplot_build(p_scat)$layout$panel_params[[1]]$x$get_labels() %&gt;% as.numeric()
+  y_text = ggplot_build(p_scat)$layout$panel_params[[1]]$y$get_labels() %&gt;% as.numeric()
+  p_scat = p_scat +
+    ggplot2::scale_x_continuous(breaks = round(sort(c(x_text, cut_nFeature_RNA)),2),
+                                limits = range(sobj@meta.data$nFeature_RNA)) +
+    ggplot2::scale_y_continuous(breaks = round(sort(c(y_text, cut_log_nCount_RNA)),2),
+                                limits = range(sobj@meta.data$log_nCount_RNA))
+  x_color = ifelse(ggplot_build(p_scat)$layout$panel_params[[1]]$x$get_labels() %&gt;%
+                     as.numeric() %&gt;% round(., 2) == round(cut_nFeature_RNA, 2),
+                   &quot;red&quot;, &quot;black&quot;)
+  y_color = ifelse(ggplot_build(p_scat)$layout$panel_params[[1]]$y$get_labels() %&gt;%
+                     as.numeric() %&gt;% round(., 2) == round(cut_log_nCount_RNA, 2),
+                   &quot;red&quot;, &quot;black&quot;)
+  p_scat = p_scat +
+    ggplot2::theme_classic() +
+    ggplot2::theme(axis.text.x = element_text(color = x_color),
+                   axis.text.y = element_text(color = y_color))
+
+  return(p_scat)
+}
+</code></pre><p>We build the two marginal distribution plots :</p>
+<p>```{.r .fold-hide}
+p_hist_1 = ggplot(sobj@meta.data, aes(x = nFeature_RNA)) +
+  geom_histogram(aes(y = ..density..), colour = &quot;black&quot;, fill = &quot;white&quot;, bins = 40) +
+  geom_density(alpha = 0.2, fill = &quot;#FF6666&quot;) +
+  ggplot2::geom_vline(xintercept = cut_nFeature_RNA, col = &quot;red&quot;) +
+  ggplot2::lims(x = range(sobj@meta.data$nFeature_RNA)) +
+  ggplot2::theme_classic() +
+  ggplot2::theme(axis.title = element_blank(),
+                 axis.ticks = element_blank(),
+                 axis.text = element_blank())</p>
+<p>p_hist_2 = ggplot(sobj@meta.data, aes(x = log_nCount_RNA)) +
+  geom_histogram(aes(y = ..density..), colour = &quot;black&quot;, fill = &quot;white&quot;, bins = 40) +
+  geom_density(alpha = 0.2, fill = &quot;#FF6666&quot;) +
+  ggplot2::geom_vline(xintercept = cut_log_nCount_RNA, col = &quot;red&quot;) +
+  ggplot2::lims(x = range(sobj@meta.data$log_nCount_RNA)) +
+  ggplot2::coord_flip() +
+  ggplot2::theme_classic() +
+  ggplot2::theme(axis.title = element_blank(),
+                 axis.ticks = element_blank(),
+                 axis.text = element_blank())</p>
+<pre><code>
+This is the figure, colored by sample of origin :
+
+
+```{.r .fold-hide}
+patchwork::wrap_plots(complete_p_scat(p_scat_ident), p_hist_1, p_hist_2, grobTable) +
+  patchwork::plot_layout(design = &quot;
+                         BBBBBD\nAAAAAC\nAAAAAC\nAAAAAC&quot;,
+                         guides = &quot;collect&quot;,
+                         widths = c(5,3),
+                         heights = c(3,5)) +
+  ggplot2::theme(panel.spacing = unit(15, &quot;pt&quot;),
+                 legend.position = &quot;right&quot;) &amp;
+  ggplot2::guides(color = guide_legend(ncol = 1, override.aes = list(size = 3)))
+</code></pre><p><img src="files/notebook_MyYVJBQbf1/qc_patchwork_ident-1.png" style="display: block; margin: auto;"></p>
+<p>This is the figure, colored by cell type :</p>
+<p>```{.r .fold-hide}
+patchwork::wrap_plots(complete_p_scat(p_scat_cell_type), p_hist_1, p_hist_2, grobTable) +
+  patchwork::plot_layout(design = &quot;
+                         BBBBBD\nAAAAAC\nAAAAAC\nAAAAAC&quot;,
+                         guides = &quot;collect&quot;,
+                         widths = c(5,3),
+                         heights = c(3,5)) +
+  ggplot2::theme(panel.spacing = unit(15, &quot;pt&quot;),
+                 legend.position = &quot;right&quot;) &amp;
+  ggplot2::guides(color = guide_legend(ncol = 1, override.aes = list(size = 3)))</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/qc_patchwork_cell_type-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+This is the figure, colored by the percentage of mitochondrial genes expressed in cell :
+
+
+```{.r .fold-hide}
+patchwork::wrap_plots(complete_p_scat(p_scat_mito), p_hist_1, p_hist_2, grobTable) +
+  patchwork::plot_layout(design = &quot;
+                         BBBBBD\nAAAAAC\nAAAAAC\nAAAAAC&quot;,
+                         guides = &quot;collect&quot;,
+                         widths = c(5,3),
+                         heights = c(3,5)) +
+  ggplot2::theme(panel.spacing = unit(15, &quot;pt&quot;),
+                 legend.position = &quot;right&quot;) &amp;
+  ggplot2::guides(color = guide_legend(ncol = 1, override.aes = list(size = 3)))
+</code></pre><p><img src="files/notebook_MyYVJBQbf1/qc_patchwork_mito-1.png" style="display: block; margin: auto;"></p>
+<p>This is the figure, colored by the percentage of ribosomal genes expressed in cell :</p>
+<p>```{.r .fold-hide}
+patchwork::wrap_plots(complete_p_scat(p_scat_ribo), p_hist_1, p_hist_2, grobTable) +
+  patchwork::plot_layout(design = &quot;
+                         BBBBBD\nAAAAAC\nAAAAAC\nAAAAAC&quot;,
+                         guides = &quot;collect&quot;,
+                         widths = c(5,3),
+                         heights = c(3,5)) +
+  ggplot2::theme(panel.spacing = unit(15, &quot;pt&quot;),
+                 legend.position = &quot;right&quot;) &amp;
+  ggplot2::guides(color = guide_legend(ncol = 1, override.aes = list(size = 3)))</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/qc_patchwork_ribo-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+This is the figure, colored by the doublet cells status (`doublets_consensus.class`) :
+
+
+```{.r .fold-hide}
+patchwork::wrap_plots(complete_p_scat(p_scat_doublet_both), p_hist_1, p_hist_2, grobTable) +
+  patchwork::plot_layout(design = &quot;
+                         BBBBBD\nAAAAAC\nAAAAAC\nAAAAAC&quot;,
+                         guides = &quot;collect&quot;,
+                         widths = c(5,3),
+                         heights = c(3,5)) +
+  ggplot2::theme(panel.spacing = unit(15, &quot;pt&quot;),
+                 legend.position = &quot;right&quot;) &amp;
+  ggplot2::guides(color = guide_legend(ncol = 1, override.aes = list(size = 3)))
+</code></pre><p><img src="files/notebook_MyYVJBQbf1/qc_patchwork_doublet_consensus-1.png" style="display: block; margin: auto;"></p>
+<p>This is the figure, colored by the doublet cells status (<code>scDblFinder.class</code>) :</p>
+<p>```{.r .fold-hide}
+patchwork::wrap_plots(complete_p_scat(p_scat_scdblfinder), p_hist_1, p_hist_2, grobTable) +
+  patchwork::plot_layout(design = &quot;
+                         BBBBBD\nAAAAAC\nAAAAAC\nAAAAAC&quot;,
+                         guides = &quot;collect&quot;,
+                         widths = c(5,3),
+                         heights = c(3,5)) +
+  ggplot2::theme(panel.spacing = unit(15, &quot;pt&quot;),
+                 legend.position = &quot;right&quot;) &amp;
+  ggplot2::guides(color = guide_legend(ncol = 1, override.aes = list(size = 3)))</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/qc_patchwork_scdblfinder-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+This is the figure, colored by the doublet cells status (`hybrid_score.class`) :
+
+
+```{.r .fold-hide}
+patchwork::wrap_plots(complete_p_scat(p_scat_hybrid), p_hist_1, p_hist_2, grobTable) +
+  patchwork::plot_layout(design = &quot;
+                         BBBBBD\nAAAAAC\nAAAAAC\nAAAAAC&quot;,
+                         guides = &quot;collect&quot;,
+                         widths = c(5,3),
+                         heights = c(3,5)) +
+  ggplot2::theme(panel.spacing = unit(15, &quot;pt&quot;),
+                 legend.position = &quot;right&quot;) &amp;
+  ggplot2::guides(color = guide_legend(ncol = 1, override.aes = list(size = 3)))
+</code></pre><p><img src="files/notebook_MyYVJBQbf1/qc_patchwork_hybrid_score-1.png" style="display: block; margin: auto;"></p>
+<h3 id="piecharts">Piecharts</h3>
+<p>Do filtered cells belong to a particular cell type ?</p>
+<p>```{.r .fold-hide}
+piechart_all_cells = aquarius::plot_piechart(df = sobj@meta.data,
+                                             logical_var = &quot;all_cells&quot;,
+                                             grouping_var = &quot;cell_type&quot;,
+                                             colors = color_markers,
+                                             display_legend = TRUE) +
+  ggplot2::labs(title = &quot;All cells&quot;,
+                subtitle = paste(nrow(sobj@meta.data), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))</p>
+<p>piechart_doublets = aquarius::plot_piechart(df = sobj@meta.data %&gt;%
+                                              dplyr::filter(doublets_consensus.class),
+                                            logical_var = &quot;all_cells&quot;,
+                                            grouping_var = &quot;cell_type&quot;,
+                                            colors = color_markers,
+                                            display_legend = TRUE) +
+  ggplot2::labs(title = &quot;doublets_consensus.class&quot;,
+                subtitle = paste(sum(sobj$doublets_consensus.class, na.rm = TRUE), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))</p>
+<p>piechart_percent.mt = aquarius::plot_piechart(df = sobj@meta.data %&gt;%
+                                                dplyr::filter(percent.mt &gt; cut_percent.mt),
+                                              logical_var = &quot;all_cells&quot;,
+                                              grouping_var = &quot;cell_type&quot;,
+                                              colors = color_markers,
+                                              display_legend = TRUE) +
+  ggplot2::labs(title = paste(&quot;percent.mt &gt;&quot;, cut_percent.mt),
+                subtitle = paste(length(fail_percent.mt), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))</p>
+<p>piechart_percent.rb = aquarius::plot_piechart(df = sobj@meta.data %&gt;%
+                                                dplyr::filter(percent.rb &gt; cut_percent.rb),
+                                              logical_var = &quot;all_cells&quot;,
+                                              grouping_var = &quot;cell_type&quot;,
+                                              colors = color_markers,
+                                              display_legend = TRUE) +
+  ggplot2::labs(title = paste(&quot;percent.rb &gt;&quot;, cut_percent.rb),
+                subtitle = paste(length(fail_percent.rb), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))</p>
+<p>piechart_log_nCount_RNA = aquarius::plot_piechart(df = sobj@meta.data %&gt;%
+                                                    dplyr::filter(log_nCount_RNA &lt; cut_log_nCount_RNA),
+                                                  logical_var = &quot;all_cells&quot;,
+                                                  grouping_var = &quot;cell_type&quot;,
+                                                  colors = color_markers,
+                                                  display_legend = TRUE) +
+  ggplot2::labs(title = paste(&quot;log_nCount_RNA &lt;&quot;, round(cut_log_nCount_RNA, 2)),
+                subtitle = paste(length(fail_log_nCount_RNA), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))</p>
+<p>piechart_nFeature_RNA = aquarius::plot_piechart(df = sobj@meta.data %&gt;%
+                                                  dplyr::filter(nFeature_RNA &lt; cut_nFeature_RNA),
+                                                logical_var = &quot;all_cells&quot;,
+                                                grouping_var = &quot;cell_type&quot;,
+                                                colors = color_markers,
+                                                display_legend = TRUE) +
+  ggplot2::labs(title = paste(&quot;nFeature_RNA &lt;&quot;, round(cut_nFeature_RNA, 2)),
+                subtitle = paste(length(fail_nFeature_RNA), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))</p>
+<p>patchwork::wrap_plots(piechart_all_cells, piechart_percent.mt, piechart_percent.rb,
+                      piechart_doublets, piechart_nFeature_RNA, piechart_log_nCount_RNA) +
+  patchwork::plot_layout(guides = &quot;collect&quot;) &amp;
+  ggplot2::theme(legend.position = &quot;right&quot;)</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/qc_piechart_cell_type-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+Do filtered cells belong to a particular sample ?
+
+
+```{.r .fold-hide}
+piechart_all_cells = aquarius::plot_piechart(df = sobj@meta.data,
+                                             logical_var = &quot;all_cells&quot;,
+                                             grouping_var = &quot;orig.ident&quot;,
+                                             colors = sample_info$color,
+                                             display_legend = TRUE) +
+  ggplot2::scale_fill_manual(values = sample_info$color,
+                             breaks = sample_info$sample_identifiant,
+                             name = &quot;Sample of origin&quot;) +
+  ggplot2::labs(title = &quot;All cells&quot;,
+                subtitle = paste(nrow(sobj@meta.data), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))
+
+piechart_percent.mt = aquarius::plot_piechart(df = sobj@meta.data %&gt;%
+                                                dplyr::filter(percent.mt &gt; cut_percent.mt),
+                                              logical_var = &quot;all_cells&quot;,
+                                              grouping_var = &quot;orig.ident&quot;,
+                                              colors = sample_info$color,
+                                              display_legend = TRUE) +
+  ggplot2::scale_fill_manual(values = sample_info$color,
+                             breaks = sample_info$sample_identifiant,
+                             name = &quot;Sample of origin&quot;) +
+  ggplot2::labs(title = paste(&quot;percent.mt &gt;&quot;, cut_percent.mt),
+                subtitle = paste(length(fail_percent.mt), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))
+
+piechart_percent.rb = aquarius::plot_piechart(df = sobj@meta.data %&gt;%
+                                                dplyr::filter(percent.rb &gt; cut_percent.rb),
+                                              logical_var = &quot;all_cells&quot;,
+                                              grouping_var = &quot;orig.ident&quot;,
+                                              colors = sample_info$color,
+                                              display_legend = TRUE) +
+  ggplot2::scale_fill_manual(values = sample_info$color,
+                             breaks = sample_info$sample_identifiant,
+                             name = &quot;Sample of origin&quot;) +
+  ggplot2::labs(title = paste(&quot;percent.rb &gt;&quot;, cut_percent.rb),
+                subtitle = paste(length(fail_percent.rb), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))
+
+piechart_log_nCount_RNA = aquarius::plot_piechart(df = sobj@meta.data %&gt;%
+                                                    dplyr::filter(log_nCount_RNA &lt; cut_log_nCount_RNA),
+                                                  logical_var = &quot;all_cells&quot;,
+                                                  grouping_var = &quot;orig.ident&quot;,
+                                                  colors = sample_info$color,
+                                                  display_legend = TRUE) +
+  ggplot2::scale_fill_manual(values = sample_info$color,
+                             breaks = sample_info$sample_identifiant,
+                             name = &quot;Sample of origin&quot;) +
+  ggplot2::labs(title = paste(&quot;log_nCount_RNA &lt;&quot;, round(cut_log_nCount_RNA, 2)),
+                subtitle = paste(length(fail_log_nCount_RNA), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))
+
+piechart_nFeature_RNA = aquarius::plot_piechart(df = sobj@meta.data %&gt;%
+                                                  dplyr::filter(nFeature_RNA &lt; cut_nFeature_RNA),
+                                                logical_var = &quot;all_cells&quot;,
+                                                grouping_var = &quot;orig.ident&quot;,
+                                                colors = sample_info$color,
+                                                display_legend = TRUE) +
+  ggplot2::scale_fill_manual(values = sample_info$color,
+                             breaks = sample_info$sample_identifiant,
+                             name = &quot;Sample of origin&quot;) +
+  ggplot2::labs(title = paste(&quot;nFeature_RNA &lt;&quot;, round(cut_nFeature_RNA, 2)),
+                subtitle = paste(length(fail_nFeature_RNA), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))
+
+piechart_doublets = aquarius::plot_piechart(df = sobj@meta.data %&gt;%
+                                              dplyr::filter(doublets_consensus.class),
+                                            logical_var = &quot;all_cells&quot;,
+                                            grouping_var = &quot;orig.ident&quot;,
+                                            colors = sample_info$color,
+                                            display_legend = TRUE) +
+  ggplot2::scale_fill_manual(values = sample_info$color,
+                             breaks = sample_info$sample_identifiant,
+                             name = &quot;Sample of origin&quot;) +
+  ggplot2::labs(title = &quot;doublets_consensus.class&quot;,
+                subtitle = paste(sum(sobj$doublets_consensus.class, na.rm = TRUE), &quot;cells&quot;)) +
+  ggplot2::theme(plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;),
+                 plot.subtitle = element_text(hjust = 0.5))
+
+patchwork::wrap_plots(piechart_all_cells, piechart_percent.mt, piechart_percent.rb,
+                      piechart_doublets, piechart_nFeature_RNA, piechart_log_nCount_RNA) +
+  patchwork::plot_layout(guides = &quot;collect&quot;) &amp;
+  ggplot2::theme(legend.position = &quot;right&quot;)
+</code></pre><p><img src="files/notebook_MyYVJBQbf1/qc_piechart_orig_ident-1.png" style="display: block; margin: auto;"></p>
+<p></p><p style="color:red;">Cells expressing a high level of mitochondrial genes are mainly tumor cells. We do not apply any filter based on this metric, to quantify cell type.</p> But, for trajectory inference, we will remove them.<p></p>
+<h1 id="filtering">Filtering</h1>
+<p>We remove :</p>
+<ul>
+<li>cells with a number of UMI lower than 6.34</li>
+<li>cells expressing a number of genes lower than 626</li>
+<li>doublet cells detected with both method (<strong>scDblFinder</strong> and <strong>scds-hybrid</strong>)</li>
+</ul>
+<pre><code class="lang-r">sobj = subset(sobj, invert = <span class="hljs-literal">TRUE</span>,
+              cells = unique(c(fail_log_nCount_RNA, fail_nFeature_RNA, fail_doublets_consensus)))
+sobj
+</code></pre>
+<pre><code>## An object of class Seurat 
+## 28000 features across 6482 samples within 1 assay 
+## Active assay: RNA (28000 features, 3000 variable features)
+</code></pre><p>We filter genes expressed in few cells :</p>
+<pre><code class="lang-r">sobj = aquarius::filter_features(sobj, min_cells = <span class="hljs-number">5</span>)
+sobj
+</code></pre>
+<p>We save this object and the metrics :</p>
+<pre><code class="lang-r">saveRDS(sobj, paste0(out_dir, <span class="hljs-string">&quot;/&quot;</span>, save_name, <span class="hljs-string">&quot;_sobj_filtered&quot;</span>,
+                     <span class="hljs-string">&quot;_logCount_&quot;</span>, round(cut_log_nCount_RNA, <span class="hljs-number">2</span>),
+                     <span class="hljs-string">&quot;_nFeature_&quot;</span>, round(cut_nFeature_RNA, <span class="hljs-number">2</span>),
+                     <span class="hljs-string">&quot;_doublets_both.rds&quot;</span>))
+
+save(fail_doublets_consensus, fail_doublets_scDblFinder, fail_doublets_hybrid,
+     fail_percent.mt, fail_log_nCount_RNA, fail_nFeature_RNA,
+     cut_percent.mt, cut_log_nCount_RNA, cut_nFeature_RNA,
+     file = paste0(out_dir, <span class="hljs-string">&quot;/&quot;</span>, save_name, <span class="hljs-string">&quot;_filtered_cells.rda&quot;</span>))
+</code></pre>
+<h1 id="post-filtering-processing">Post-filtering processing</h1>
+<p>We normalize the count matrix for remaining cells :</p>
+<pre><code class="lang-r">sobj = aquarius::sc_normalization(sobj = sobj,
+                                  assay = <span class="hljs-string">&quot;RNA&quot;</span>,
+                                  method = <span class="hljs-string">&quot;LogNormalize&quot;</span>,
+                                  verbose = <span class="hljs-literal">FALSE</span>)
+</code></pre>
+<p>We perform a PCA :</p>
+<pre><code class="lang-r">sobj = aquarius::dimensions_reduction(sobj = sobj,
+                                      assay = <span class="hljs-string">&quot;RNA&quot;</span>,
+                                      reduction = <span class="hljs-string">&quot;pca&quot;</span>,
+                                      max_dims = <span class="hljs-number">100</span>,
+                                      verbose = <span class="hljs-literal">FALSE</span>)
+Seurat::ElbowPlot(sobj, ndims = <span class="hljs-number">100</span>, reduction = <span class="hljs-string">&quot;RNA_pca&quot;</span>)
+</code></pre>
+<p><img src="files/notebook_MyYVJBQbf1/pca-1.png" style="display: block; margin: auto;"></p>
+<p>We generate a tSNE and a UMAP with 35 principal components :</p>
+<pre><code class="lang-r">ndims = <span class="hljs-number">35</span>
+sobj = Seurat::RunTSNE(sobj,
+                       reduction = <span class="hljs-string">&quot;RNA_pca&quot;</span>,
+                       dims = <span class="hljs-number">1</span>:ndims,
+                       seed.use = <span class="hljs-number">1337L</span>,
+                       reduction.name = paste0(<span class="hljs-string">&quot;RNA_pca_&quot;</span>, ndims, <span class="hljs-string">&quot;_tsne&quot;</span>))
+
+sobj = Seurat::RunUMAP(sobj,
+                       reduction = <span class="hljs-string">&quot;RNA_pca&quot;</span>,
+                       dims = <span class="hljs-number">1</span>:ndims,
+                       seed.use = <span class="hljs-number">1337L</span>,
+                       reduction.name = paste0(<span class="hljs-string">&quot;RNA_pca_&quot;</span>, ndims, <span class="hljs-string">&quot;_umap&quot;</span>))
+</code></pre>
+<p>We can visualize the two representations. There is a batch effect :</p>
+<p>```{.r .fold-hide}
+tsne = Seurat::DimPlot(sobj, group.by = &quot;orig.ident&quot;,
+                       reduction = paste0(&quot;RNA<em>pca</em>&quot;, ndims, &quot;_tsne&quot;), cols = sample_info$color) +
+  Seurat::NoAxes() + ggplot2::ggtitle(&quot;tSNE&quot;) +
+  ggplot2::theme(aspect.ratio = 1,
+                 plot.title = element_text(hjust = 0.5),
+                 legend.position = &quot;none&quot;)</p>
+<p>umap = Seurat::DimPlot(sobj, group.by = &quot;orig.ident&quot;,
+                       reduction = paste0(&quot;RNA<em>pca</em>&quot;, ndims, &quot;_umap&quot;), cols = sample_info$color) +
+  Seurat::NoAxes() + ggplot2::ggtitle(&quot;UMAP&quot;) +
+  ggplot2::theme(aspect.ratio = 1,
+                 plot.title = element_text(hjust = 0.5))</p>
+<p>tsne | umap</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/see_umap_tsne-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+
+## Annotation
+
+We annotate cells for cell type, with the new normalized expression matrix :
+
+
+```{.r .fold-hide}
+score_columns = grep(x = colnames(sobj@meta.data), pattern = &quot;^score&quot;, value = TRUE)
+sobj@meta.data[, score_columns] = NULL
+sobj$cell_type = NULL
+
+sobj = aquarius::cell_annot_custom(sobj,
+                                   newname = &quot;cell_type&quot;,
+                                   markers = cell_markers,
+                                   use_negative = TRUE,
+                                   add_score = TRUE,
+                                   verbose = TRUE)
+
+sobj$cell_type = factor(sobj$cell_type, levels = cell_type_levels)
+
+colnames(sobj@meta.data) = stringr::str_replace_all(string = colnames(sobj@meta.data),
+                                                    pattern = &quot; &quot;,
+                                                    replacement = &quot;_&quot;)
+</code></pre><p>(Time to run : 33.71 s)</p>
+<p>To justify cell type annotation, we can make a dotplot :</p>
+<pre><code class="lang-r">markers = unique(unlist(dotplot_markers[levels(sobj$cell_type)]))
+
+aquarius::plot_dotplot(sobj, assay = <span class="hljs-string">&quot;RNA&quot;</span>,
+                       column_name = <span class="hljs-string">&quot;cell_type&quot;</span>,
+                       markers = c(<span class="hljs-string">&quot;Ptprc&quot;</span>, markers, <span class="hljs-string">&quot;dtTomato&quot;</span>),
+                       nb_hline = <span class="hljs-number">0</span>) +
+  ggplot2::scale_color_gradientn(colors = c(<span class="hljs-string">&quot;lightgray&quot;</span>, <span class="hljs-string">&quot;#FDBB84&quot;</span>, <span class="hljs-string">&quot;#EF6548&quot;</span>, <span class="hljs-string">&quot;#7F0000&quot;</span>, <span class="hljs-string">&quot;black&quot;</span>)) +
+  ggplot2::labs(x = <span class="hljs-string">&quot;Cell type&quot;</span>, y = <span class="hljs-string">&quot;&quot;</span>) +
+  ggplot2::theme(legend.position = <span class="hljs-string">&quot;right&quot;</span>,
+                 legend.box = <span class="hljs-string">&quot;vertical&quot;</span>,
+                 legend.direction = <span class="hljs-string">&quot;vertical&quot;</span>) +
+  ggplot2::geom_vline(xintercept = <span class="hljs-number">0.5</span> + c(<span class="hljs-number">8</span>, <span class="hljs-number">12</span>, <span class="hljs-number">16</span>, <span class="hljs-number">17</span>, <span class="hljs-number">20</span>, <span class="hljs-number">23</span>, <span class="hljs-number">26</span>, <span class="hljs-number">29</span>,
+                                           <span class="hljs-number">33</span>, <span class="hljs-number">36</span>, <span class="hljs-number">38</span>, <span class="hljs-number">41</span>, <span class="hljs-number">43</span>, <span class="hljs-number">46</span>, <span class="hljs-number">47</span>),
+                      color = <span class="hljs-string">&quot;gray92&quot;</span>)
+</code></pre>
+<p><img src="files/notebook_MyYVJBQbf1/dotplot_cell_type2-1.png" style="display: block; margin: auto;"></p>
+<p>We can make a barplot to see the composition of each dataset.</p>
+<pre><code class="lang-r">df_proportion = as.data.frame(prop.table(table(sobj$orig.ident,
+                                               sobj$cell_type)))
+colnames(df_proportion) = c(<span class="hljs-string">&quot;orig.ident&quot;</span>, <span class="hljs-string">&quot;cell_type&quot;</span>, <span class="hljs-string">&quot;freq&quot;</span>)
+
+quantif = table(sobj$orig.ident) %&gt;%
+  as.data.frame.table() %&gt;%
+  `colnames&lt;-`(c(<span class="hljs-string">&quot;orig.ident&quot;</span>, <span class="hljs-string">&quot;nb_cells&quot;</span>))
+
+aquarius::plot_barplot(df = df_proportion,
+                       x = <span class="hljs-string">&quot;orig.ident&quot;</span>,
+                       y = <span class="hljs-string">&quot;freq&quot;</span>,
+                       fill = <span class="hljs-string">&quot;cell_type&quot;</span>,
+                       position = ggplot2::position_fill()) +
+  ggplot2::scale_fill_manual(name = <span class="hljs-string">&quot;Cell type&quot;</span>,
+                             values = color_markers[levels(df_proportion$cell_type)],
+                             breaks = levels(df_proportion$cell_type)) +
+  ggplot2::geom_label(data = quantif, inherit.aes = <span class="hljs-literal">FALSE</span>,
+                      aes(x = orig.ident, y = <span class="hljs-number">1.05</span>, label = nb_cells),
+                      label.size = <span class="hljs-number">0</span>)
+</code></pre>
+<p><img src="files/notebook_MyYVJBQbf1/barplot_celltype2-1.png" style="display: block; margin: auto;"></p>
+<p>We annotate cells for cell cycle phase :</p>
+<pre><code class="lang-r">cc_columns = aquarius::add_cell_cycle(sobj = sobj,
+                                      assay = <span class="hljs-string">&quot;RNA&quot;</span>,
+                                      species_rdx = <span class="hljs-string">&quot;mm&quot;</span>,
+                                      BPPARAM = cl)@meta.data[, c(<span class="hljs-string">&quot;Seurat.Phase&quot;</span>, <span class="hljs-string">&quot;Phase&quot;</span>)]
+</code></pre>
+<pre><code>## 
+##   G1  G2M    S 
+## 6174  290   18
+</code></pre><pre><code class="lang-r">sobj$Seurat.Phase = cc_columns$Seurat.Phase
+sobj$cyclone.Phase = cc_columns$Phase
+</code></pre>
+<p>(Time to run : 176.94 s)</p>
+<h2 id="visualization">Visualization</h2>
+<p>We can visualize the cell type :</p>
+<p>```{.r .fold-hide}
+tsne = Seurat::DimPlot(sobj, group.by = &quot;cell<em>type&quot;,
+                       reduction = paste0(&quot;RNA_pca</em>&quot;, ndims, &quot;_tsne&quot;), cols = color_markers) +
+  Seurat::NoAxes() + ggplot2::ggtitle(&quot;tSNE&quot;) +
+  ggplot2::theme(aspect.ratio = 1,
+                 plot.title = element_text(hjust = 0.5),
+                 legend.position = &quot;none&quot;)</p>
+<p>umap = Seurat::DimPlot(sobj, group.by = &quot;cell<em>type&quot;,
+                       reduction = paste0(&quot;RNA_pca</em>&quot;, ndims, &quot;_umap&quot;), cols = color_markers) +
+  Seurat::NoAxes() + ggplot2::ggtitle(&quot;UMAP&quot;) +
+  ggplot2::theme(aspect.ratio = 1,
+                 plot.title = element_text(hjust = 0.5))</p>
+<p>tsne | umap</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/see_cell_type-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+
+We can visualize the cell cycle, from Seurat :
+
+
+```{.r .fold-hide}
+tsne = Seurat::DimPlot(sobj, group.by = &quot;Seurat.Phase&quot;,
+                       reduction = paste0(&quot;RNA_pca_&quot;, ndims, &quot;_tsne&quot;)) +
+  Seurat::NoAxes() + ggplot2::ggtitle(&quot;tSNE&quot;) +
+  ggplot2::theme(aspect.ratio = 1,
+                 plot.title = element_text(hjust = 0.5),
+                 legend.position = &quot;none&quot;)
+
+umap = Seurat::DimPlot(sobj, group.by = &quot;Seurat.Phase&quot;,
+                       reduction = paste0(&quot;RNA_pca_&quot;, ndims, &quot;_umap&quot;)) +
+  Seurat::NoAxes() + ggplot2::ggtitle(&quot;UMAP&quot;) +
+  ggplot2::theme(aspect.ratio = 1,
+                 plot.title = element_text(hjust = 0.5))
+
+tsne | umap
+</code></pre><p><img src="files/notebook_MyYVJBQbf1/see_cc_Seurat-1.png" style="display: block; margin: auto;"></p>
+<p>We can visualize the cell cycle, from cyclone :</p>
+<p>```{.r .fold-hide}
+tsne = Seurat::DimPlot(sobj, group.by = &quot;cyclone.Phase&quot;,
+                       reduction = paste0(&quot;RNA<em>pca</em>&quot;, ndims, &quot;_tsne&quot;)) +
+  Seurat::NoAxes() + ggplot2::ggtitle(&quot;tSNE&quot;) +
+  ggplot2::theme(aspect.ratio = 1,
+                 plot.title = element_text(hjust = 0.5),
+                 legend.position = &quot;none&quot;)</p>
+<p>umap = Seurat::DimPlot(sobj, group.by = &quot;cyclone.Phase&quot;,
+                       reduction = paste0(&quot;RNA<em>pca</em>&quot;, ndims, &quot;_umap&quot;)) +
+  Seurat::NoAxes() + ggplot2::ggtitle(&quot;UMAP&quot;) +
+  ggplot2::theme(aspect.ratio = 1,
+                 plot.title = element_text(hjust = 0.5))</p>
+<p>tsne | umap</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_MyYVJBQbf1/see_cc_cyclone-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+
+## Save
+
+We save the annotated and filtered Seurat object :
+
+
+```r
+saveRDS(sobj, file = paste0(out_dir, &quot;/&quot;, save_name, &quot;_sobj_filtered_processed.rds&quot;))
+</code></pre><h1 id="batch-effect-removal-with-harmony">Batch effect removal with harmony</h1>
+<p>On the previous Seurat object, we generate a reduction without batch-effect, from the PCA.</p>
+<pre><code class="lang-r">`%||%` = <span class="hljs-keyword">function</span>(lhs, rhs) {
+  <span class="hljs-keyword">if</span> (!is.null(x = lhs)) {
+    <span class="hljs-keyword">return</span>(lhs)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span>(rhs)
+  }
+}
+
+set.seed(<span class="hljs-number">1337L</span>)
+sobj = harmony::RunHarmony(object = sobj,
+                           group.by.vars = <span class="hljs-string">&quot;orig.ident&quot;</span>,
+                           plot_convergence = <span class="hljs-literal">TRUE</span>,
+                           reduction = <span class="hljs-string">&quot;RNA_pca&quot;</span>,
+                           assay.use = <span class="hljs-string">&quot;RNA&quot;</span>,
+                           reduction.save = <span class="hljs-string">&quot;harmony&quot;</span>,
+                           max.iter.harmony = <span class="hljs-number">20</span>,
+                           project.dim = <span class="hljs-literal">FALSE</span>)
+</code></pre>
+<p><img src="files/notebook_MyYVJBQbf1/harmony-1.png" style="display: block; margin: auto;">(Time to run : 8.16 s)</p>
+<p>From this batch-effect removed projection, we generate several tSNE and UMAP.</p>
+<pre><code class="lang-r">dims_vector = c(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">35</span>, <span class="hljs-number">40</span>, <span class="hljs-number">50</span>)
+<span class="hljs-keyword">for</span> (ndims <span class="hljs-keyword">in</span> dims_vector) {
+  sobj = Seurat::RunUMAP(sobj,
+                         dims = <span class="hljs-number">1</span>:ndims,
+                         reduction = <span class="hljs-string">&quot;harmony&quot;</span>,
+                         reduction.name = paste0(<span class="hljs-string">&quot;harmony_&quot;</span>, ndims, <span class="hljs-string">&quot;_umap&quot;</span>),
+                         reduction.key = paste0(<span class="hljs-string">&quot;harmony&quot;</span>, ndims, <span class="hljs-string">&quot;umap_&quot;</span>))
+  sobj = Seurat::RunTSNE(sobj,
+                         dims = <span class="hljs-number">1</span>:ndims,
+                         seed.use = <span class="hljs-number">1337L</span>,
+                         reduction = <span class="hljs-string">&quot;harmony&quot;</span>,
+                         reduction.name = paste0(<span class="hljs-string">&quot;harmony_&quot;</span>, ndims, <span class="hljs-string">&quot;_tsne&quot;</span>),
+                         reduction.key = paste0(<span class="hljs-string">&quot;harmony&quot;</span>, ndims, <span class="hljs-string">&quot;tsne_&quot;</span>))
+}
+</code></pre>
+<p>We can visualize these representations :</p>
+<p>```{.r .fold-hide}</p>
+<h1 id="tsne---origident">tsne - orig.ident</h1>
+<p>plot<em>list = lapply(dims_vector, FUN = function(ndims) {
+  Seurat::DimPlot(sobj, group.by = &quot;orig.ident&quot;,
+                  reduction = paste0(&quot;harmony</em>&quot;, ndims, &quot;<em>tsne&quot;)) +
+    ggplot2::scale_color_manual(values = sample_info$color,
+                                breaks = sample_info$sample_identifiant,
+                                name = &quot;Sample of origin&quot;) +
+    ggplot2::ggtitle(paste0(&quot;harmony</em>&quot;, ndims, &quot;_tsne&quot;))})</p>
+<h1 id="tsne---celltype">tsne - cell_type</h1>
+<p>plot<em>list = c(plot_list,
+              lapply(dims_vector, FUN = function(ndims) {
+                Seurat::DimPlot(sobj, group.by = &quot;cell_type&quot;,
+                                reduction = paste0(&quot;harmony</em>&quot;, ndims, &quot;<em>tsne&quot;)) +
+                  ggplot2::scale_color_manual(values = color_markers,
+                                              breaks = names(color_markers),
+                                              name = &quot;Cell type&quot;) +
+                  ggplot2::ggtitle(paste0(&quot;harmony</em>&quot;, ndims, &quot;_tsne&quot;))}))</p>
+<h1 id="tsne---seuratphase">tsne - Seurat.Phase</h1>
+<p>plot<em>list = c(plot_list,
+              lapply(dims_vector, FUN = function(ndims) {
+                Seurat::DimPlot(sobj, group.by = &quot;cyclone.Phase&quot;,
+                                reduction = paste0(&quot;harmony</em>&quot;, ndims, &quot;<em>tsne&quot;)) +
+                  ggplot2::scale_color_manual(values = aquarius::gg_color_hue(3),
+                                              breaks = c(&quot;G1&quot;, &quot;G2M&quot;, &quot;S&quot;),
+                                              name = &quot;Cell cycle&quot;) +
+                  ggplot2::ggtitle(paste0(&quot;harmony</em>&quot;, ndims, &quot;_tsne&quot;))}))</p>
+<h1 id="umap---origident">umap - orig.ident</h1>
+<p>plot<em>list = c(plot_list,
+              lapply(dims_vector, FUN = function(ndims) {
+                Seurat::DimPlot(sobj, group.by = &quot;orig.ident&quot;,
+                                reduction = paste0(&quot;harmony</em>&quot;, ndims, &quot;<em>umap&quot;)) +
+                  ggplot2::scale_color_manual(values = sample_info$color,
+                                              breaks = sample_info$sample_identifiant,
+                                              name = &quot;Sample of origin&quot;) +
+                  ggplot2::ggtitle(paste0(&quot;harmony</em>&quot;, ndims, &quot;_umap&quot;))}))</p>
+<h1 id="umap---celltype">umap - cell_type</h1>
+<p>plot<em>list = c(plot_list,
+              lapply(dims_vector, FUN = function(ndims) {
+                Seurat::DimPlot(sobj, group.by = &quot;cell_type&quot;,
+                                reduction = paste0(&quot;harmony</em>&quot;, ndims, &quot;<em>umap&quot;)) +
+                  ggplot2::scale_color_manual(values = color_markers,
+                                              breaks = names(color_markers),
+                                              name = &quot;Cell type&quot;) +
+                  ggplot2::ggtitle(paste0(&quot;harmony</em>&quot;, ndims, &quot;_umap&quot;))
+              }))</p>
+<h1 id="umap---seuratphase">umap - Seurat.Phase</h1>
+<p>plot<em>list = c(plot_list,
+              lapply(dims_vector, FUN = function(ndims) {
+                Seurat::DimPlot(sobj, group.by = &quot;cyclone.Phase&quot;,
+                                reduction = paste0(&quot;harmony</em>&quot;, ndims, &quot;<em>umap&quot;)) +
+                  ggplot2::scale_color_manual(values = aquarius::gg_color_hue(3),
+                                              breaks = c(&quot;G1&quot;, &quot;G2M&quot;, &quot;S&quot;),
+                                              name = &quot;Cell cycle&quot;) +
+                  ggplot2::ggtitle(paste0(&quot;harmony</em>&quot;, ndims, &quot;_umap&quot;))}))</p>
+<h1 id="common-theme">Common theme</h1>
+<p>plot_list = lapply(plot_list, FUN = function(one_plot) {
+  one_plot +
+    Seurat::NoAxes() +
+    ggplot2::theme(aspect.ratio = 1,
+                   plot.title = element_text(hjust = 0.5),
+                   legend.title = element_text(face = &quot;bold&quot;))
+})</p>
+<h1 id="change-order">Change order</h1>
+<h1 id="current-order--all-tsne-sample---all-tsne-cell-type---all-tsne-cell-cycle---same-for-umap">current order : all tsne sample - all tsne cell type - all tsne cell cycle - same for umap</h1>
+<h1 id="wanted-order--for-each-dim--tsne-sample---tsne-cell-type---tsne-cell-cycle-same-for-umap">wanted order : for each dim : tsne sample - tsne cell type - tsne cell cycle, same for umap</h1>
+<p>names(plot_list) = c(1:length(plot_list))
+plot_order = lapply(c(0:(length(dims_vector) - 1)), FUN = function(id) {
+  tsne = c(1, 1 + length(dims_vector), 1 + 2<em>length(dims_vector)) + id
+  umap = c(1, 1 + length(dims_vector), 1 + 2</em>length(dims_vector)) + id + length(dims_vector)*3
+  return(c(tsne, umap))
+}) %&gt;% unlist()
+plot_list = plot_list[plot_order]
+rm(plot_order)</p>
+<pre><code>
+
+
+```r
+patchwork::wrap_plots(plot_list, ncol = 3) +
+  patchwork::plot_layout(guides = &quot;collect&quot;) &amp; 
+  ggplot2::theme(legend.position = &quot;right&quot;,
+                 legend.direction = &quot;vertical&quot;,
+                 legend.box = &quot;vertical&quot;)
+</code></pre><p><img src="files/notebook_MyYVJBQbf1/harmony_tsne_umap_see-1.png" style="display: block; margin: auto;"></p>
+<p>We save the annotated, filtered and batch-effect removed Seurat object :</p>
+<pre><code class="lang-r">saveRDS(sobj, file = paste0(out_dir, <span class="hljs-string">&quot;/&quot;</span>, save_name, <span class="hljs-string">&quot;_sobj_filtered_processed_harmony.rds&quot;</span>))
+</code></pre>
+<h1 id="r-session">R session</h1>
+<details><summary>show</summary>
+
+```
+## R version 3.6.3 (2020-02-29)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 20.04.5 LTS
+## 
+## Matrix products: default
+## BLAS:   /usr/local/lib/R/lib/libRblas.so
+## LAPACK: /usr/local/lib/R/lib/libRlapack.so
+## 
+## locale:
+## [1] C
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] patchwork_1.0.1.9000 ggplot2_3.3.5        dplyr_1.0.7         
+## 
+## loaded via a namespace (and not attached):
+##   [1] softImpute_1.4              graphlayouts_0.7.0         
+##   [3] pbapply_1.4-2               lattice_0.20-41            
+##   [5] haven_2.3.1                 vctrs_0.3.8                
+##   [7] usethis_2.0.1               dynwrap_1.2.1              
+##   [9] blob_1.2.1                  survival_3.2-13            
+##  [11] prodlim_2019.11.13          dynutils_1.0.5.9000        
+##  [13] DBI_1.1.1                   R.utils_2.11.0             
+##  [15] SingleCellExperiment_1.8.0  rappdirs_0.3.3             
+##  [17] uwot_0.1.8                  dqrng_0.2.1                
+##  [19] jpeg_0.1-8.1                zlibbioc_1.32.0            
+##  [21] pspline_1.0-18              pcaMethods_1.78.0          
+##  [23] mvtnorm_1.1-1               htmlwidgets_1.5.4          
+##  [25] GlobalOptions_0.1.2         future_1.22.1              
+##  [27] UpSetR_1.4.0                laeken_0.5.2               
+##  [29] leiden_0.3.3                clustree_0.4.3             
+##  [31] parallel_3.6.3              scater_1.14.6              
+##  [33] irlba_2.3.3                 DEoptimR_1.0-9             
+##  [35] tidygraph_1.1.2             Rcpp_1.0.9                 
+##  [37] readr_2.0.2                 KernSmooth_2.23-17         
+##  [39] carrier_0.1.0               gdata_2.18.0               
+##  [41] DelayedArray_0.12.3         limma_3.42.2               
+##  [43] RcppParallel_5.1.4          Hmisc_4.4-0                
+##  [45] fs_1.5.2                    RSpectra_0.16-0            
+##  [47] fastmatch_1.1-0             ranger_0.12.1              
+##  [49] digest_0.6.25               png_0.1-7                  
+##  [51] sctransform_0.2.1           cowplot_1.0.0              
+##  [53] DOSE_3.12.0                 ggvenn_0.1.9               
+##  [55] TInGa_0.0.0.9000            ggraph_2.0.3               
+##  [57] pkgconfig_2.0.3             GO.db_3.10.0               
+##  [59] DelayedMatrixStats_1.8.0    gower_0.2.1                
+##  [61] ggbeeswarm_0.6.0            iterators_1.0.12           
+##  [63] DropletUtils_1.6.1          reticulate_1.26            
+##  [65] clusterProfiler_3.14.3      SummarizedExperiment_1.16.1
+##  [67] circlize_0.4.16             beeswarm_0.4.0             
+##  [69] GetoptLong_1.0.5            xfun_0.35                  
+##  [71] bslib_0.3.1                 zoo_1.8-10                 
+##  [73] tidyselect_1.1.0            reshape2_1.4.4             
+##  [75] purrr_0.3.4                 ica_1.0-2                  
+##  [77] pcaPP_1.9-73                viridisLite_0.3.0          
+##  [79] rtracklayer_1.46.0          rlang_1.0.2                
+##  [81] hexbin_1.28.1               jquerylib_0.1.4            
+##  [83] dyneval_0.9.9               glue_1.4.2                 
+##  [85] RColorBrewer_1.1-2          matrixStats_0.56.0         
+##  [87] stringr_1.4.0               lava_1.6.7                 
+##  [89] europepmc_0.3               DESeq2_1.26.0              
+##  [91] recipes_0.1.17              labeling_0.3               
+##  [93] harmony_0.1.0               class_7.3-17               
+##  [95] BiocNeighbors_1.4.2         DO.db_2.9                  
+##  [97] annotate_1.64.0             jsonlite_1.7.2             
+##  [99] XVector_0.26.0              bit_4.0.4                  
+## [101] aquarius_0.1.3              gridExtra_2.3              
+## [103] gplots_3.0.3                Rsamtools_2.2.3            
+## [105] stringi_1.4.6               processx_3.5.2             
+## [107] gsl_2.1-6                   bitops_1.0-6               
+## [109] cli_3.0.1                   batchelor_1.2.4            
+## [111] RSQLite_2.2.0               randomForest_4.6-14        
+## [113] tidyr_1.1.4                 data.table_1.14.2          
+## [115] rstudioapi_0.13             org.Mm.eg.db_3.10.0        
+## [117] GenomicAlignments_1.22.1    nlme_3.1-147               
+## [119] qvalue_2.18.0               scran_1.14.6               
+## [121] locfit_1.5-9.4              scDblFinder_1.1.8          
+## [123] listenv_0.8.0               ggthemes_4.2.4             
+## [125] gridGraphics_0.5-0          R.oo_1.24.0                
+## [127] dbplyr_1.4.4                BiocGenerics_0.32.0        
+## [129] TTR_0.24.2                  readxl_1.3.1               
+## [131] lifecycle_1.0.1             timeDate_3043.102          
+## [133] ggpattern_0.3.1             munsell_0.5.0              
+## [135] cellranger_1.1.0            R.methodsS3_1.8.1          
+## [137] proxyC_0.1.5                visNetwork_2.0.9           
+## [139] caTools_1.18.0              codetools_0.2-16           
+## [141] Biobase_2.46.0              GenomeInfoDb_1.22.1        
+## [143] vipor_0.4.5                 lmtest_0.9-38              
+## [145] htmlTable_1.13.3            triebeard_0.3.0            
+## [147] lsei_1.2-0                  xtable_1.8-4               
+## [149] ROCR_1.0-7                  BiocManager_1.30.10        
+## [151] scatterplot3d_0.3-41        abind_1.4-5                
+## [153] farver_2.0.3                parallelly_1.28.1          
+## [155] RANN_2.6.1                  askpass_1.1                
+## [157] GenomicRanges_1.38.0        RcppAnnoy_0.0.16           
+## [159] tibble_3.1.5                ggdendro_0.1-20            
+## [161] cluster_2.1.0               future.apply_1.5.0         
+## [163] Seurat_3.1.5                dendextend_1.15.1          
+## [165] Matrix_1.3-2                ellipsis_0.3.2             
+## [167] prettyunits_1.1.1           lubridate_1.7.9            
+## [169] ggridges_0.5.2              igraph_1.2.5               
+## [171] RcppEigen_0.3.3.7.0         fgsea_1.12.0               
+## [173] remotes_2.4.2               destiny_3.0.1              
+## [175] scBFA_1.0.0                 VIM_6.1.1                  
+## [177] testthat_3.1.0              htmltools_0.5.2            
+## [179] BiocFileCache_1.10.2        yaml_2.2.1                 
+## [181] utf8_1.1.4                  plotly_4.9.2.1             
+## [183] XML_3.99-0.3                ModelMetrics_1.2.2.2       
+## [185] e1071_1.7-3                 foreign_0.8-76             
+## [187] withr_2.5.0                 fitdistrplus_1.0-14        
+## [189] BiocParallel_1.20.1         xgboost_1.4.1.1            
+## [191] bit64_4.0.5                 foreach_1.5.0              
+## [193] robustbase_0.93-9           Biostrings_2.54.0          
+## [195] GOSemSim_2.13.1             rsvd_1.0.3                 
+## [197] memoise_2.0.0               evaluate_0.18              
+## [199] forcats_0.5.0               rio_0.5.16                 
+## [201] geneplotter_1.64.0          tzdb_0.1.2                 
+## [203] caret_6.0-86                ps_1.6.0                   
+## [205] curl_4.3                    DiagrammeR_1.0.6.1         
+## [207] fdrtool_1.2.15              fansi_0.4.1                
+## [209] highr_0.8                   urltools_1.7.3             
+## [211] xts_0.12.1                  acepack_1.4.1              
+## [213] edgeR_3.28.1                checkmate_2.0.0            
+## [215] scds_1.2.0                  cachem_1.0.6               
+## [217] npsurv_0.4-0                rjson_0.2.20               
+## [219] openxlsx_4.1.5              ggrepel_0.9.1              
+## [221] clue_0.3-60                 stabledist_0.7-1           
+## [223] tools_3.6.3                 sass_0.4.0                 
+## [225] nichenetr_0.1.0             magrittr_2.0.1             
+## [227] RCurl_1.98-1.2              proxy_0.4-24               
+## [229] car_3.0-11                  ape_5.3                    
+## [231] ggplotify_0.0.5             xml2_1.3.2                 
+## [233] httr_1.4.2                  assertthat_0.2.1           
+## [235] rmarkdown_2.18              boot_1.3-25                
+## [237] globals_0.14.0              R6_2.4.1                   
+## [239] Rhdf5lib_1.8.0              nnet_7.3-14                
+## [241] RcppHNSW_0.2.0              progress_1.2.2             
+## [243] genefilter_1.68.0           statmod_1.4.34             
+## [245] gtools_3.8.2                shape_1.4.6                
+## [247] HDF5Array_1.14.4            BiocSingular_1.2.2         
+## [249] rhdf5_2.30.1                splines_3.6.3              
+## [251] carData_3.0-4               colorspace_1.4-1           
+## [253] generics_0.1.0              stats4_3.6.3               
+## [255] base64enc_0.1-3             dynfeature_1.0.0.9000      
+## [257] smoother_1.1                gridtext_0.1.1             
+## [259] pillar_1.6.3                tweenr_1.0.1               
+## [261] sp_1.4-1                    ggplot.multistats_1.0.0    
+## [263] rvcheck_0.1.8               GenomeInfoDbData_1.2.2     
+## [265] plyr_1.8.6                  gtable_0.3.0               
+## [267] zip_2.2.0                   knitr_1.41                 
+## [269] ComplexHeatmap_2.13.1       latticeExtra_0.6-29        
+## [271] biomaRt_2.42.1              IRanges_2.20.2             
+## [273] fastmap_1.1.0               ADGofTest_0.3              
+## [275] copula_1.0-0                doParallel_1.0.15          
+## [277] AnnotationDbi_1.48.0        vcd_1.4-8                  
+## [279] babelwhale_1.0.1            openssl_1.4.1              
+## [281] scales_1.1.1                backports_1.2.1            
+## [283] S4Vectors_0.24.4            ipred_0.9-12               
+## [285] enrichplot_1.6.1            hms_1.1.1                  
+## [287] ggforce_0.3.1               Rtsne_0.15                 
+## [289] numDeriv_2016.8-1.1         polyclip_1.10-0            
+## [291] grid_3.6.3                  lazyeval_0.2.2             
+## [293] Formula_1.2-3               tsne_0.1-3                 
+## [295] crayon_1.3.4                MASS_7.3-54                
+## [297] pROC_1.16.2                 viridis_0.5.1              
+## [299] dynparam_1.0.0              rpart_4.1-15               
+## [301] compiler_3.6.3              ggtext_0.1.0               
+## [303] zinbwave_1.8.0
+```
+
+
+
+</details>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../tuto/make_singularity_container.html" class="navigation navigation-prev " aria-label="Previous page: Singularity + R">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="README.md" class="navigation navigation-next " aria-label="Next page: Zoom on tumor cells">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Preprocessing","subtitle":"Build a common dataset","author":"Audrey","date":"2022-12-14","output":{"html_document":{"self_contained":false,"lib_dir":"libs","keep_md":true,"code_folding":"show","code_download":true,"toc":true,"toc_float":true,"number_sections":false}},"params":{"input_dir":"arg1","out_dir":"arg2"},"level":"3.1","depth":1,"next":{"title":"Zoom on tumor cells","level":"3.2","depth":1,"path":"graft/README.md","ref":"graft/README.md","articles":[{"title":"Make dataset","level":"3.2.1","depth":2,"path":"graft/2_make_tumor_dataset.md","ref":"graft/2_make_tumor_dataset.md","articles":[]},{"title":"Trajectory using TInGa","level":"3.2.2","depth":2,"path":"graft/3_run_trajectory_tinga.md","ref":"graft/3_run_trajectory_tinga.md","articles":[]},{"title":"Trajectory using slingshot","level":"3.2.3","depth":2,"path":"graft/4_run_trajectory_slingshot.md","ref":"graft/4_run_trajectory_slingshot.md","articles":[]}]},"previous":{"title":"Singularity + R","level":"2.1.2","depth":2,"path":"tuto/make_singularity_container.md","ref":"tuto/make_singularity_container.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-html","wide-page","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"Content"},"livereload":{},"search":{},"wide-page":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Analysis","language":"en","gitbook":"*"},"file":{"path":"graft/1_preprocessing.md","mtime":"2022-12-14T15:30:38.936Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-14T19:16:41.829Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

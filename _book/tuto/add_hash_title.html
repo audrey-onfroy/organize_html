@@ -1,0 +1,792 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Hash · Analysis</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-wide-page/wide.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="make_singularity_container.html" />
+    
+    
+    <link rel="prev" href="README.md" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Chapters</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="README.md">
+            
+                <span>
+            
+                    
+                    Tuto
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1.1" data-path="add_hash_title.html">
+            
+                <a href="add_hash_title.html">
+            
+                    
+                    Hash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="make_singularity_container.html">
+            
+                <a href="make_singularity_container.html">
+            
+                    
+                    Singularity + R
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Graft experiment</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../graft/1_preprocessing.html">
+            
+                <a href="../graft/1_preprocessing.html">
+            
+                    
+                    Preprocessing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../graft/README.md">
+            
+                <span>
+            
+                    
+                    Zoom on tumor cells
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../graft/2_make_tumor_dataset.html">
+            
+                <a href="../graft/2_make_tumor_dataset.html">
+            
+                    
+                    Make dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../graft/3_run_trajectory_tinga.html">
+            
+                <a href="../graft/3_run_trajectory_tinga.html">
+            
+                    
+                    Trajectory using TInGa
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../graft/4_run_trajectory_slingshot.html">
+            
+                <a href="../graft/4_run_trajectory_slingshot.html">
+            
+                    
+                    Trajectory using slingshot
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../pages/example_file.html">
+            
+                <a href="../pages/example_file.html">
+            
+                    
+                    Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../hack/do_everything.html">
+            
+                <a href="../hack/do_everything.html">
+            
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../hack/include_html.html">
+            
+                <a href="../hack/include_html.html">
+            
+                    
+                    Good one
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Hash</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="context">Context</h1>
+<p>In <code>bookdown</code> package, Rmarkdown files must contains only one <code>#</code> for chapter titles, then, only subtitles (<code>##</code>, <code>###</code>). It could be useful to increment all titles in Rmd files.</p>
+<p>The full command to replace all <code>#</code> by <code>##</code>, only in section names, is :</p>
+<pre><code class="lang-bash">ls *.Rmd |
+<span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> f; <span class="hljs-keyword">do</span>
+  { cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;1;/```{/{exit}&apos;</span> ; \
+  cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;/```$/{flag=1;next}/```{/{flag=0}flag&apos;</span> ; } | \
+  grep -P <span class="hljs-string">&apos;[0-9]\s#&apos;</span> | \
+  grep -oP <span class="hljs-string">&apos;.*?(?=#)&apos;</span> | \
+  sed <span class="hljs-string">&apos;s/ //g&apos;</span> | \
+  <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> x ; <span class="hljs-keyword">do</span>
+    sed -ie <span class="hljs-string">&quot;<span class="hljs-variable">${x}</span> s/^/#&amp;/&quot;</span> <span class="hljs-variable">$f</span>
+  <span class="hljs-keyword">done</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<h1 id="create-working-files">Create working files</h1>
+<p>We create a directory, with a pseudo-random name, to make sure the directory doesn&apos;t already exist. We generate a pseudo-random string :</p>
+<pre><code class="lang-bash">rnd_str=$(openssl rand -hex 5)
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$rnd_str</span> &gt; .rvars
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$rnd_str</span>
+</code></pre>
+<pre><code>32365b579a
+</code></pre><p>We can reuse this variable :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$rnd_str</span>
+</code></pre>
+<pre><code>32365b579a
+</code></pre><p>We create a directory :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+mkdir -p dir<span class="hljs-variable">$rnd_str</span>
+ls <span class="hljs-_">-d</span> dir*
+</code></pre>
+<pre><code>dir32365b579a
+</code></pre><p>We add two Rmarkdown files in this directory, by duplicating this one.</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+cp add_<span class="hljs-built_in">hash</span>_title.Rmd dir<span class="hljs-variable">$rnd_str</span>/toto.Rmd
+cp add_<span class="hljs-built_in">hash</span>_title.Rmd dir<span class="hljs-variable">$rnd_str</span>/tata.Rmd
+ls dir<span class="hljs-variable">$rnd_str</span>/
+</code></pre>
+<pre><code>tata.Rmd
+toto.Rmd
+</code></pre><h1 id="increment-all-hashes">Increment all hashes</h1>
+<p>The first line will list all Rmarkdwon file in the directory of interest :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+ls dir<span class="hljs-variable">$rnd_str</span>/*.Rmd
+</code></pre>
+<pre><code>dir32365b579a/tata.Rmd
+dir32365b579a/toto.Rmd
+</code></pre><p>To get file names as variable using pipe, we use the <code>read</code> function :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+ls dir<span class="hljs-variable">$rnd_str</span>/*.Rmd |
+<span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> f; <span class="hljs-keyword">do</span>
+ ls -lh <span class="hljs-variable">$f</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<pre><code>-rw-rw-r-- 1 aurelien aurelien 8,0K d&#xE9;c.  14 10:26 dir32365b579a/tata.Rmd
+-rw-rw-r-- 1 aurelien aurelien 8,0K d&#xE9;c.  14 10:26 dir32365b579a/toto.Rmd
+</code></pre><h2 id="get-matching-line-numbers">Get matching line numbers</h2>
+<p>We can then apply a function to each file. For instance, let&apos;s work on <code>toto.Rmd</code>. We add line number. To see what we are doing, we print last 25 lines of the file.</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+f=dir<span class="hljs-variable">$rnd_str</span>/toto.Rmd
+
+cat -n <span class="hljs-variable">$f</span> | tail -n 25
+</code></pre>
+<pre><code>   275    # Exercise
+   276    
+   277    ## Lorem ipsum A
+   278    
+   279    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel commodo dui. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hendrerit tristique sem non interdum. Etiam eget risus quis dui pharetra condimentum id ut odio. Proin quis enim libero. Suspendisse sed purus elementum, congue ipsum eget, volutpat lorem. Duis a elit condimentum, efficitur tellus et, viverra enim. Suspendisse tincidunt odio tortor, sit amet lacinia mauris suscipit at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer consectetur lacus at vulputate bibendum. Nunc ornare vel erat vitae facilisis. Praesent maximus elementum tellus vel pharetra.
+   280    
+   281    ```{r eval = FALSE}
+   282    # lorem ipsum dolor sit amet
+   283    print(&quot;toto&quot;) # proin quis enim libero
+   284
+</code></pre><p>   285<br>   286<br>   287    ## <a href="../GLOSSARY.html#lorem" class="glossary-term" title="ipsum dolor sit amer">Lorem</a> ipsum B
+   288<br>   289    ### <a href="../GLOSSARY.html#lorem" class="glossary-term" title="ipsum dolor sit amer">Lorem</a> ipsum B1
+   290<br>   291    Ut luctus urna eu nisl consectetur interdum. Sed elementum, risus ut maximus ultrices, <a href="../GLOSSARY.html#lorem" class="glossary-term" title="ipsum dolor sit amer">lorem</a> nisi condimentum odio, vitae molestie urna dui ut purus. Suspendisse semper ligula ut nibh tempor tincidunt. Etiam quis nunc in neque aliquam viverra in quis libero. Maecenas ut neque a <a href="../GLOSSARY.html#lorem" class="glossary-term" title="ipsum dolor sit amer">lorem</a> lacinia tempus. Nulla sagittis turpis sed leo congue dignissim. Aenean vestibulum consectetur elit in mollis. Suspendisse vitae quam mi. Integer urna enim, convallis quis efficitur quis, facilisis ac libero. Vivamus laoreet in ligula non pretium. Donec mattis at massa a mattis. Etiam consectetur porttitor arcu in porta. Nunc nec fringilla nisl. Proin faucibus nisl eget velit iaculis elementum. Cras eu venenatis ipsum. 
+   292    <code>{r eval = FALSE}
+   293    # lorem ipsum dolor sit amet
+   294    print(&quot;toto&quot;) # proin quis enim libero
+   295</code>
+   296<br>   297    ### <a href="../GLOSSARY.html#lorem" class="glossary-term" title="ipsum dolor sit amer">Lorem</a> ipsum B2
+   298<br>   299    Ut eu tellus ornare, interdum ex ac, cursus quam. In tristique risus eu lacus aliquet iaculis in et velit. Sed felis purus, molestie eu urna eget, viverra porttitor felis. Suspendisse sed facilisis erat, non ultrices lacus. Quisque ac eros a velit maximus fringilla. Etiam malesuada in leo viverra rutrum. Nunc tempor erat id mollis pellentesque. Duis hendrerit tincidunt lacus eu ultricies.</p>
+<pre><code>
+
+To extract only text lines, ie lines not corresponding to chunk, we select all lines after the end of a chunk and before the beginning of a new one :
+
+* end of chunk is marked by three back quotes and nothing after (`$` to mark the end)
+* beginning of chunk is marked by three back quotes and a curly bracket (`{`)
+
+The command below will extract all the text between chunks, including what is after the last chunks :
+
+
+```bash
+rnd_str=$(cat .rvars)
+
+f=dir$rnd_str/toto.Rmd
+
+cat -n $f | \
+awk &apos;/```$/{flag=1;next}/```{/{flag=0}flag&apos; | \
+tail -n 20
+</code></pre><pre><code>   267    And that&apos;s all ! We clean the directory :
+   268    
+   274    
+   275    # Exercise
+   276    
+   277    ## Lorem ipsum A
+   278    
+   279    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel commodo dui. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hendrerit tristique sem non interdum. Etiam eget risus quis dui pharetra condimentum id ut odio. Proin quis enim libero. Suspendisse sed purus elementum, congue ipsum eget, volutpat lorem. Duis a elit condimentum, efficitur tellus et, viverra enim. Suspendisse tincidunt odio tortor, sit amet lacinia mauris suscipit at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer consectetur lacus at vulputate bibendum. Nunc ornare vel erat vitae facilisis. Praesent maximus elementum tellus vel pharetra.
+   280    
+   285    
+   286    
+   287    ## Lorem ipsum B
+   288    
+   289    ### Lorem ipsum B1
+   290    
+   291    Ut luctus urna eu nisl consectetur interdum. Sed elementum, risus ut maximus ultrices, lorem nisi condimentum odio, vitae molestie urna dui ut purus. Suspendisse semper ligula ut nibh tempor tincidunt. Etiam quis nunc in neque aliquam viverra in quis libero. Maecenas ut neque a lorem lacinia tempus. Nulla sagittis turpis sed leo congue dignissim. Aenean vestibulum consectetur elit in mollis. Suspendisse vitae quam mi. Integer urna enim, convallis quis efficitur quis, facilisis ac libero. Vivamus laoreet in ligula non pretium. Donec mattis at massa a mattis. Etiam consectetur porttitor arcu in porta. Nunc nec fringilla nisl. Proin faucibus nisl eget velit iaculis elementum. Cras eu venenatis ipsum. 
+   296    
+   297    ### Lorem ipsum B2
+   298    
+   299    Ut eu tellus ornare, interdum ex ac, cursus quam. In tristique risus eu lacus aliquet iaculis in et velit. Sed felis purus, molestie eu urna eget, viverra porttitor felis. Suspendisse sed facilisis erat, non ultrices lacus. Quisque ac eros a velit maximus fringilla. Etiam malesuada in leo viverra rutrum. Nunc tempor erat id mollis pellentesque. Duis hendrerit tincidunt lacus eu ultricies.
+</code></pre><p>But, it won&apos;t include the text appearing before the first chunk :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+f=dir<span class="hljs-variable">$rnd_str</span>/toto.Rmd
+
+cat -n <span class="hljs-variable">$f</span> | \
+awk <span class="hljs-string">&apos;/```$/{flag=1;next}/```{/{flag=0}flag&apos;</span> | \
+head -n 15
+</code></pre>
+<pre><code>    25    
+    26    The full command to replace all `#` by `##`, only in section names, is :
+    27    
+    41    
+    42    # Create working files
+    43    
+    44    We create a directory, with a pseudo-random name, to make sure the directory doesn&apos;t already exist. We generate a pseudo-random string :
+    45    
+    51    We can reuse this variable :
+    52    
+    58    
+    59    We create a directory :
+    60    
+    66    
+    67    We add two Rmarkdown files in this directory, by duplicating this one.
+</code></pre><p>We extract all text written before the first chunk :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+f=dir<span class="hljs-variable">$rnd_str</span>/toto.Rmd
+
+cat -n <span class="hljs-variable">$f</span> | \
+awk <span class="hljs-string">&apos;1;/```{/{exit}&apos;</span>
+</code></pre>
+<pre><code>     1    ---
+     2    title: &quot;Add one level to all titles in Rmd file&quot;
+     3    author: &quot;Audrey&quot;
+     4    date: &quot;`r format(Sys.time(), &apos;%Y-%m-%d&apos;)`&quot;
+     5    output:
+     6      html_document:
+     7        self_contained: false
+     8        lib_dir: libs
+     9        keep_md: true
+    10        code_folding: show
+    11        code_download: true
+    12        toc: true
+    13        toc_float: true
+    14        number_sections: true
+    15    ---
+    16    
+    17    # Context
+    18    
+    19    In `bookdown` package, Rmarkdown files must contains only one `#` for chapter titles, then, only subtitles (`##`, `###`). It could be useful to increment all titles in Rmd files.
+    20    
+    21    ```{r setup, include = FALSE}
+</code></pre><p>We merge both commands, to get all text written before the first chunk, and after it. <em>Is there a more elegant command ?</em></p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+f=dir<span class="hljs-variable">$rnd_str</span>/toto.Rmd
+
+{ cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;1;/```{/{exit}&apos;</span> ; \
+cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;/```$/{flag=1;next}/```{/{flag=0}flag&apos;</span> ; } | \
+head -n 25
+</code></pre>
+<pre><code>     1    ---
+     2    title: &quot;Add one level to all titles in Rmd file&quot;
+     3    author: &quot;Audrey&quot;
+     4    date: &quot;`r format(Sys.time(), &apos;%Y-%m-%d&apos;)`&quot;
+     5    output:
+     6      html_document:
+     7        self_contained: false
+     8        lib_dir: libs
+     9        keep_md: true
+    10        code_folding: show
+    11        code_download: true
+    12        toc: true
+    13        toc_float: true
+    14        number_sections: true
+    15    ---
+    16    
+    17    # Context
+    18    
+    19    In `bookdown` package, Rmarkdown files must contains only one `#` for chapter titles, then, only subtitles (`##`, `###`). It could be useful to increment all titles in Rmd files.
+    20    
+    21    ```{r setup, include = FALSE}
+    25    
+    26    The full command to replace all `#` by `##`, only in section names, is :
+    27    
+    41
+</code></pre><p>From the text, we extract only lines containing a hash (<code>#</code>). In Rmarkdown syntax, they are necessarily at the beginning of a line, so no need to add the <code>^</code> before <code>#</code>. But, we can add hash between back quotes, as in this file... To keep only hash corresponding to section names, we grep lines matching only numbers and space, then hash, because we numbered lines.</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+f=dir<span class="hljs-variable">$rnd_str</span>/toto.Rmd
+
+{ cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;1;/```{/{exit}&apos;</span> ; \
+cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;/```$/{flag=1;next}/```{/{flag=0}flag&apos;</span> ; } | \
+grep -P <span class="hljs-string">&apos;[0-9]\s#&apos;</span>
+</code></pre>
+<pre><code>    17    # Context
+    42    # Create working files
+    76    # Increment all hashes
+    96    ## Get matching line numbers
+   201    ## Correction
+   246    ## Generalization
+   275    # Exercise
+   277    ## Lorem ipsum A
+   287    ## Lorem ipsum B
+   289    ### Lorem ipsum B1
+   297    ### Lorem ipsum B2
+</code></pre><p>To get line numbers, we extract what occurs before the <code>#</code>. We could (but how ?) include this in the <code>grep</code> line, but for readability, we add a new command line :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+f=dir<span class="hljs-variable">$rnd_str</span>/toto.Rmd
+
+{ cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;1;/```{/{exit}&apos;</span> ; \
+cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;/```$/{flag=1;next}/```{/{flag=0}flag&apos;</span> ; } | \
+grep -P <span class="hljs-string">&apos;[0-9]\s#&apos;</span> | \
+grep -oP <span class="hljs-string">&apos;.*?(?=#)&apos;</span>
+</code></pre>
+<pre><code>    17    
+    42    
+    76    
+    96    
+   201    
+   246    
+   275    
+   277    
+   287    
+   289    
+   297
+</code></pre><p>We remove spaces around line numbers :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+f=dir<span class="hljs-variable">$rnd_str</span>/toto.Rmd
+
+{ cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;1;/```{/{exit}&apos;</span> ; \
+cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;/```$/{flag=1;next}/```{/{flag=0}flag&apos;</span> ; } | \
+grep -P <span class="hljs-string">&apos;[0-9]\s#&apos;</span> | \
+grep -oP <span class="hljs-string">&apos;.*?(?=#)&apos;</span> | \
+sed <span class="hljs-string">&apos;s/ //g&apos;</span>
+</code></pre>
+<pre><code>17    
+42    
+76    
+96    
+201    
+246    
+275    
+277    
+287    
+289    
+297
+</code></pre><h2 id="correction">Correction</h2>
+<p>For each line in the file, we add a <code>#</code>. We use <code>while</code> and <code>read</code> to loop over all the line number. In <code>sed</code> command, option <code>-i</code> modifies the input file.</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+f=dir<span class="hljs-variable">$rnd_str</span>/toto.Rmd
+fcorr=dir<span class="hljs-variable">$rnd_str</span>/toto_cor.Rmd
+cp <span class="hljs-variable">$f</span> <span class="hljs-variable">$fcorr</span>
+
+{ cat -n <span class="hljs-variable">$fcorr</span> | awk <span class="hljs-string">&apos;1;/```{/{exit}&apos;</span> ; \
+cat -n <span class="hljs-variable">$fcorr</span> | awk <span class="hljs-string">&apos;/```$/{flag=1;next}/```{/{flag=0}flag&apos;</span> ; } | \
+grep -P <span class="hljs-string">&apos;[0-9]\s#&apos;</span> | \
+grep -oP <span class="hljs-string">&apos;.*?(?=#)&apos;</span> | \
+sed <span class="hljs-string">&apos;s/ //g&apos;</span> | \
+<span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> x ; <span class="hljs-keyword">do</span>
+  sed -ie <span class="hljs-string">&quot;<span class="hljs-variable">${x}</span> s/^/#&amp;/&quot;</span> <span class="hljs-variable">$fcorr</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<p>We can check all lines containing <code>#</code> in the corrected file :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+fcorr=dir<span class="hljs-variable">$rnd_str</span>/toto_cor.Rmd
+
+cat -n <span class="hljs-variable">$fcorr</span> | \
+grep <span class="hljs-string">&apos;#&apos;</span>
+</code></pre>
+<pre><code>    17    ## Context
+    19    In `bookdown` package, Rmarkdown files must contains only one `#` for chapter titles, then, only subtitles (`##`, `###`). It could be useful to increment all titles in Rmd files.
+    26    The full command to replace all `#` by `##`, only in section names, is :
+    33      grep -P &apos;[0-9]\s#&apos; | \
+    34      grep -oP &apos;.*?(?=#)&apos; | \
+    37        sed -ie &quot;${x} s/^/#&amp;/&quot; $f
+    42    ## Create working files
+    76    ## Increment all hashes
+    96    ### Get matching line numbers
+   162    From the text, we extract only lines containing a hash (`#`). In Rmarkdown syntax, they are necessarily at the beginning of a line, so no need to add the `^` before `#`. But, we can add hash between back quotes, as in this file... To keep only hash corresponding to section names, we grep lines matching only numbers and space, then hash, because we numbered lines.
+   171    grep -P &apos;[0-9]\s#&apos; 
+   174    To get line numbers, we extract what occurs before the `#`. We could (but how ?) include this in the `grep` line, but for readability, we add a new command line :
+   183    grep -P &apos;[0-9]\s#&apos; | \
+   184    grep -oP &apos;.*?(?=#)&apos;
+   196    grep -P &apos;[0-9]\s#&apos; | \
+   197    grep -oP &apos;.*?(?=#)&apos; | \
+   201    ### Correction
+   203    For each line in the file, we add a `#`. We use `while` and `read` to loop over all the line number. In `sed` command, option `-i` modifies the input file.
+   214    grep -P &apos;[0-9]\s#&apos; | \
+   215    grep -oP &apos;.*?(?=#)&apos; | \
+   218      sed -ie &quot;${x} s/^/#&amp;/&quot; $fcorr
+   222    We can check all lines containing `#` in the corrected file :
+   230    grep &apos;#&apos; 
+   246    ### Generalization
+   257      grep -P &apos;[0-9]\s#&apos; | \
+   258      grep -oP &apos;.*?(?=#)&apos; | \
+   261        sed -ie &quot;${x} s/^/#&amp;/&quot; $f
+   275    ## Exercise
+   277    ### Lorem ipsum A
+   282    # lorem ipsum dolor sit amet
+   283    print(&quot;toto&quot;) # proin quis enim libero
+   287    ### Lorem ipsum B
+   289    #### Lorem ipsum B1
+   293    # lorem ipsum dolor sit amet
+   294    print(&quot;toto&quot;) # proin quis enim libero
+   297    #### Lorem ipsum B2
+</code></pre><p>All section names have been corrected. Hashes in code, code comments and inline code didn&apos;t changed.</p>
+<p>We delete this corrected file :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+fcorr=dir<span class="hljs-variable">$rnd_str</span>/toto_cor.Rmd
+rm <span class="hljs-variable">$fcorr</span>
+</code></pre>
+<h2 id="generalization">Generalization</h2>
+<p>Now, we can apply the correction to all Rmarkdown files in the directory :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+
+ls dir<span class="hljs-variable">$rnd_str</span>/*.Rmd |
+<span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> f; <span class="hljs-keyword">do</span>
+  { cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;1;/```{/{exit}&apos;</span> ; \
+  cat -n <span class="hljs-variable">$f</span> | awk <span class="hljs-string">&apos;/```$/{flag=1;next}/```{/{flag=0}flag&apos;</span> ; } | \
+  grep -P <span class="hljs-string">&apos;[0-9]\s#&apos;</span> | \
+  grep -oP <span class="hljs-string">&apos;.*?(?=#)&apos;</span> | \
+  sed <span class="hljs-string">&apos;s/ //g&apos;</span> | \
+  <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> x ; <span class="hljs-keyword">do</span>
+    sed -ie <span class="hljs-string">&quot;<span class="hljs-variable">${x}</span> s/^/#&amp;/&quot;</span> <span class="hljs-variable">$f</span>
+  <span class="hljs-keyword">done</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<p>And that&apos;s all ! We clean the directory :</p>
+<pre><code class="lang-bash">rnd_str=$(cat .rvars)
+rm -r dir<span class="hljs-variable">$rnd_str</span>
+rm .rvars
+</code></pre>
+<h1 id="exercise">Exercise</h1>
+<h2 id="lorem-ipsum-a">Lorem ipsum A</h2>
+<p><a href="../GLOSSARY.html#lorem" class="glossary-term" title="ipsum dolor sit amer">Lorem</a> ipsum dolor <a href="../GLOSSARY.html#sit" class="glossary-term" title="sit sat sat">sit</a> amet, consectetur adipiscing elit. Vestibulum vel commodo dui. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hendrerit tristique sem non interdum. Etiam eget risus quis dui pharetra condimentum id ut odio. Proin quis enim libero. Suspendisse sed purus elementum, congue ipsum eget, volutpat <a href="../GLOSSARY.html#lorem" class="glossary-term" title="ipsum dolor sit amer">lorem</a>. Duis a elit condimentum, efficitur tellus et, viverra enim. Suspendisse tincidunt odio tortor, <a href="../GLOSSARY.html#sit" class="glossary-term" title="sit sat sat">sit</a> amet lacinia mauris suscipit at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer consectetur lacus at vulputate bibendum. Nunc ornare vel erat vitae facilisis. Praesent maximus elementum tellus vel pharetra.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># lorem ipsum dolor sit amet</span>
+print(<span class="hljs-string">&quot;toto&quot;</span>) <span class="hljs-comment"># proin quis enim libero</span>
+</code></pre>
+<h2 id="lorem-ipsum-b">Lorem ipsum B</h2>
+<h3 id="lorem-ipsum-b1">Lorem ipsum B1</h3>
+<p>Ut luctus urna eu nisl consectetur interdum. Sed elementum, risus ut maximus ultrices, <a href="../GLOSSARY.html#lorem" class="glossary-term" title="ipsum dolor sit amer">lorem</a> nisi condimentum odio, vitae molestie urna dui ut purus. Suspendisse semper ligula ut nibh tempor tincidunt. Etiam quis nunc in neque aliquam viverra in quis libero. Maecenas ut neque a <a href="../GLOSSARY.html#lorem" class="glossary-term" title="ipsum dolor sit amer">lorem</a> lacinia tempus. Nulla sagittis turpis sed leo congue dignissim. Aenean vestibulum consectetur elit in mollis. Suspendisse vitae quam mi. Integer urna enim, convallis quis efficitur quis, facilisis ac libero. Vivamus laoreet in ligula non pretium. Donec mattis at massa a mattis. Etiam consectetur porttitor arcu in porta. Nunc nec fringilla nisl. Proin faucibus nisl eget velit iaculis elementum. Cras eu venenatis ipsum. </p>
+<pre><code class="lang-r"><span class="hljs-comment"># lorem ipsum dolor sit amet</span>
+print(<span class="hljs-string">&quot;toto&quot;</span>) <span class="hljs-comment"># proin quis enim libero</span>
+</code></pre>
+<h3 id="lorem-ipsum-b2">Lorem ipsum B2</h3>
+<p>Ut eu tellus ornare, interdum ex ac, cursus quam. In tristique risus eu lacus aliquet iaculis in et velit. Sed felis purus, molestie eu urna eget, viverra porttitor felis. Suspendisse sed facilisis erat, non ultrices lacus. Quisque ac eros a velit maximus fringilla. Etiam malesuada in leo viverra rutrum. Nunc tempor erat id mollis pellentesque. Duis hendrerit tincidunt lacus eu ultricies.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="README.md" class="navigation navigation-prev " aria-label="Previous page: Tuto">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="make_singularity_container.html" class="navigation navigation-next " aria-label="Next page: Singularity + R">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Hash","author":"Audrey","date":"2022-12-14","output":{"html_document":{"self_contained":false,"lib_dir":"libs","keep_md":true,"code_folding":"show","code_download":true,"toc":true,"toc_float":true,"number_sections":true}},"level":"2.1.1","depth":2,"next":{"title":"Singularity + R","level":"2.1.2","depth":2,"path":"tuto/make_singularity_container.md","ref":"tuto/make_singularity_container.md","articles":[]},"previous":{"title":"Tuto","level":"2.1","depth":1,"path":"tuto/README.md","ref":"tuto/README.md","articles":[{"title":"Hash","level":"2.1.1","depth":2,"path":"tuto/add_hash_title.md","ref":"tuto/add_hash_title.md","articles":[]},{"title":"Singularity + R","level":"2.1.2","depth":2,"path":"tuto/make_singularity_container.md","ref":"tuto/make_singularity_container.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["include-html","wide-page","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"Content"},"livereload":{},"search":{},"wide-page":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Analysis","language":"en","gitbook":"*"},"file":{"path":"tuto/add_hash_title.md","mtime":"2022-12-14T09:26:57.100Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-14T19:16:41.829Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
