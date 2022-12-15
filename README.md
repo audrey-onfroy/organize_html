@@ -30,7 +30,7 @@ We create the `book.json` file and write what is inside. To make clean the repos
 
 #### How to install ?
 
-All the possible plugins are stored at (npmjs.com)[https://www.npmjs.com/search?q=gitbook-plugin "npmjs"] webiste. To use a plugin `plugin-name`, add :
+All the possible plugins are stored at [npmjs.com](https://www.npmjs.com/search?q=gitbook-plugin "npmjs") webiste. To use a plugin `plugin-name`, add :
 
 ```bash
 "plugins": ["plugin-name"]
