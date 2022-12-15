@@ -52,15 +52,15 @@ to update the pages.
 
 #### Favorite plugins
 
-|  plugin                                                                                    |    used ?               |  purpose                                                  |
-|--------------------------------------------------------------------------------------------|-------------------------|-----------------------------------------------------------|
-|  (chapter-numbering)[https://www.npmjs.com/package/gitbook-plugin-chapter-numbering]       | <ul><li>- [ ]</li></ul> |    Number chapter in the output html file from md file    |
-|  (intopic-toc)[https://github.com/fzankl/gitbook-plugin-intopic-toc]                       | <ul><li>- [ ]</li></ul> |    Floating table of content (right)                      |
-|  (back-to-top-button)[https://github.com/stuebersystems/gitbook-plugin-back-to-top-button] | <ul><li>- [ ]</li></ul> |    Bottom right button to go to page top                  |
-|  (folding-chapters)[https://github.com/Yakima-Teng/gitbook-plugin-folding-chapters]        | <ul><li>- [ ]</li></ul> |    Folding chapters in the site table of content (left)   |
-|  (wide-page)[https://www.npmjs.com/package/gitbook-plugin-wide-page]                       | <ul><li>- [x]</li></ul> |    HTML pages have very small margins : wide page !       |
+|  plugin                                                                                    | used ? |  purpose                                                  |
+|--------------------------------------------------------------------------------------------|--------|-----------------------------------------------------------|
+|  [chapter-numbering](https://www.npmjs.com/package/gitbook-plugin-chapter-numbering)       | no     |    Number chapter in the output html file from md file    |
+|  [intopic-toc](https://github.com/fzankl/gitbook-plugin-intopic-toc)                       | no     |    Floating table of content (right)                      |
+|  [back-to-top-button](https://github.com/stuebersystems/gitbook-plugin-back-to-top-button) | no     |    Bottom right button to go to page top                  |
+|  [folding-chapters](https://github.com/Yakima-Teng/gitbook-plugin-folding-chapters)        | no     |    Folding chapters in the site table of content (left)   |
+|  [wide-page](https://www.npmjs.com/package/gitbook-plugin-wide-page)                       | yes    |    HTML pages have very small margins : wide page !       |
 
 Maybe some other interesting plugins :
 
-* (panels)[https://github.com/lhcb/gitbook-plugin-panels]
-* (password)[https://github.com/tanghengzhi/gitbook-plugin-password]
+* [panels](https://github.com/lhcb/gitbook-plugin-panels)
+* [password](https://github.com/tanghengzhi/gitbook-plugin-password)
