@@ -64,7 +64,7 @@
     <link rel="next" href="make_singularity_container.html" />
     
     
-    <link rel="prev" href="README.md" />
+    <link rel="prev" href="DONTEXIST.md" />
     
 
     </head>
@@ -115,7 +115,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="README.md">
+        <li class="chapter " data-level="2.1" data-path="DONTEXIST.md">
             
                 <span>
             
@@ -155,6 +155,32 @@
             
         </li>
     
+        <li class="chapter " data-level="2.1.3" data-path="../pages/example_file.html">
+            
+                <a href="../pages/example_file.html">
+            
+                    
+                    Very complete
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="do_everything.html">
+            
+                <a href="do_everything.html">
+            
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -163,7 +189,7 @@
 
     
         
-        <li class="header">Graft experiment</li>
+        <li class="header">Graft from md</li>
         
         
     
@@ -180,7 +206,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../graft/README.md">
+        <li class="chapter " data-level="3.2" data-path="../graft/DONTEXIST.md">
             
                 <span>
             
@@ -245,35 +271,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../pages/example_file.html">
+        <li class="chapter " data-level="4.1" data-path="include_html.html">
             
-                <a href="../pages/example_file.html">
-            
-                    
-                    Example
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.2" data-path="../hack/do_everything.html">
-            
-                <a href="../hack/do_everything.html">
-            
-                    
-                    Test
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.3" data-path="../hack/include_html.html">
-            
-                <a href="../hack/include_html.html">
+                <a href="include_html.html">
             
                     
                     Good one
@@ -350,18 +350,18 @@
 <span class="hljs-built_in">echo</span> <span class="hljs-variable">$rnd_str</span> &gt; .rvars
 <span class="hljs-built_in">echo</span> <span class="hljs-variable">$rnd_str</span>
 </code></pre>
-<pre><code>32365b579a
+<pre><code>052554cba4
 </code></pre><p>We can reuse this variable :</p>
 <pre><code class="lang-bash">rnd_str=$(cat .rvars)
 <span class="hljs-built_in">echo</span> <span class="hljs-variable">$rnd_str</span>
 </code></pre>
-<pre><code>32365b579a
+<pre><code>052554cba4
 </code></pre><p>We create a directory :</p>
 <pre><code class="lang-bash">rnd_str=$(cat .rvars)
 mkdir -p dir<span class="hljs-variable">$rnd_str</span>
 ls <span class="hljs-_">-d</span> dir*
 </code></pre>
-<pre><code>dir32365b579a
+<pre><code>dir052554cba4
 </code></pre><p>We add two Rmarkdown files in this directory, by duplicating this one.</p>
 <pre><code class="lang-bash">rnd_str=$(cat .rvars)
 cp add_<span class="hljs-built_in">hash</span>_title.Rmd dir<span class="hljs-variable">$rnd_str</span>/toto.Rmd
@@ -376,8 +376,8 @@ toto.Rmd
 
 ls dir<span class="hljs-variable">$rnd_str</span>/*.Rmd
 </code></pre>
-<pre><code>dir32365b579a/tata.Rmd
-dir32365b579a/toto.Rmd
+<pre><code>dir052554cba4/tata.Rmd
+dir052554cba4/toto.Rmd
 </code></pre><p>To get file names as variable using pipe, we use the <code>read</code> function :</p>
 <pre><code class="lang-bash">rnd_str=$(cat .rvars)
 
@@ -386,8 +386,8 @@ ls dir<span class="hljs-variable">$rnd_str</span>/*.Rmd |
  ls -lh <span class="hljs-variable">$f</span>
 <span class="hljs-keyword">done</span>
 </code></pre>
-<pre><code>-rw-rw-r-- 1 aurelien aurelien 8,0K d&#xE9;c.  14 10:26 dir32365b579a/tata.Rmd
--rw-rw-r-- 1 aurelien aurelien 8,0K d&#xE9;c.  14 10:26 dir32365b579a/toto.Rmd
+<pre><code>-rw-rw-r-- 1 aurelien aurelien 8,0K d&#xE9;c.  14 20:30 dir052554cba4/tata.Rmd
+-rw-rw-r-- 1 aurelien aurelien 8,0K d&#xE9;c.  14 20:30 dir052554cba4/toto.Rmd
 </code></pre><h2 id="get-matching-line-numbers">Get matching line numbers</h2>
 <p>We can then apply a function to each file. For instance, let&apos;s work on <code>toto.Rmd</code>. We add line number. To see what we are doing, we print last 25 lines of the file.</p>
 <pre><code class="lang-bash">rnd_str=$(cat .rvars)
@@ -733,7 +733,7 @@ print(<span class="hljs-string">&quot;toto&quot;</span>) <span class="hljs-comme
 
             
                 
-                <a href="README.md" class="navigation navigation-prev " aria-label="Previous page: Tuto">
+                <a href="DONTEXIST.md" class="navigation navigation-prev " aria-label="Previous page: Tuto">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -749,7 +749,7 @@ print(<span class="hljs-string">&quot;toto&quot;</span>) <span class="hljs-comme
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hash","author":"Audrey","date":"2022-12-14","output":{"html_document":{"self_contained":false,"lib_dir":"libs","keep_md":true,"code_folding":"show","code_download":true,"toc":true,"toc_float":true,"number_sections":true}},"level":"2.1.1","depth":2,"next":{"title":"Singularity + R","level":"2.1.2","depth":2,"path":"tuto/make_singularity_container.md","ref":"tuto/make_singularity_container.md","articles":[]},"previous":{"title":"Tuto","level":"2.1","depth":1,"path":"tuto/README.md","ref":"tuto/README.md","articles":[{"title":"Hash","level":"2.1.1","depth":2,"path":"tuto/add_hash_title.md","ref":"tuto/add_hash_title.md","articles":[]},{"title":"Singularity + R","level":"2.1.2","depth":2,"path":"tuto/make_singularity_container.md","ref":"tuto/make_singularity_container.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["include-html","wide-page","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"Content"},"livereload":{},"search":{},"wide-page":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Analysis","language":"en","gitbook":"*"},"file":{"path":"tuto/add_hash_title.md","mtime":"2022-12-14T09:26:57.100Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-14T19:16:41.829Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hash","author":"Audrey","date":"2022-12-14","output":{"html_document":{"self_contained":false,"lib_dir":"libs","keep_md":true,"code_folding":"show","code_download":true,"toc":true,"toc_float":true,"number_sections":true}},"level":"2.1.1","depth":2,"next":{"title":"Singularity + R","level":"2.1.2","depth":2,"path":"tuto/make_singularity_container.md","ref":"tuto/make_singularity_container.md","articles":[]},"previous":{"title":"Tuto","level":"2.1","depth":1,"path":"tuto/DONTEXIST.md","ref":"tuto/DONTEXIST.md","articles":[{"title":"Hash","level":"2.1.1","depth":2,"path":"tuto/add_hash_title.md","ref":"tuto/add_hash_title.md","articles":[]},{"title":"Singularity + R","level":"2.1.2","depth":2,"path":"tuto/make_singularity_container.md","ref":"tuto/make_singularity_container.md","articles":[]},{"title":"Very complete","level":"2.1.3","depth":2,"path":"pages/example_file.md","ref":"pages/example_file.md","articles":[]},{"title":"Test","level":"2.1.4","depth":2,"path":"tuto/do_everything.md","ref":"tuto/do_everything.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["include-html","wide-page","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"Content"},"livereload":{},"search":{},"wide-page":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Analysis","language":"en","gitbook":"*"},"file":{"path":"tuto/add_hash_title.md","mtime":"2022-12-14T19:30:14.128Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-14T19:50:16.741Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

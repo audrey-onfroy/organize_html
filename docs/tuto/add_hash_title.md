@@ -49,7 +49,7 @@ echo $rnd_str
 ```
 
 ```
-32365b579a
+052554cba4
 ```
 We can reuse this variable :
 
@@ -61,7 +61,7 @@ echo $rnd_str
 ```
 
 ```
-32365b579a
+052554cba4
 ```
 
 We create a directory :
@@ -74,7 +74,7 @@ ls -d dir*
 ```
 
 ```
-dir32365b579a
+dir052554cba4
 ```
 
 We add two Rmarkdown files in this directory, by duplicating this one.
@@ -104,8 +104,8 @@ ls dir$rnd_str/*.Rmd
 ```
 
 ```
-dir32365b579a/tata.Rmd
-dir32365b579a/toto.Rmd
+dir052554cba4/tata.Rmd
+dir052554cba4/toto.Rmd
 ```
 To get file names as variable using pipe, we use the `read` function :
 
@@ -120,8 +120,8 @@ done
 ```
 
 ```
--rw-rw-r-- 1 aurelien aurelien 8,0K déc.  14 10:26 dir32365b579a/tata.Rmd
--rw-rw-r-- 1 aurelien aurelien 8,0K déc.  14 10:26 dir32365b579a/toto.Rmd
+-rw-rw-r-- 1 aurelien aurelien 8,0K déc.  14 20:30 dir052554cba4/tata.Rmd
+-rw-rw-r-- 1 aurelien aurelien 8,0K déc.  14 20:30 dir052554cba4/toto.Rmd
 ```
 
 ## Get matching line numbers
