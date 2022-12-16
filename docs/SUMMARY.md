@@ -22,11 +22,11 @@
 
 ## Graft from html
 
-* [Preprocessing](graft_from_html/1_file.md)
+* [Preprocessing](graft_from_html/include_graft_1_preprocessing.md)
 * [Zoom on tumor cells](graft_from_html/DONTEXIST.md)
-  * [Make dataset](graft_from_html/2_file.md)
-  * [Trajectory using TInGa](graft_from_html/3_file.md)
-  * [Trajectory using slingshot](graft_from_html/4_file.md)
+  * [Make dataset](graft_from_html/DONTEXIST.md)
+  * [Trajectory using TInGa](graft_from_html/DONTEXIST.md)
+  * [Trajectory using slingshot](graft_from_html/DONTEXIST.md)
 
 ----
 
