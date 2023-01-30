@@ -1,7 +1,9 @@
 /* =========================== BODY =========================== */
 body, html, button {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
 }
 
 body, html {
@@ -83,7 +85,7 @@ body, html {
 /* Github logo */
 .github {
   display: block;
-  background-image: url("./logo/github-mark/github-mark.svg");
+  background-image: url("./logo/github-mark/github-mark-white.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -117,7 +119,7 @@ a {
 /* List item */
 ul, li {
   list-style-type: none;
-  color: red;
+  color: rgb(51,122,183);
   font-weight: bold;
 }
 
