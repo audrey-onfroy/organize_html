@@ -1,0 +1,132 @@
+/* =========================== BODY =========================== */
+body, html, button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+body, html {
+  margin:  auto;
+  text-align: justify;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0
+}
+
+/* =========================== TWO COLUMNS =========================== */
+
+/* Big box to contain the full page */
+.row-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.first-row {
+  /* height: 10%; */
+  background-color: rgb(51,122,183);
+  color: white;
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  position: relative;
+  text-align: center;
+}
+
+.first-row-content {
+  padding: 0px 5px 0px 5px;
+  margin: 0px 15px 0px 10px;
+  width: 30px;
+}
+
+/* Main title */
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  flex: 1;
+}
+
+/* Big box to contain the second row */
+.column-container  {
+  background-color: rgb(245,245,245);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+/* MENU : First column in second row */
+.first-column {
+  width: 15%;
+  flex-grow: 1;
+  border: none;
+  padding: 10px;
+  overflow-y:auto;
+  resize: horizontal;
+}
+
+/* IFRAME : Second column in second row */
+.second-column {
+  width: 85%;
+  flex-grow: 1;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================== ELEMENTS =========================== */
+
+/* Github logo */
+.github {
+  display: block;
+  background-image: url("./logo/github-mark/github-mark.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Links stay black and without style */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Button as text */
+.first-column button {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  /*
+  display: inline-block;
+  color: inherit;
+  */
+}
+
+.first-column button:hover {
+  font-weight: bold;
+}
+
+/* List item */
+ul, li {
+  list-style-type: none;
+  color: red;
+  font-weight: bold;
+}
+
+li {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+ul {
+  margin: 0px 0px 0px 10px;
+  padding: 0px 0px 0px 0px;
+}

@@ -1,0 +1,749 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Trajectory using TInGa · Analysis</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-wide-page/wide.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4_run_trajectory_slingshot.html" />
+    
+    
+    <link rel="prev" href="2_make_tumor_dataset.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Graft from md</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="1_preprocessing.html">
+            
+                <a href="1_preprocessing.html">
+            
+                    
+                    Preprocessing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../DONTEXIST.md">
+            
+                <span>
+            
+                    
+                    Zoom on tumor cells
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="2_make_tumor_dataset.html">
+            
+                <a href="2_make_tumor_dataset.html">
+            
+                    
+                    Make dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2.2" data-path="3_run_trajectory_tinga.html">
+            
+                <a href="3_run_trajectory_tinga.html">
+            
+                    
+                    Trajectory using TInGa
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="4_run_trajectory_slingshot.html">
+            
+                <a href="4_run_trajectory_slingshot.html">
+            
+                    
+                    Trajectory using slingshot
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Graft from html</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../include_graft_1_preprocessing.html">
+            
+                <a href="../include_graft_1_preprocessing.html">
+            
+                    
+                    Html
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Trajectory using TInGa</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <style>
+body {
+text-align: justify}
+</style>
+
+<!-- Automatically computes and prints in the output the running time for any code chunk -->
+<!-- Set default parameters for all chunks -->
+<p>This script is used to infer trajectory on tumor cells, using TInGa.</p>
+<h1 id="set-environment">Set environment</h1>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(patchwork)
+<span class="hljs-keyword">library</span>(ggplot2)
+<span class="hljs-keyword">library</span>(dplyr)
+</code></pre>
+<p>We load the parameters :</p>
+<pre><code class="lang-r">out_dir = params$out_dir
+</code></pre>
+<p>We load the Seurat object containing all tumor cells from both datasets :</p>
+<pre><code class="lang-r">sample_name = <span class="hljs-string">&quot;donor18_recipient23&quot;</span>
+
+sobj = readRDS(paste0(out_dir, <span class="hljs-string">&quot;/&quot;</span>, sample_name, <span class="hljs-string">&quot;_sobj_tumor_cells.rds&quot;</span>))
+sobj
+</code></pre>
+<pre><code>## An object of class Seurat 
+## 19179 features across 2556 samples within 2 assays 
+## Active assay: RNA (17179 features, 0 variable features)
+##  1 other assay present: mnn.reconstructed
+##  2 dimensional reductions calculated: mnn, mnn_umap
+</code></pre><p>This are the settings :</p>
+<pre><code class="lang-r">load(paste0(out_dir, <span class="hljs-string">&quot;/&quot;</span>, sample_name, <span class="hljs-string">&quot;_sample_info.rda&quot;</span>))
+
+traj_dimred = <span class="hljs-string">&quot;mnn&quot;</span>
+traj_umap = <span class="hljs-string">&quot;mnn_umap&quot;</span>
+seed = <span class="hljs-number">1337L</span>
+traj_max_dims = <span class="hljs-number">50</span>
+</code></pre>
+<h1 id="trajectory-inference">Trajectory inference</h1>
+<p>Where is the root ?</p>
+<pre><code class="lang-r">root_cell_id = names(which.max(sobj$root_score))
+sobj$is_root = colnames(sobj) == root_cell_id
+sobj$cell_name = colnames(sobj)
+root_plot = aquarius::plot_label_dimplot(sobj, reduction = traj_umap,
+                                         col_by = <span class="hljs-string">&quot;is_root&quot;</span>, col_color = c(<span class="hljs-string">&quot;gray80&quot;</span>, <span class="hljs-string">&quot;red&quot;</span>),
+                                         label_by = <span class="hljs-string">&quot;cell_name&quot;</span>, label_val = root_cell_id) +
+  ggplot2::ggtitle(<span class="hljs-string">&quot;Root cell&quot;</span>) +
+  ggplot2::theme(plot.title = element_text(hjust = <span class="hljs-number">0.5</span>),
+                 aspect.ratio = <span class="hljs-number">1</span>) +
+  Seurat::NoLegend() + Seurat::NoAxes()
+
+sobj$is_root = <span class="hljs-literal">NULL</span>
+sobj$cell_name = <span class="hljs-literal">NULL</span>
+
+root_plot
+</code></pre>
+<p><img src="files/notebook_XPeG6rGZRe/root_cell-1.png" style="display: block; margin: auto;"></p>
+<p>Now, we perform the trajectory inference :</p>
+<pre><code class="lang-r">set.seed(seed)
+my_traj = aquarius::traj_tinga(sobj,
+                               seed = seed,
+                               expression_assay = <span class="hljs-string">&quot;RNA&quot;</span>,
+                               expression_slot = <span class="hljs-string">&quot;data&quot;</span>,
+                               count_assay = <span class="hljs-string">&quot;RNA&quot;</span>,
+                               count_slot = <span class="hljs-string">&quot;counts&quot;</span>,
+                               dimred_name = traj_dimred,
+                               dimred_max_dim = traj_max_dims,
+                               root_cell_id = root_cell_id,
+                               tinga_parameters = list(max_nodes = <span class="hljs-number">8</span>))
+
+<span class="hljs-comment">## Add pseudotime</span>
+sobj$pseudotime = my_traj$pseudotime
+</code></pre>
+<p>We can visualize pseudotime :</p>
+<pre><code class="lang-r">Seurat::FeaturePlot(sobj, features = <span class="hljs-string">&quot;pseudotime&quot;</span>,
+                    reduction = traj_umap,
+                    cols = viridis::viridis(n = <span class="hljs-number">100</span>)) +
+  ggplot2::ggtitle(<span class="hljs-string">&quot;Pseudotime&quot;</span>) +
+  ggplot2::theme(plot.title = element_text(hjust = <span class="hljs-number">0.5</span>, face = <span class="hljs-string">&quot;bold&quot;</span>),
+                 axis.ticks = element_blank(),
+                 axis.text = element_blank(),
+                 axis.title = element_blank(),
+                 aspect.ratio = <span class="hljs-number">1</span>)
+</code></pre>
+<p><img src="files/notebook_XPeG6rGZRe/pseudotime1-1.png" style="display: block; margin: auto;"></p>
+<p>We can generate the figure :</p>
+<p>```{.r .fold-hide}</p>
+<h2 id="make-some-plots">Make some plots</h2>
+<h1 id="colored-title">Colored title</h1>
+<h1 id="httpsstackoverflowcomquestions55874998replace-nth-occurrence-of-a-character-in-a-string-with-something-else"><a href="https://stackoverflow.com/questions/55874998/replace-nth-occurrence-of-a-character-in-a-string-with-something-else" target="_blank">https://stackoverflow.com/questions/55874998/replace-nth-occurrence-of-a-character-in-a-string-with-something-else</a></h1>
+<h1 id="httpsstackoverflowcomquestions49735290ggplot2-color-individual-words-in-title-to-match-colors-of-groups"><a href="https://stackoverflow.com/questions/49735290/ggplot2-color-individual-words-in-title-to-match-colors-of-groups" target="_blank">https://stackoverflow.com/questions/49735290/ggplot2-color-individual-words-in-title-to-match-colors-of-groups</a></h1>
+<p>samples_of_interest = unique(sobj$orig.ident)
+mytitle = sapply(samples_of_interest, FUN = function(one_sample) {
+  one_color = sample_info[sample_info$sample_identifiant == one_sample, &quot;color&quot;]
+  new_char = paste0(&quot;<span style="color:&quot;, one_color,
+                    &quot;;">&quot;, one_sample, &quot;</span>&quot;)
+  return(new_char)
+})
+if (length(mytitle) &gt; 7) {
+  every4 = seq(from = 1, to = length(mytitle), by = 5)
+  every4 = every4[-1]
+  for (elem in every4) {
+    mytitle[elem] = paste0(&quot;<br>&quot;, mytitle[elem])
+  }
+}
+mytitle = paste(mytitle, collapse = &quot;, &quot;)</p>
+<h1 id="mytitle--gsub-3--1n-mytitle">mytitle = gsub(&quot;((?:<sup><a href="#fn_," id="reffn_,">,</a></sup>+, ){3}<sup><a href="#fn_" id="reffn_ "> </a></sup>+),&quot;, &quot;\1\n&quot;, mytitle)</h1>
+<h1 id="trajectory-on-umap">Trajectory on UMAP</h1>
+<p>p1 = dynplot::plot_dimred(trajectory = my_traj,
+                          label_milestones = TRUE,
+                          plot_trajectory = TRUE,
+                          dimred = sobj[[traj_umap]]@cell.embeddings,
+                          color_cells = &apos;pseudotime&apos;, color_trajectory = &quot;none&quot;)</p>
+<h1 id="gene-of-interest">Gene of interest</h1>
+<p>p2 = Seurat::FeaturePlot(sobj,
+                         features = c(&quot;dtTomato&quot;, &quot;Sox10&quot;, &quot;Kcna1&quot;,
+                                      &quot;Plp1&quot;, &quot;Erbb3&quot;, &quot;S100b&quot;, &quot;Cd59a&quot;,
+                                      &quot;Acta2&quot;, &quot;Nes&quot;, &quot;Mif&quot;, &quot;Lgals1&quot;,
+                                      &quot;Crabp1&quot;, &quot;Pdgfra&quot;, &quot;Dcn&quot;, &quot;Mgp&quot;,
+                                      &quot;Sox9&quot;, &quot;Birc5&quot;, &quot;percent.mt&quot;, &quot;percent.rb&quot;),
+                         reduction = traj_umap, combine = FALSE)
+p2 = lapply(p2, FUN = function(my_plot) {
+  my_plot = my_plot +
+    ggplot2::theme(aspect.ratio = 1,
+                   axis.ticks = element_blank(),
+                   axis.text = element_blank(),
+                   axis.title = element_blank()) +
+    Seurat::NoLegend()
+  return(my_plot)
+})</p>
+<h1 id="sample-of-origin">Sample of origin</h1>
+<p>p3 = Seurat::DimPlot(sobj, reduction = traj_umap,
+                     group.by = &quot;orig.ident&quot;) +
+  ggplot2::scale_color_manual(values = sample_info$color,
+                              breaks = sample_info$sample_identifiant) +
+  ggplot2::ggtitle(mytitle) +
+  ggplot2::theme(plot.title = ggtext::element_markdown(hjust = 0.5,
+                                                       face = &quot;bold&quot;,
+                                                       size = 12),
+                 axis.ticks = element_blank(),
+                 axis.text = element_blank(),
+                 axis.title = element_blank(),
+                 aspect.ratio = 1) +
+  Seurat::NoLegend() </p>
+<h1 id="patchwork">Patchwork</h1>
+<p>p2[[length(p2) + 1]] = patchwork::guide_area()
+p2[[length(p2) + 1]] = root_plot
+p2[[length(p2) + 1]] = p1
+p2[[length(p2) + 1]] = p3
+p2 = p2[c(length(p2) - 3, # guide_area
+          length(p2) - 1, # p1 : trajectory
+          length(p2),     # p3 : sample of origin
+          length(p2) - 2, # root_plot
+          1:(length(p2) - 4))] # all features
+mylayout = &quot;</p>
+<h1 id="aacccc">AA#CCCC</h1>
+<p>  BBBBCCCC
+  BBBBCCCC
+  BBBBCCCC
+  DDEEFFGG
+  DDEEFFGG
+  HHIIJJKK
+  HHIIJJKK
+  LLMMNNOO
+  LLMMNNOO
+  PPQQRRSS
+  PPQQRRSS
+  TTUUVVWW
+  TTUUVVWW
+  &quot;</p>
+<p>p = patchwork::wrap_plots(p2) +
+  patchwork::plot_layout(design = mylayout,
+                         guide = &quot;collect&quot;) &amp;
+  ggplot2::theme(legend.direction = &quot;horizontal&quot;)</p>
+<pre><code>
+In order to save the dataset, we create a list containing everything :
+
+
+```{.r .fold-hide}
+output = list(traj_umap = traj_umap,
+              traj_dimred = traj_dimred,
+              root_plot = root_plot,
+              my_traj = my_traj,
+              sobj = sobj,
+              p1 = p1, p2 = p2,
+              p3 = p3, p = p)
+</code></pre><p>We can visualize the main figure :</p>
+<pre><code class="lang-r">output$p
+</code></pre>
+<p><img src="files/notebook_XPeG6rGZRe/output_p-1.png" style="display: block; margin: auto;"></p>
+<p>We can zoom on the pseudotime figure :</p>
+<pre><code class="lang-r">output$p1
+</code></pre>
+<p><img src="files/notebook_XPeG6rGZRe/pseudotime-1.png" style="display: block; margin: auto;"></p>
+<p>Where are cells from each dataset ?</p>
+<p>```{.r .fold-hide}</p>
+<h1 id="build-plots">Build plots</h1>
+<p>plot_list = aquarius::plot_split_dimred(sobj = sobj,
+                                        reduction = traj_umap,
+                                        split_by = &quot;orig.ident&quot;,
+                                        split_color = sample_info %&gt;%
+                                          dplyr::arrange(sample_identifiant) %&gt;%
+                                          dplyr::pull(color),
+                                        group_by = &quot;orig.ident&quot;,
+                                        group_color = rep(&quot;black&quot;, length(unique(sobj$orig.ident))),
+                                        bg_pt_size = 0.25,
+                                        main_pt_size = 0.25)
+plot_list = lapply(plot_list, FUN = function(one_plot) {
+  plot_title = as.character(one_plot$labels$title)
+  nb_cells = sum(sobj$orig.ident == plot_title)
+  one_plot = one_plot +
+    ggplot2::labs(subtitle = paste0(nb_cells, &quot; cells&quot;)) +
+    ggplot2::theme(aspect.ratio = 1,
+                   plot.title = element_text(hjust = 0.5, face = &quot;bold&quot;, size = 15),
+                   plot.subtitle = element_text(hjust = 0.5, face = &quot;bold&quot;, size = 12)) +
+    Seurat::NoLegend()
+})</p>
+<h1 id="patchwork">Patchwork</h1>
+<p>patchwork::wrap_plots(plot_list, nrow = 1)</p>
+<pre><code>
+&lt;img src=&quot;files/notebook_XPeG6rGZRe/tumor_split_by_origin-1.png&quot; style=&quot;display: block; margin: auto;&quot; /&gt;
+
+We save it !
+
+
+```r
+saveRDS(output, file = paste0(out_dir, &quot;/trajectory_output_tinga.rds&quot;))
+names(output)
+</code></pre><pre><code>## [1] &quot;traj_umap&quot;   &quot;traj_dimred&quot; &quot;root_plot&quot;   &quot;my_traj&quot;     &quot;sobj&quot;       
+## [6] &quot;p1&quot;          &quot;p2&quot;          &quot;p3&quot;          &quot;p&quot;
+</code></pre><h1 id="r-session">R Session</h1>
+<details><summary>show</summary>
+
+```
+## R version 3.6.3 (2020-02-29)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 20.04.5 LTS
+## 
+## Matrix products: default
+## BLAS:   /usr/local/lib/R/lib/libRblas.so
+## LAPACK: /usr/local/lib/R/lib/libRlapack.so
+## 
+## locale:
+## [1] C
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] dynutils_1.0.5.9000  dynwrap_1.2.1        purrr_0.3.4         
+## [4] tidyr_1.1.4          Seurat_3.1.5         dplyr_1.0.7         
+## [7] ggplot2_3.3.5        patchwork_1.0.1.9000
+## 
+## loaded via a namespace (and not attached):
+##   [1] softImpute_1.4              graphlayouts_0.7.0         
+##   [3] pbapply_1.4-2               lattice_0.20-41            
+##   [5] haven_2.3.1                 dyndimred_1.0.3            
+##   [7] vctrs_0.3.8                 usethis_2.0.1              
+##   [9] blob_1.2.1                  survival_3.2-13            
+##  [11] prodlim_2019.11.13          DBI_1.1.1                  
+##  [13] R.utils_2.11.0              SingleCellExperiment_1.8.0 
+##  [15] rappdirs_0.3.3              uwot_0.1.8                 
+##  [17] dqrng_0.2.1                 gng_0.1.0                  
+##  [19] jpeg_0.1-8.1                zlibbioc_1.32.0            
+##  [21] pspline_1.0-18              pcaMethods_1.78.0          
+##  [23] mvtnorm_1.1-1               htmlwidgets_1.5.4          
+##  [25] GlobalOptions_0.1.2         future_1.22.1              
+##  [27] UpSetR_1.4.0                laeken_0.5.2               
+##  [29] leiden_0.3.3                clustree_0.4.3             
+##  [31] lmds_0.1.0                  parallel_3.6.3             
+##  [33] scater_1.14.6               irlba_2.3.3                
+##  [35] markdown_1.1                DEoptimR_1.0-9             
+##  [37] tidygraph_1.1.2             Rcpp_1.0.9                 
+##  [39] readr_2.0.2                 KernSmooth_2.23-17         
+##  [41] carrier_0.1.0               gdata_2.18.0               
+##  [43] DelayedArray_0.12.3         limma_3.42.2               
+##  [45] pkgload_1.2.2               RcppParallel_5.1.4         
+##  [47] Hmisc_4.4-0                 fs_1.5.2                   
+##  [49] RSpectra_0.16-0             fastmatch_1.1-0            
+##  [51] ranger_0.12.1               digest_0.6.25              
+##  [53] png_0.1-7                   sctransform_0.2.1          
+##  [55] cowplot_1.0.0               DOSE_3.12.0                
+##  [57] TInGa_0.0.0.9000            dynplot_1.0.2.9000         
+##  [59] ggraph_2.0.3                pkgconfig_2.0.3            
+##  [61] GO.db_3.10.0                DelayedMatrixStats_1.8.0   
+##  [63] gower_0.2.1                 ggbeeswarm_0.6.0           
+##  [65] iterators_1.0.12            DropletUtils_1.6.1         
+##  [67] reticulate_1.26             clusterProfiler_3.14.3     
+##  [69] SummarizedExperiment_1.16.1 circlize_0.4.16            
+##  [71] beeswarm_0.4.0              GetoptLong_1.0.5           
+##  [73] xfun_0.35                   bslib_0.3.1                
+##  [75] zoo_1.8-10                  tidyselect_1.1.0           
+##  [77] GA_3.2                      reshape2_1.4.4             
+##  [79] ica_1.0-2                   pcaPP_1.9-73               
+##  [81] viridisLite_0.3.0           rtracklayer_1.46.0         
+##  [83] rlang_1.0.2                 hexbin_1.28.1              
+##  [85] jquerylib_0.1.4             dyneval_0.9.9              
+##  [87] glue_1.4.2                  waldo_0.3.1                
+##  [89] RColorBrewer_1.1-2          matrixStats_0.56.0         
+##  [91] stringr_1.4.0               lava_1.6.7                 
+##  [93] europepmc_0.3               DESeq2_1.26.0              
+##  [95] recipes_0.1.17              labeling_0.3               
+##  [97] class_7.3-17                BiocNeighbors_1.4.2        
+##  [99] DO.db_2.9                   annotate_1.64.0            
+## [101] jsonlite_1.7.2              XVector_0.26.0             
+## [103] bit_4.0.4                   aquarius_0.1.3             
+## [105] gridExtra_2.3               gplots_3.0.3               
+## [107] Rsamtools_2.2.3             stringi_1.4.6              
+## [109] processx_3.5.2              gsl_2.1-6                  
+## [111] bitops_1.0-6                cli_3.0.1                  
+## [113] batchelor_1.2.4             RSQLite_2.2.0              
+## [115] randomForest_4.6-14         data.table_1.14.2          
+## [117] rstudioapi_0.13             org.Mm.eg.db_3.10.0        
+## [119] GenomicAlignments_1.22.1    nlme_3.1-147               
+## [121] qvalue_2.18.0               scran_1.14.6               
+## [123] locfit_1.5-9.4              scDblFinder_1.1.8          
+## [125] listenv_0.8.0               ggthemes_4.2.4             
+## [127] gridGraphics_0.5-0          R.oo_1.24.0                
+## [129] dbplyr_1.4.4                BiocGenerics_0.32.0        
+## [131] TTR_0.24.2                  readxl_1.3.1               
+## [133] lifecycle_1.0.1             timeDate_3043.102          
+## [135] ggpattern_0.3.1             munsell_0.5.0              
+## [137] cellranger_1.1.0            R.methodsS3_1.8.1          
+## [139] proxyC_0.1.5                visNetwork_2.0.9           
+## [141] caTools_1.18.0              codetools_0.2-16           
+## [143] Biobase_2.46.0              GenomeInfoDb_1.22.1        
+## [145] vipor_0.4.5                 lmtest_0.9-38              
+## [147] htmlTable_1.13.3            triebeard_0.3.0            
+## [149] lsei_1.2-0                  xtable_1.8-4               
+## [151] ROCR_1.0-7                  BiocManager_1.30.10        
+## [153] scatterplot3d_0.3-41        abind_1.4-5                
+## [155] farver_2.0.3                parallelly_1.28.1          
+## [157] RANN_2.6.1                  askpass_1.1                
+## [159] GenomicRanges_1.38.0        RcppAnnoy_0.0.16           
+## [161] tibble_3.1.5                ggdendro_0.1-20            
+## [163] cluster_2.1.0               future.apply_1.5.0         
+## [165] dendextend_1.15.1           Matrix_1.3-2               
+## [167] ellipsis_0.3.2              prettyunits_1.1.1          
+## [169] lubridate_1.7.9             ggridges_0.5.2             
+## [171] igraph_1.2.5                RcppEigen_0.3.3.7.0        
+## [173] fgsea_1.12.0                remotes_2.4.2              
+## [175] destiny_3.0.1               scBFA_1.0.0                
+## [177] VIM_6.1.1                   testthat_3.1.0             
+## [179] htmltools_0.5.2             BiocFileCache_1.10.2       
+## [181] yaml_2.2.1                  utf8_1.1.4                 
+## [183] plotly_4.9.2.1              XML_3.99-0.3               
+## [185] ModelMetrics_1.2.2.2        e1071_1.7-3                
+## [187] foreign_0.8-76              withr_2.5.0                
+## [189] fitdistrplus_1.0-14         BiocParallel_1.20.1        
+## [191] xgboost_1.4.1.1             bit64_4.0.5                
+## [193] foreach_1.5.0               robustbase_0.93-9          
+## [195] Biostrings_2.54.0           GOSemSim_2.13.1            
+## [197] data.tree_1.0.0             rsvd_1.0.3                 
+## [199] memoise_2.0.0               evaluate_0.18              
+## [201] forcats_0.5.0               rio_0.5.16                 
+## [203] geneplotter_1.64.0          tzdb_0.1.2                 
+## [205] caret_6.0-86                ps_1.6.0                   
+## [207] curl_4.3                    DiagrammeR_1.0.6.1         
+## [209] fdrtool_1.2.15              fansi_0.4.1                
+## [211] highr_0.8                   urltools_1.7.3             
+## [213] rje_1.10.15                 xts_0.12.1                 
+## [215] acepack_1.4.1               edgeR_3.28.1               
+## [217] checkmate_2.0.0             scds_1.2.0                 
+## [219] cachem_1.0.6                randomForestSRC_2.12.1     
+## [221] desc_1.4.1                  npsurv_0.4-0               
+## [223] rjson_0.2.20                openxlsx_4.1.5             
+## [225] ggrepel_0.9.1               rprojroot_2.0.2            
+## [227] clue_0.3-60                 stabledist_0.7-1           
+## [229] tools_3.6.3                 sass_0.4.0                 
+## [231] nichenetr_0.1.0             magrittr_2.0.1             
+## [233] RCurl_1.98-1.2              proxy_0.4-24               
+## [235] car_3.0-11                  ape_5.3                    
+## [237] ggplotify_0.0.5             xml2_1.3.2                 
+## [239] httr_1.4.2                  assertthat_0.2.1           
+## [241] rmarkdown_2.18              boot_1.3-25                
+## [243] globals_0.14.0              R6_2.4.1                   
+## [245] Rhdf5lib_1.8.0              nnet_7.3-14                
+## [247] RcppHNSW_0.2.0              progress_1.2.2             
+## [249] genefilter_1.68.0           statmod_1.4.34             
+## [251] gtools_3.8.2                shape_1.4.6                
+## [253] HDF5Array_1.14.4            BiocSingular_1.2.2         
+## [255] rhdf5_2.30.1                splines_3.6.3              
+## [257] carData_3.0-4               colorspace_1.4-1           
+## [259] generics_0.1.0              stats4_3.6.3               
+## [261] base64enc_0.1-3             dynfeature_1.0.0.9000      
+## [263] smoother_1.1                gridtext_0.1.1             
+## [265] pillar_1.6.3                tweenr_1.0.1               
+## [267] sp_1.4-1                    ggplot.multistats_1.0.0    
+## [269] rvcheck_0.1.8               GenomeInfoDbData_1.2.2     
+## [271] plyr_1.8.6                  gtable_0.3.0               
+## [273] zip_2.2.0                   knitr_1.41                 
+## [275] ComplexHeatmap_2.13.1       latticeExtra_0.6-29        
+## [277] biomaRt_2.42.1              IRanges_2.20.2             
+## [279] fastmap_1.1.0               ADGofTest_0.3              
+## [281] copula_1.0-0                doParallel_1.0.15          
+## [283] AnnotationDbi_1.48.0        vcd_1.4-8                  
+## [285] babelwhale_1.0.1            openssl_1.4.1              
+## [287] scales_1.1.1                backports_1.2.1            
+## [289] S4Vectors_0.24.4            ipred_0.9-12               
+## [291] enrichplot_1.6.1            hms_1.1.1                  
+## [293] ggforce_0.3.1               Rtsne_0.15                 
+## [295] numDeriv_2016.8-1.1         polyclip_1.10-0            
+## [297] grid_3.6.3                  lazyeval_0.2.2             
+## [299] Formula_1.2-3               tsne_0.1-3                 
+## [301] crayon_1.3.4                MASS_7.3-54                
+## [303] pROC_1.16.2                 viridis_0.5.1              
+## [305] dynparam_1.0.0              rpart_4.1-15               
+## [307] compiler_3.6.3              ggtext_0.1.0               
+## [309] zinbwave_1.8.0
+```
+
+
+
+</details>
+
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2_make_tumor_dataset.html" class="navigation navigation-prev " aria-label="Previous page: Make dataset">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4_run_trajectory_slingshot.html" class="navigation navigation-next " aria-label="Next page: Trajectory using slingshot">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Trajectory using TInGa","subtitle":"Tumor cells trajectory using TInGa","author":"Audrey","date":"2022-12-14","output":{"html_document":{"self_contained":false,"lib_dir":"libs","keep_md":true,"code_folding":"show","code_download":true,"toc":true,"toc_float":true,"number_sections":false}},"params":{"out_dir":"arg1"},"level":"2.2.2","depth":2,"next":{"title":"Trajectory using slingshot","level":"2.2.3","depth":2,"path":"graft/4_run_trajectory_slingshot.md","ref":"graft/4_run_trajectory_slingshot.md","articles":[]},"previous":{"title":"Make dataset","level":"2.2.1","depth":2,"path":"graft/2_make_tumor_dataset.md","ref":"graft/2_make_tumor_dataset.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-html","wide-page","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"Content"},"livereload":{},"search":{},"wide-page":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"include-html":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Analysis","language":"en","gitbook":"*"},"file":{"path":"graft/3_run_trajectory_tinga.md","mtime":"2022-12-14T15:38:02.262Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-23T17:22:05.537Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

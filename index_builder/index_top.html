@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <script type="text/javascript" src="functions.js"> </script>
+        <link rel="stylesheet" href="style.css">
+        <title>scRNA-Seq</title>
+    </head>
+
+    <body>
+        <!--
+        # https://plaintexttools.github.io/plain-text-table/
+        ┌──────────┬───────────────┬───────────┐
+        │ top left │     title     │ top right │
+        ├───────┬──┴───────────────┴───────────┤
+        │       │                              │
+        │       │                              │
+        │ menu  │           iframe             │
+        │       │                              │
+        │       │                              │
+        └───────┴──────────────────────────────┘
+        -->
+
+        <div class="row-container">
+
+            <!-- FIRST ROW -->
+            <div class="first-row">
+                    <!-- UPDATE BUTTON -->
+                    <div class="first-row-content" style="text-align:left">
+                        ..
+                    </div>
+
+                    <!-- TITLE -->
+                    <div class="title">
+                        <a href='index.html' title='Home'>Single-cell analysis</a>
+                    </div>
+
+                    <!-- GITHUB LINK -->
+                    <div class="first-row-content" style="text-align:right">
+                        <a href="https://github.com/audrey-onfroy" title="Github" class="github"></a>
+                    </div>
+            </div>
+
+            <div class="column-container">
+
+                <!-- MENU -->
+                <div class="first-column">
+                    <p>Praesent et placerat nunc, nec facilisis libero. Pellentesque enim enim, fermentum vel fringilla vel, pharetra ut metus. Vivamus euismod
+                        libero eu eros viverra lacinia. Suspendisse sodales, urna vitae commodo dapibus, velit purus suscipit ex, ac porta enim odio pulvinar dui.
+                        Aliquam erat volutpat.
+                    </p>
+
+                    <!-- MANDATORY MENU -->
+                    <ul>
+                        <li><button onClick="changeIframe('./pages/first.html')">Welcome</button></li>
+                        <li><button onClick="changeIframe('./pages/datasets.html')">Datasets</button></li>
+                        <li><button onClick="changeIframe('./pages/reproducibility.html')">Reproducibility</button></li>
+                    </ul>
+
+                    <!-- COPY PASTE MENU THERE -->
