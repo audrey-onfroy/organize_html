@@ -1,10 +1,35 @@
 #!/bin/bash
 
-ROOT="/home/aurelien/Documents/Audrey/git_analysis"
-OUTPUT="/home/aurelien/Documents/Audrey/git_book/index_builder/site-index.html"
-IGNORE="/libs/|/pipeline_info/|/SCENIC/"
+#====================== GET OPTIONS
 
-#tree -f | grep '\.html$' | grep -v "/libs/"
+#-------- Error if not 3 options
+if [ $# -ne 6 ]; then
+    echo "Please specify 3 command line arguments :"
+    echo "-r is the root directory to make tree on"
+    echo "-o is the output file names, with full path"
+    echo "-i is a regular expression with pattern to ignore in the tree"
+		exit 1
+fi
+
+#-------- Get option
+#ROOT="/home/aurelien/Documents/Audrey/git_analysis"
+#OUTPUT="/home/aurelien/Documents/Audrey/git_book/index_builder/site-index.html"
+#IGNORE="/libs/|/pipeline_info/|/SCENIC/"
+
+while getopts r:o:i: flag
+do
+    case "${flag}" in
+        r) ROOT=${OPTARG};;
+        o) OUTPUT=${OPTARG};;
+        i) IGNORE=${OPTARG};;
+    esac
+done
+
+#====================== BUILD TREE
+
+# Also a nice option :
+#tree -f | grep '\.html$' | grep -v $IGNORE
+
 
 echo "<ul>" > $OUTPUT
 

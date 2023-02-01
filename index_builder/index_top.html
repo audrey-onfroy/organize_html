@@ -14,7 +14,7 @@
         <!--
         # https://plaintexttools.github.io/plain-text-table/
         ┌──────────┬───────────────┬───────────┐
-        │ top left │     title     │ top right │
+        │ top left │     title     │ top right │  # first-row
         ├───────┬──┴───────────────┴───────────┤
         │       │                              │
         │       │                              │
@@ -24,13 +24,13 @@
         └───────┴──────────────────────────────┘
         -->
 
-        <div class="row-container">
+        <div class="body-container">
 
             <!-- FIRST ROW -->
             <div class="first-row">
                     <!-- UPDATE BUTTON -->
-                    <div class="first-row-content" style="text-align:left">
-                        ..
+                    <div class="left-corner" id="dynamic-url">
+                        Url will be displayed there
                     </div>
 
                     <!-- TITLE -->
@@ -39,8 +39,8 @@
                     </div>
 
                     <!-- GITHUB LINK -->
-                    <div class="first-row-content" style="text-align:right">
-                        <a href="https://github.com/audrey-onfroy" title="Github" class="github"></a>
+                    <div class="right-corner">
+                        <a  class="github" href="https://github.com/audrey-onfroy" title="Github"></a>
                     </div>
             </div>
 
