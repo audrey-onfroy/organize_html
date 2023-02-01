@@ -113,9 +113,10 @@ a {
 }
 
 /* Button as text */
-.first-column button {
+button {
   border: none;
   background-color: inherit;
+  color: inherit;
   cursor: pointer;
   padding: 0;
   margin: 0;
@@ -127,6 +128,10 @@ a {
 
 .first-column button:hover {
   font-weight: bold;
+}
+
+.first-row button:hover {
+  color: darkblue;
 }
 
 /* List item */
