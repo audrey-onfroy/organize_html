@@ -18,3 +18,15 @@ We used :
 * R version 3.6.3
 * a lot of packages : in Singularity
 * several Rmd files : ordered using Nextflow
+
+## Singularity container
+
+Container / Image was built under Singularity version XXX
+
+
+
+## Install Singularity
+
+Follow instructions here :
+
+https://apptainer.org/docs-legacy/
