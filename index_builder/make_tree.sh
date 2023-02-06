@@ -75,7 +75,7 @@ for one_file in `find $ROOT -iname "*html" -type f | grep -Ev $IGNORE | sort`; d
   # Print file
   only_file=${one_file##*/}
   only_file=${only_file%.*}
-  echo "<li><button onClick=\"changeIframe('$ROOT/$one_file')\">$only_file</button></li>" >> $OUTPUT
+  echo "<li><button id='$ROOT/$one_file' class='ulli_button' onClick=\"changeIframe('$ROOT/$one_file')\">$only_file</button></li>" >> $OUTPUT
 
 done
 

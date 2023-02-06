@@ -19,4 +19,15 @@ function changeIframe(my_url) {
 
     // Change iframe content
     document.getElementById('dynamic-iframe').src = my_url;
+
+    // Change button style
+    var all_buttons = document.getElementsByClassName("ulli_button");
+    for (var i = 0; i < all_buttons.length; i++) {
+        all_buttons[i].style.color = "inherit";
+    }
+
+    document.getElementById(my_url).style.color = "red";
 }
+
+
+
