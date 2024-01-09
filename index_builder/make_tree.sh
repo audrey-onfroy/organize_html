@@ -12,11 +12,11 @@ if [ $# -ne 6 ]; then
 fi
 
 #-------- Get option
-#ROOT="/home/aurelien/Documents/Audrey/git_analysis"
-#OUTPUT="/home/aurelien/Documents/Audrey/git_book/index_builder/site-index.html"
-#IGNORE="/libs/|/pipeline_info/|/SCENIC/"
+#ROOT="./"
+#OUTPUT="./site-index.html"
+#IGNORE="/libs/|/toto/"
 
-while getopts r:o:i: flag
+while getopts m:r:o:i: flag
 do
     case "${flag}" in
         r) ROOT=${OPTARG};;
@@ -29,7 +29,6 @@ done
 
 # Also a nice option :
 #tree -f | grep '\.html$' | grep -v $IGNORE
-
 
 echo "<ul>" > $OUTPUT
 
