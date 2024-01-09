@@ -1,5 +1,14 @@
 # Organise knit HTML files
 
+To do :
+
+- add doc to download the repo
+- chmod both .sh files
+- explain .sh files purpose
+- make version
+
+## Content
+
 This repository contains what is necessary to build an `index.html` page, harboring this structure :
 
         ┌──────────┬───────────────┬───────────┐
