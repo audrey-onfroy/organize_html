@@ -3,7 +3,7 @@
 #====================== GET OPTIONS
 
 #-------- Get option
-MAKER="/home/nf1/Documents/Audrey/git_book/"  # index maker directory
+MAKER="."                                     # index maker directory
 ROOT="./"                                     # directory to make the index.html for
 MENU="./site-index.html"                      # intermediate html file containing the menu (generated with make_tree.sh)
 IGNORE="/libs/|/index_layout/|index.html"     # elements to ignore while making the menu
