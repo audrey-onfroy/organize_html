@@ -33,9 +33,9 @@ chmod +u+x make_index.s
 ```
 
 * **index_build**: everything to build the `index.html` page:
-        - `index_top.html`: html content to build the first row (top left, title, top right)
-        - `index_bottom.html`: html content to build the iframe on the second row
-        - `make_tree.sh`: bash **executable** file to build the menu list
+    * `index_top.html`: html content to build the first row (top left, title, top right)
+    * `index_bottom.html`: html content to build the iframe on the second row
+    * `make_tree.sh`: bash **executable** file to build the menu list
 
 You may need to make the `make_tree.sh` file executable:
 
@@ -44,14 +44,16 @@ chmod +u+x make_tree.sh
 ```
 
 * **index_layout**: this folder is duplicated in your folder of interest. It contains:
-        * **logo**:
-                - Github logo for the top right corner
-                - favicon for the tab logo, built using [https://favicomatic.com/](https://favicomatic.com/)
-        * **pages**: some html pages that are always in the menu
+    * **logo**:
+        * Github logo for the top right corner
+        * favicon for the tab logo, built using [https://favicon.io/favicon-converter/](https://favicon.io/favicon-converter/)
+    * **pages**: some html pages that are always in the menu
         * `style.css`: for the `index.html` page to look beautiful
         * `functions.js`: JavaScript function to make the `index.html` page dynamic
 
 ## Usage
+
+![index_pipeline](./index_pipeline.png)
 
 Options of `make_index.sh`:
 
