@@ -20,6 +20,12 @@ This repository contains the necessary to build an `index.html` page, harboring 
 
 This table was made using [https://plaintexttools.github.io/plain-text-table/](https://plaintexttools.github.io/plain-text-table/).
 
+## Examples
+
+* [https://audrey-onfroy.github.io/HS](https://audrey-onfroy.github.io/HS) NOT YET PUBLIC
+* [https://audrey-onfroy.github.io/HN](https://audrey-onfroy.github.io/HN) NOT YET PUBLIC
+* [https://audrey-onfroy.github.io/MPNST](https://audrey-onfroy.github.io/MPNST) NOT YET PUBLIC
+
 ## Repository content
 
 This repository contains several files and folders:
@@ -28,9 +34,9 @@ This repository contains several files and folders:
 
 You may need to make the `make_index.sh` file executable:
 
-        ```bash
-        chmod +u+x make_index.sh
-        ```
+```bash
+chmod +u+x make_index.sh
+```
 
 * **index_build**: everything to build the `index.html` page:
   * `index_top.html`: html content to build the first row (top left, title, top right)
@@ -39,9 +45,9 @@ You may need to make the `make_index.sh` file executable:
 
 You may need to make the `make_tree.sh` file executable:
 
-        ```bash
-        chmod +u+x make_tree.sh
-        ```
+```bash
+chmod +u+x make_tree.sh
+```
 
 * **index_layout**: this folder is duplicated in your folder of interest. It contains:
   * **logo**:
@@ -53,7 +59,7 @@ You may need to make the `make_tree.sh` file executable:
 
 ## Usage
 
-![index_pipeline](./index_pipeline.png)
+<img src="./index_pipeline.png" width="500"/>
 
 Options of `make_index.sh`:
 
@@ -65,14 +71,14 @@ Options of `make_index.sh`:
 
 Usage :
 
-        ```bash
-        ./make_index.sh \
-        -b pathto/git_book/ \
-        -r pathto/dir_of_interest/ \
-        -m pathto/git_book/site-index.html \
-        -i "/libs/|/index_layout/|index.html" \
-        -o pathto/dir_of_interest/index.html \
-        ```
+```bash
+./make_index.sh \
+-b pathto/git_book/ \
+-r pathto/dir_of_interest/ \
+-m pathto/git_book/site-index.html \
+-i "/libs/|/index_layout/|index.html" \
+-o pathto/dir_of_interest/index.html \
+```
 
 The executable file `make_index.sh` builds the `index.html` page by running `make_tree.sh` file, and concatenaning the three index subfiles (`index_top.html`, then `site-index.html`, then `index_bottom.html`). Everything, except the iframe box content, is written in the `index.html` file. The iframe content is elsewhere on the computer. This is just an embedding.
 
@@ -130,89 +136,92 @@ Titles and links are declared in the `index.hml` file:
 
 By default, the menu contains only first-level and second-level items, named according to the directory or file names. For instance, the directory:
 
-        ```bash
-        ├── first
-                │   ├── file1.html
-                │   └── file2.html
-        └── second
-                ├── file1.html
-                ├── file2.html
-                └── third
-                        ├── file1.html
-                        └── file2.html
-        ```
+```bash
+├── first
+│   ├── file1.html
+│   └── file2.html
+└── second
+    ├── file1.html
+    ├── file2.html
+    └── third
+        ├── file1.html
+        └── file2.html
+```
 
 will be translated in the `index.html` file into:
 
-        ```html
-        <ul>
-                <li>first</li>
-                <ul>
-                        <li><button id='./first/file1.html' class='ulli_button' onClick="changeIframe('./first/file1.html')">file1</button></li>
-                        <li><button id='./first/file2.html' class='ulli_button' onClick="changeIframe('./first/file2.html')">file2</button></li>
-                </ul>
-                <li>second</li>
-                <ul>
-                        <li><button id='./second/file1.html' class='ulli_button' onClick="changeIframe('./second/file1.html')">file1</button></li>
-                        <li><button id='./second/file2.html' class='ulli_button' onClick="changeIframe('./second/file2.html')">file2</button></li>
-                        <li>second/third</li>
-                        <ul>
-                                <li><button id='./second/third/file1.html' class='ulli_button' onClick="changeIframe('./second/third/file1.html')">file1</button></li>
-                                <li><button id='./second/third/file2.html' class='ulli_button' onClick="changeIframe('./second/third/file2.html')">file2</button></li>
-                        </ul>
-                </ul>
-        </ul>
-        ```
+```html
+<ul>
+  <li>first</li>
+  <ul>
+    <li><button id='./first/file1.html' class='ulli_button' onClick="changeIframe('./first/file1.html')">file1</button></li>
+    <li><button id='./first/file2.html' class='ulli_button' onClick="changeIframe('./first/file2.html')">file2</button></li>
+  </ul>
+  <li>second</li>
+  <ul>
+    <li><button id='./second/file1.html' class='ulli_button' onClick="changeIframe('./second/file1.html')">file1</button></li>
+    <li><button id='./second/file2.html' class='ulli_button' onClick="changeIframe('./second/file2.html')">file2</button></li>
+    <li>second/third</li>
+    <ul>
+      <li><button id='./second/third/file1.html' class='ulli_button' onClick="changeIframe('./second/third/file1.html')">file1</button></li>
+      <li><button id='./second/third/file2.html' class='ulli_button' onClick="changeIframe('./second/third/file2.html')">file2</button></li>
+    </ul>
+  </ul>
+</ul>
+```
 
 A possible modification consists in doing:
 
-        ```html
-        <ul>
-                <li>Toto</li>
-                <ul>
-                        <li><button id='./first/file1.html' class='ulli_button' onClick="changeIframe('./first/file1.html')">Toto 1</button></li>
-                        <li><button id='./first/file2.html' class='ulli_button' onClick="changeIframe('./first/file2.html')">Toto 2</button></li>
-                </ul>
-                <li>Tata</li>
-                <ul>
-                        <li><button id='./second/file1.html' class='ulli_button' onClick="changeIframe('./second/file1.html')">Tata 1</button></li>
-                        <li><button id='./second/file2.html' class='ulli_button' onClick="changeIframe('./second/file2.html')">Tata 2</button></li>
-                </ul>
-                <li>Titi</li>
-                <ul>
-                        <li><button id='./second/third/file1.html' class='ulli_button' onClick="changeIframe('./second/third/file1.html')">Titi 1</button></li>
-                        <li><button id='./second/third/file2.html' class='ulli_button' onClick="changeIframe('./second/third/file2.html')">Titi 2</button></li>
-                </ul>
-        </ul>
-        ```
+```html
+<ul>
+  <li>Toto</li>
+  <ul>
+    <li><button id='./first/file1.html' class='ulli_button' onClick="changeIframe('./first/file1.html')">Toto 1</button></li>
+    <li><button id='./first/file2.html' class='ulli_button' onClick="changeIframe('./first/file2.html')">Toto 2</button></li>
+  </ul>
+  <br>
+  <li>Tata</li>
+  <ul>
+    <li><button id='./second/file1.html' class='ulli_button' onClick="changeIframe('./second/file1.html')">Tata 1</button></li>
+    <li><button id='./second/file2.html' class='ulli_button' onClick="changeIframe('./second/file2.html')">Tata 2</button></li>
+  </ul>
+  <br>
+  <li>Titi</li>
+  <ul>
+    <li><button id='./second/third/file1.html' class='ulli_button' onClick="changeIframe('./second/third/file1.html')">Titi 1</button></li>
+    <li><button id='./second/third/file2.html' class='ulli_button' onClick="changeIframe('./second/third/file2.html')">Titi 2</button></li>
+  </ul>
+</ul>
+```
 
 ie:
 
 * changing the names of the items
 * decrementing the third folder
+* skipping line (`<br>`)
 
 ### Folding menu
 
 In the default version, the menu in `index.html` is defined as follows:
 
-        ```html
-        <li>main</li>
-                <ul>
-                        <li><button id='./file1.html' class='ulli_button' onClick="changeIframe('./file1.html')">file1.html</button></li>
-                        <li><button id='./file2.html' class='ulli_button' onClick="changeIframe('./file2.html')">file2.html</button></li>
-                </ul>
-        ```
+```html
+<li>main</li>
+<ul>
+  <li><button id='./file1.html' class='ulli_button' onClick="changeIframe('./file1.html')">file1.html</button></li>
+  <li><button id='./file2.html' class='ulli_button' onClick="changeIframe('./file2.html')">file2.html</button></li>
+</ul>
+```
 
-To make a list foldable, modify to:
+To make a list foldable, modify this section to:
 
-        ```html
-        <li><a onClick="toggleSwitch(this)">main &#9662;</a>
-                <ul style="display:none">
-                        <li><button id='./file1.html' class='ulli_button' onClick="changeIframe('./file1.html')">file1.html</button></li>
-                        <li><button id='./file2.html' class='ulli_button' onClick="changeIframe('./file2.html')">file2.html</button></li>
-                </ul>
-        </li>
-        ```
+```html
+<li><a onClick="toggleSwitch(this)">main &#9662;</a>
+  <ul style="display:none">
+    <li><button id='./file1.html' class='ulli_button' onClick="changeIframe('./file1.html')">file1.html</button></li>
+    <li><button id='./file2.html' class='ulli_button' onClick="changeIframe('./file2.html')">file2.html</button></li>
+  </ul>
+</li>
+```
 
 ## Other tools ?
 
