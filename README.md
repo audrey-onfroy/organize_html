@@ -28,28 +28,28 @@ This repository contains several files and folders:
 
 You may need to make the `make_index.sh` file executable:
 
-```bash
-chmod +u+x make_index.s
-```
+        ```bash
+        chmod +u+x make_index.sh
+        ```
 
 * **index_build**: everything to build the `index.html` page:
-    * `index_top.html`: html content to build the first row (top left, title, top right)
-    * `index_bottom.html`: html content to build the iframe on the second row
-    * `make_tree.sh`: bash **executable** file to build the menu list
+  * `index_top.html`: html content to build the first row (top left, title, top right)
+  * `index_bottom.html`: html content to build the iframe on the second row
+  * `make_tree.sh`: bash **executable** file to build the menu list
 
 You may need to make the `make_tree.sh` file executable:
 
-```bash
-chmod +u+x make_tree.sh
-```
+        ```bash
+        chmod +u+x make_tree.sh
+        ```
 
 * **index_layout**: this folder is duplicated in your folder of interest. It contains:
-    * **logo**:
-        * Github logo for the top right corner
-        * favicon for the tab logo, built using [https://favicon.io/favicon-converter/](https://favicon.io/favicon-converter/)
-    * **pages**: some html pages that are always in the menu
-        * `style.css`: for the `index.html` page to look beautiful
-        * `functions.js`: JavaScript function to make the `index.html` page dynamic
+  * **logo**:
+    * Github logo for the top right corner
+    * favicon for the tab logo, built using [https://favicon.io/favicon-converter/](https://favicon.io/favicon-converter/)
+  * **pages**: some html pages that are always in the menu
+    * `style.css`: for the `index.html` page to look beautiful
+    * `functions.js`: JavaScript function to make the `index.html` page dynamic
 
 ## Usage
 
@@ -65,14 +65,14 @@ Options of `make_index.sh`:
 
 Usage :
 
-```bash
-./ make_index.sh \
--b pathto/git_book/ \
--r pathto/dir_of_interest/ \
--m pathto/git_book/site-index.html \
--i "/libs/|/index_layout/|index.html" \
--o pathto/dir_of_interest/index.html \
-```
+        ```bash
+        ./make_index.sh \
+        -b pathto/git_book/ \
+        -r pathto/dir_of_interest/ \
+        -m pathto/git_book/site-index.html \
+        -i "/libs/|/index_layout/|index.html" \
+        -o pathto/dir_of_interest/index.html \
+        ```
 
 The executable file `make_index.sh` builds the `index.html` page by running `make_tree.sh` file, and concatenaning the three index subfiles (`index_top.html`, then `site-index.html`, then `index_bottom.html`). Everything, except the iframe box content, is written in the `index.html` file. The iframe content is elsewhere on the computer. This is just an embedding.
 
@@ -84,6 +84,136 @@ The executable file `make_tree.sh` generate the menu, as a list, in a `site-inde
 * `-o` is the output file names, with full path
 * `-i` is a regular expression with pattern to ignore in the tree
 
+## Customization
+
+One may need to customize the index.html page.
+
+### Colors
+
+To change the color theme (first row banner + menu):
+
+1) go to `style.css`
+2) in the `.first-row` style, change the `background-color` value
+3) in the `ul,li` style, change the `color` value
+
+### Github logo
+
+To switch the Github logo to a black or white picture:
+
+1) go to `style.css`
+2) in the `.github` style, switch the `background-image` url to:
+
+* `./logo/github-mark-white.svg` for ![github-white](./logo/github-mark-white.png)
+* `./logo/github-mark.svg` for ![github-black](./logo/github-mark.png)
+
+### Website logo
+
+To customize the logo, appearing in a browser tab:
+
+1) go, for instance, on [https://favicon.io/](https://favicon.io/)
+2) build and download your logo
+3) in the `./index_layout/logo` folder, replace the `favicon.ico` file
+
+Note: in the `index.html` file, the logo is declared at the **line 11**, containing `<link rel="icon" type="image/x-icon" href="./index_layout/logo/favicon.ico">`.
+
+### Titles and links
+
+Titles and links are declared in the `index.hml` file:
+
+|          what                | line in index.html |       where              |
+|:----------------------------:|:----------:|:--------------------------------:|
+|    title in the browser tab  |    12      | between `<title>` and `</title>` |
+|    title in the top banner   |    40      | between `<a ....>` and `</a>`    |
+|    link to Github            |    45      | after `href=`                    |
+
+### Menu items
+
+By default, the menu contains only first-level and second-level items, named according to the directory or file names. For instance, the directory:
+
+        ```bash
+        ├── first
+                │   ├── file1.html
+                │   └── file2.html
+        └── second
+                ├── file1.html
+                ├── file2.html
+                └── third
+                        ├── file1.html
+                        └── file2.html
+        ```
+
+will be translated in the `index.html` file into:
+
+        ```html
+        <ul>
+                <li>first</li>
+                <ul>
+                        <li><button id='./first/file1.html' class='ulli_button' onClick="changeIframe('./first/file1.html')">file1</button></li>
+                        <li><button id='./first/file2.html' class='ulli_button' onClick="changeIframe('./first/file2.html')">file2</button></li>
+                </ul>
+                <li>second</li>
+                <ul>
+                        <li><button id='./second/file1.html' class='ulli_button' onClick="changeIframe('./second/file1.html')">file1</button></li>
+                        <li><button id='./second/file2.html' class='ulli_button' onClick="changeIframe('./second/file2.html')">file2</button></li>
+                        <li>second/third</li>
+                        <ul>
+                                <li><button id='./second/third/file1.html' class='ulli_button' onClick="changeIframe('./second/third/file1.html')">file1</button></li>
+                                <li><button id='./second/third/file2.html' class='ulli_button' onClick="changeIframe('./second/third/file2.html')">file2</button></li>
+                        </ul>
+                </ul>
+        </ul>
+        ```
+
+A possible modification consists in doing:
+
+        ```html
+        <ul>
+                <li>Toto</li>
+                <ul>
+                        <li><button id='./first/file1.html' class='ulli_button' onClick="changeIframe('./first/file1.html')">Toto 1</button></li>
+                        <li><button id='./first/file2.html' class='ulli_button' onClick="changeIframe('./first/file2.html')">Toto 2</button></li>
+                </ul>
+                <li>Tata</li>
+                <ul>
+                        <li><button id='./second/file1.html' class='ulli_button' onClick="changeIframe('./second/file1.html')">Tata 1</button></li>
+                        <li><button id='./second/file2.html' class='ulli_button' onClick="changeIframe('./second/file2.html')">Tata 2</button></li>
+                </ul>
+                <li>Titi</li>
+                <ul>
+                        <li><button id='./second/third/file1.html' class='ulli_button' onClick="changeIframe('./second/third/file1.html')">Titi 1</button></li>
+                        <li><button id='./second/third/file2.html' class='ulli_button' onClick="changeIframe('./second/third/file2.html')">Titi 2</button></li>
+                </ul>
+        </ul>
+        ```
+
+ie:
+
+* changing the names of the items
+* decrementing the third folder
+
+### Folding menu
+
+In the default version, the menu in `index.html` is defined as follows:
+
+        ```html
+        <li>main</li>
+                <ul>
+                        <li><button id='./file1.html' class='ulli_button' onClick="changeIframe('./file1.html')">file1.html</button></li>
+                        <li><button id='./file2.html' class='ulli_button' onClick="changeIframe('./file2.html')">file2.html</button></li>
+                </ul>
+        ```
+
+To make a list foldable, modify to:
+
+        ```html
+        <li><a onClick="toggleSwitch(this)">main &#9662;</a>
+                <ul style="display:none">
+                        <li><button id='./file1.html' class='ulli_button' onClick="changeIframe('./file1.html')">file1.html</button></li>
+                        <li><button id='./file2.html' class='ulli_button' onClick="changeIframe('./file2.html')">file2.html</button></li>
+                </ul>
+        </li>
+        ```
+
 ## Other tools ?
 
 One may be interested in:
@@ -94,7 +224,7 @@ One may be interested in:
 * **gitbook**: [https://gitbook-ng.github.io/](https://gitbook-ng.github.io/)
 * **quarto**: [https://quarto.org/docs/websites/](https://quarto.org/docs/websites/)
 
-<br><br><br><br>
+<br><br>
 
 | ![CC](https://upload.wikimedia.org/wikipedia/commons/1/12/Cc-by-nc-sa_icon.svg) | Except where otherwise noted, this work is licensed under <br> [https://creativecommons.org/licenses/by-nc-sa/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
 |:----:|:---:|
