@@ -20,6 +20,12 @@ This repository contains the necessary to build an `index.html` page, harboring 
 
 This table was made using [https://plaintexttools.github.io/plain-text-table/](https://plaintexttools.github.io/plain-text-table/).
 
+## Examples
+
+* [https://audrey-onfroy.github.io/HS](https://audrey-onfroy.github.io/HS) NOT YET PUBLIC
+* [https://audrey-onfroy.github.io/HN](https://audrey-onfroy.github.io/HN) NOT YET PUBLIC
+* [https://audrey-onfroy.github.io/MPNST](https://audrey-onfroy.github.io/MPNST) NOT YET PUBLIC
+
 ## Repository content
 
 This repository contains several files and folders:
@@ -80,7 +86,7 @@ The executable file `make_index.sh` builds the `index.html` page by running `mak
 
 ### Included in `make_index.sh`
 
-The executable file `make_tree.sh` generate the menu, as a list, in a `site-index.html` file. The menu list is not perfect. You may want to edit it, to simplify it, or rename items, directly in the `index.html` file. The executable `make_tree.sh` asks three parameters:
+The executable file `make_tree.sh` generates the menu, as a list, in a `site-index.html` file. The menu list is not perfect. You may want to edit it, to simplify it, or rename items, directly in the `index.html` file. The executable `make_tree.sh` asks three parameters:
 
 * `-r` is the root directory to make tree on
 * `-o` is the output file names, with full path
@@ -285,7 +291,6 @@ The purpose of the command is to replicate the tree of html files in an ouput di
         ```
 
 To include the full `index_layout` folder in the output directory, use the option `-w index_layout` (**w**ith).
-
 
 ## Other tools ?
 
