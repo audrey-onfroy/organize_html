@@ -51,7 +51,9 @@ You may need to make the `make_tree.sh` file executable:
     * `style.css`: for the `index.html` page to look beautiful
     * `functions.js`: JavaScript function to make the `index.html` page dynamic
 
-## Usage
+* `copy_tree.sh`: bash **executable** file to copy all the html pages into another directory, while respecting the directory tree. Very useful to share with other people.
+
+## Usage of `make_index.sh`
 
 ![index_pipeline](./index_pipeline.png)
 
@@ -71,7 +73,7 @@ Usage :
         -r pathto/dir_of_interest/ \
         -m pathto/git_book/site-index.html \
         -i "/libs/|/index_layout/|index.html" \
-        -o pathto/dir_of_interest/index.html \
+        -o pathto/dir_of_interest/index.html
         ```
 
 The executable file `make_index.sh` builds the `index.html` page by running `make_tree.sh` file, and concatenaning the three index subfiles (`index_top.html`, then `site-index.html`, then `index_bottom.html`). Everything, except the iframe box content, is written in the `index.html` file. The iframe content is elsewhere on the computer. This is just an embedding.
@@ -132,14 +134,14 @@ By default, the menu contains only first-level and second-level items, named acc
 
         ```bash
         ├── first
-                │   ├── file1.html
-                │   └── file2.html
+        │   ├── file1.html
+        │   └── file2.html
         └── second
-                ├── file1.html
-                ├── file2.html
-                └── third
-                        ├── file1.html
-                        └── file2.html
+            ├── file1.html
+            ├── file2.html
+            └── third
+                ├── file1.html
+                └── file2.html
         ```
 
 will be translated in the `index.html` file into:
@@ -213,6 +215,77 @@ To make a list foldable, modify to:
                 </ul>
         </li>
         ```
+
+## Usage of `copy_tree.sh`
+
+Options of `copy_tree.sh`:
+
+* **-i**: input directory containing several html files (of interest) and other files not of interest
+* **-o**: output directory to replicate the tree of html files
+* **-w**: (optional) include the whole content of a folder. The path should be relative to input. The option is currently suited for only one folder.
+
+Usage :
+
+        ```bash
+        ./copy_tree.sh \
+        -i pathto/input_directory/ \
+        -o pathto/output_directory/ \
+        -w of_interest
+        ```
+
+Example of input directory tree:
+
+        ```bash
+        ├── first
+        │   ├── file1.html
+        │   ├── file1.Rmd
+        │   ├── file2.html
+        │   ├── file2.Rmd
+        │   └── toto.rds
+        ├── second
+        │   ├── file1.html
+        │   ├── file1.Rmd
+        │   ├── file2.html
+        │   ├── file2.Rmd
+        │   ├── titi.rda
+        │   ├── tata.txt
+        │   └── third
+        │      ├── file1.html
+        │      └── file2.html
+        ├── index_layout
+        │   ├── functions.js
+        │   ├── logo
+        │   │   ├── favicon.ico
+        │   │   ├── github-mark.png
+        │   │   ├── github-mark.svg
+        │   │   ├── github-mark-white.png
+        │   │   └── github-mark-white.svg
+        │   ├── pages
+        │   │   └── first.html
+        │   └── style.css
+        └── index.html
+        ```
+
+The purpose of the command is to replicate the tree of html files in an ouput directory:
+
+        ```bash
+        ├── first
+        │   ├── file1.html
+        │   └── file2.html
+        ├── second
+        │   ├── file1.html
+        │   ├── file2.html
+        │   └── third
+        │      ├── file1.html
+        │      └── file2.html
+        ├── index_layout
+        │   └── pages
+        │       └── first.html
+        └── index.html
+        ```
+
+To include the full `index_layout` folder in the output directory, use the option `-w index_layout` (**w**ith).
+
 
 ## Other tools ?
 
