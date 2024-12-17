@@ -1,3 +1,8 @@
+![Made with Bash](https://img.shields.io/badge/Made_with-Bash-lightgray?logo=gnubash&logoColor=white)
+[![License: CC BY-NC-SA](https://img.shields.io/badge/Licence-CC_BY--NC--SA--4.0-blue?logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.14505635-blue)](https://doi.org/10.5281/zenodo.14505635)
+![Version 1](https://img.shields.io/badge/Tag-Version_1-forestgreen)
+
 # Organise knit HTML files
 
 This repository contains the necessary to build an `index.html` page, harboring this structure:
@@ -306,3 +311,11 @@ One may be interested in:
 
 | ![CC](https://upload.wikimedia.org/wikipedia/commons/1/12/Cc-by-nc-sa_icon.svg) | Except where otherwise noted, this work is licensed under <br> [https://creativecommons.org/licenses/by-nc-sa/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
 |:----:|:---:|
+
+# Citing
+
+To cite this work, please use:
+
+```
+Audrey Onfroy, OrganizeHTML: a command-line tool to build an index page for a existing folder tree of HTML files. DOI: https://doi.org/10.5281/zenodo.14505635
+```
