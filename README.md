@@ -1,9 +1,9 @@
 ![Made with Bash](https://img.shields.io/badge/Made_with-Bash-lightgray?logo=gnubash&logoColor=white)
 [![License: CC BY-NC-SA](https://img.shields.io/badge/Licence-CC_BY--NC--SA--4.0-blue?logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.14505635-blue)](https://doi.org/10.5281/zenodo.14505635)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.15114752-blue)](https://doi.org/10.5281/zenodo.15114752)
 ![Version 2](https://img.shields.io/badge/Tag-Version_2-forestgreen)
 
-# Organise HTML files
+# Organize HTML files
 
 This repository contains the necessary to build an `index.html` page. In practice, I use it to arrange the HTML files that have been obtained after rendering R Markdown notebooks.
 
