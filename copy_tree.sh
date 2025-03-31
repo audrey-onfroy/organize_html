@@ -7,21 +7,27 @@
 # INPUT:  input directory (full path)
 # OUTPUT: output directory (full path)
 # WITH: folder in the input directory to include in the output directory (relative path)
+# EXTENSION: replicate the directory tree containing files matching this extension
 
-while getopts i:o:w: flag
+EXTENSION=".*html"
+
+while getopts i:o:w:e: flag
 do
     case "${flag}" in
         i) INPUT=${OPTARG};;
         o) OUTPUT=${OPTARG};;
         w) WITH=${OPTARG};;
+        e) EXTENSION=${OPTARG};;
     esac
 done
+
+echo $EXTENSION
 
 #====================== BUILD INDEX PAGE
 
 mkdir -p $OUTPUT
 
-for full_name in $(find $INPUT -name "*html" -type f)
+for full_name in $(find $INPUT -regex $EXTENSION -type f)
 do
     # INPUT: /useless/interest
 

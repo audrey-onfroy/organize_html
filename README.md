@@ -1,11 +1,13 @@
 ![Made with Bash](https://img.shields.io/badge/Made_with-Bash-lightgray?logo=gnubash&logoColor=white)
 [![License: CC BY-NC-SA](https://img.shields.io/badge/Licence-CC_BY--NC--SA--4.0-blue?logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.14505635-blue)](https://doi.org/10.5281/zenodo.14505635)
-![Version 1](https://img.shields.io/badge/Tag-Version_1-forestgreen)
+![Version 2](https://img.shields.io/badge/Tag-Version_2-forestgreen)
 
-# Organise knit HTML files
+# Organise HTML files
 
-This repository contains the necessary to build an `index.html` page, harboring this structure:
+This repository contains the necessary to build an `index.html` page. In practice, I use it to arrange the HTML files that have been obtained after rendering R Markdown notebooks.
+
+The `index.html` page harbors this structure:
 
         ┌──────────┬───────────────┬───────────┐
         │ top left │     title     │ top right │
@@ -27,9 +29,10 @@ This table was made using [https://plaintexttools.github.io/plain-text-table/](h
 
 ## Examples
 
-* [https://audrey-onfroy.github.io/HS](https://audrey-onfroy.github.io/HS) NOT YET PUBLIC
-* [https://audrey-onfroy.github.io/HN](https://audrey-onfroy.github.io/HN) NOT YET PUBLIC
-* [https://audrey-onfroy.github.io/MPNST](https://audrey-onfroy.github.io/MPNST) NOT YET PUBLIC
+* [https://audrey-onfroy.github.io/hs](https://audrey-onfroy.github.io/hs) *not yet public*
+* [https://audrey-onfroy.github.io/hn](https://audrey-onfroy.github.io/hn) *not yet public*
+* [https://audrey-onfroy.github.io/mpnst](https://audrey-onfroy.github.io/mpnst) *not yet public*
+* [https://audrey-onfroy.github.io/12tips](https://audrey-onfroy.github.io/12tips) *not yet public*
 
 ## Repository content
 
@@ -39,9 +42,9 @@ This repository contains several files and folders:
 
 You may need to make the `make_index.sh` file executable:
 
-        ```bash
-        chmod +u+x make_index.sh
-        ```
+```bash
+chmod +u+x make_index.sh
+```
 
 * **index_build**: everything to build the `index.html` page:
   * `index_top.html`: html content to build the first row (top left, title, top right)
@@ -50,9 +53,9 @@ You may need to make the `make_index.sh` file executable:
 
 You may need to make the `make_tree.sh` file executable:
 
-        ```bash
-        chmod +u+x make_tree.sh
-        ```
+```bash
+chmod +u+x make_tree.sh
+```
 
 * **index_layout**: this folder is duplicated in your folder of interest. It contains:
   * **logo**:
@@ -62,7 +65,7 @@ You may need to make the `make_tree.sh` file executable:
     * `style.css`: for the `index.html` page to look beautiful
     * `functions.js`: JavaScript function to make the `index.html` page dynamic
 
-* `copy_tree.sh`: bash **executable** file to copy all the html pages into another directory, while respecting the directory tree. Very useful to share with other people.
+* `copy_tree.sh`: bash **executable** file to copy all and only the html (or more!) pages into another directory, while respecting the directory tree. Very useful to share with other people.
 
 ## Usage of `make_index.sh`
 
@@ -78,14 +81,14 @@ Options of `make_index.sh`:
 
 Usage :
 
-        ```bash
-        ./make_index.sh \
-        -b pathto/git_book/ \
-        -r pathto/dir_of_interest/ \
-        -m pathto/git_book/site-index.html \
-        -i "/libs/|/index_layout/|index.html" \
-        -o pathto/dir_of_interest/index.html
-        ```
+```bash
+./make_index.sh \
+-b pathto/git_book/ \
+-r pathto/dir_of_interest/ \
+-m pathto/git_book/site-index.html \
+-i "/libs/|/index_layout/|index.html" \
+-o pathto/dir_of_interest/index.html
+```
 
 The executable file `make_index.sh` builds the `index.html` page by running `make_tree.sh` file, and concatenaning the three index subfiles (`index_top.html`, then `site-index.html`, then `index_bottom.html`). Everything, except the iframe box content, is written in the `index.html` file. The iframe content is elsewhere on the computer. This is just an embedding.
 
@@ -143,61 +146,61 @@ Titles and links are declared in the `index.hml` file:
 
 By default, the menu contains only first-level and second-level items, named according to the directory or file names. For instance, the directory:
 
-        ```bash
-        ├── first
-        │   ├── file1.html
-        │   └── file2.html
-        └── second
-            ├── file1.html
-            ├── file2.html
-            └── third
-                ├── file1.html
-                └── file2.html
-        ```
+```bash
+├── first
+│   ├── file1.html
+│   └── file2.html
+└── second
+    ├── file1.html
+    └── file2.html
+          └── third
+              ├── file1.html
+              └── file2.html
+```
 
 will be translated in the `index.html` file into:
 
-        ```html
+```html
+<ul>
+        <li>first</li>
         <ul>
-                <li>first</li>
+                <li><button id='./first/file1.html' class='ulli_button' onClick="changeIframe('./first/file1.html')">file1</button></li>
+                <li><button id='./first/file2.html' class='ulli_button' onClick="changeIframe('./first/file2.html')">file2</button></li>
+        </ul>
+        <li>second</li>
+        <ul>
+                <li><button id='./second/file1.html' class='ulli_button' onClick="changeIframe('./second/file1.html')">file1</button></li>
+                <li><button id='./second/file2.html' class='ulli_button' onClick="changeIframe('./second/file2.html')">file2</button></li>
+                <li>second/third</li>
                 <ul>
-                        <li><button id='./first/file1.html' class='ulli_button' onClick="changeIframe('./first/file1.html')">file1</button></li>
-                        <li><button id='./first/file2.html' class='ulli_button' onClick="changeIframe('./first/file2.html')">file2</button></li>
-                </ul>
-                <li>second</li>
-                <ul>
-                        <li><button id='./second/file1.html' class='ulli_button' onClick="changeIframe('./second/file1.html')">file1</button></li>
-                        <li><button id='./second/file2.html' class='ulli_button' onClick="changeIframe('./second/file2.html')">file2</button></li>
-                        <li>second/third</li>
-                        <ul>
-                                <li><button id='./second/third/file1.html' class='ulli_button' onClick="changeIframe('./second/third/file1.html')">file1</button></li>
-                                <li><button id='./second/third/file2.html' class='ulli_button' onClick="changeIframe('./second/third/file2.html')">file2</button></li>
-                        </ul>
+                        <li><button id='./second/third/file1.html' class='ulli_button' onClick="changeIframe('./second/third/file1.html')">file1</button></li>
+                        <li><button id='./second/third/file2.html' class='ulli_button' onClick="changeIframe('./second/third/file2.html')">file2</button></li>
                 </ul>
         </ul>
-        ```
+</ul>
+```
 
 A possible modification consists in doing:
 
-        ```html
+```html
+<ul>
+        <li>Toto</li>
         <ul>
-                <li>Toto</li>
-                <ul>
-                        <li><button id='./first/file1.html' class='ulli_button' onClick="changeIframe('./first/file1.html')">Toto 1</button></li>
-                        <li><button id='./first/file2.html' class='ulli_button' onClick="changeIframe('./first/file2.html')">Toto 2</button></li>
-                </ul>
-                <li>Tata</li>
-                <ul>
-                        <li><button id='./second/file1.html' class='ulli_button' onClick="changeIframe('./second/file1.html')">Tata 1</button></li>
-                        <li><button id='./second/file2.html' class='ulli_button' onClick="changeIframe('./second/file2.html')">Tata 2</button></li>
-                </ul>
-                <li>Titi</li>
-                <ul>
-                        <li><button id='./second/third/file1.html' class='ulli_button' onClick="changeIframe('./second/third/file1.html')">Titi 1</button></li>
-                        <li><button id='./second/third/file2.html' class='ulli_button' onClick="changeIframe('./second/third/file2.html')">Titi 2</button></li>
-                </ul>
+                <li><button id='./first/file1.html' class='ulli_button' onClick="changeIframe('./first/file1.html')">Toto 1</button></li>
+                <li><button id='./first/file2.html' class='ulli_button' onClick="changeIframe('./first/file2.html')">Toto 2</button></li>
         </ul>
-        ```
+        <li>Tata</li>
+        <ul>
+                <li><button id='./second/file1.html' class='ulli_button' onClick="changeIframe('./second/file1.html')">Tata 1</button></li>
+                <li><button id='./second/file2.html' class='ulli_button' onClick="changeIframe('./second/file2.html')">Tata 2</button></li>
+        </ul>
+        <li>Titi</li>
+        <ul>
+                <li><button id='./second/third/file1.html' class='ulli_button' onClick="changeIframe('./second/third/file1.html')">Titi 1</button></li>
+                <li><button id='./second/third/file2.html' class='ulli_button' onClick="changeIframe('./second/third/file2.html')">Titi 2</button></li>
+        </ul>
+</ul>
+```
 
 ie:
 
@@ -208,24 +211,24 @@ ie:
 
 In the default version, the menu in `index.html` is defined as follows:
 
-        ```html
-        <li>main</li>
-                <ul>
-                        <li><button id='./file1.html' class='ulli_button' onClick="changeIframe('./file1.html')">file1.html</button></li>
-                        <li><button id='./file2.html' class='ulli_button' onClick="changeIframe('./file2.html')">file2.html</button></li>
-                </ul>
-        ```
+```html
+<li>main</li>
+<ul>
+        <li><button id='./file1.html' class='ulli_button' onClick="changeIframe('./file1.html')">file1.html</button></li>
+        <li><button id='./file2.html' class='ulli_button' onClick="changeIframe('./file2.html')">file2.html</button></li>
+</ul>
+```
 
-To make a list foldable, modify to:
+To make a list foldable, with a default to "hidden", modify to:
 
-        ```html
-        <li><a onClick="toggleSwitch(this)">main &#9662;</a>
-                <ul style="display:none">
-                        <li><button id='./file1.html' class='ulli_button' onClick="changeIframe('./file1.html')">file1.html</button></li>
-                        <li><button id='./file2.html' class='ulli_button' onClick="changeIframe('./file2.html')">file2.html</button></li>
-                </ul>
-        </li>
-        ```
+```html
+<li><a onClick="toggleSwitch(this)">main &#9662;</a>
+        <ul style="display:none">
+                <li><button id='./file1.html' class='ulli_button' onClick="changeIframe('./file1.html')">file1.html</button></li>
+                <li><button id='./file2.html' class='ulli_button' onClick="changeIframe('./file2.html')">file2.html</button></li>
+        </ul>
+</li>
+```
 
 ## Usage of `copy_tree.sh`
 
@@ -233,69 +236,77 @@ Options of `copy_tree.sh`:
 
 * **-i**: input directory containing several html files (of interest) and other files not of interest
 * **-o**: output directory to replicate the tree of html files
-* **-w**: (optional) include the whole content of a folder. The path should be relative to input. The option is currently suited for only one folder.
+* **-w**: (optional) include the whole content of a folder. The path should be relative to input. This option is currently suited for only one folder.
+* **-e**: (optional) copy the files matching a specific regex (default to ".*html")
 
 Usage :
 
-        ```bash
-        ./copy_tree.sh \
-        -i pathto/input_directory/ \
-        -o pathto/output_directory/ \
-        -w of_interest
-        ```
+```bash
+./copy_tree.sh \
+-i pathto/input_directory/ \
+-o pathto/output_directory/ \
+-w of_interest \
+-e ".*html\|.*pdf"
+```
+
+The last line illustrates the option to copy all files ending with html or pdf. Note that the command using the -e EXTENSION option (with the the -i INPUT parameter) is:
+
+```bash
+find $INPUT -regex $EXTENSION -type f
+```
 
 Example of input directory tree:
 
-        ```bash
-        ├── first
-        │   ├── file1.html
-        │   ├── file1.Rmd
-        │   ├── file2.html
-        │   ├── file2.Rmd
-        │   └── toto.rds
-        ├── second
-        │   ├── file1.html
-        │   ├── file1.Rmd
-        │   ├── file2.html
-        │   ├── file2.Rmd
-        │   ├── titi.rda
-        │   ├── tata.txt
-        │   └── third
-        │      ├── file1.html
-        │      └── file2.html
-        ├── index_layout
-        │   ├── functions.js
-        │   ├── logo
-        │   │   ├── favicon.ico
-        │   │   ├── github-mark.png
-        │   │   ├── github-mark.svg
-        │   │   ├── github-mark-white.png
-        │   │   └── github-mark-white.svg
-        │   ├── pages
-        │   │   └── first.html
-        │   └── style.css
-        └── index.html
-        ```
+```bash
+├── first
+│   ├── file1.html
+│   ├── file1.Rmd
+│   ├── file2.html
+│   ├── file2.Rmd
+│   └── toto.rds
+├── second
+│   ├── file1.html
+│   ├── file1.Rmd
+│   ├── file2.html
+│   ├── file2.Rmd
+│   ├── titi.rda
+│   ├── tata.txt
+│   └── third
+│      ├── file1.html
+│      └── file2.html
+├── index_layout
+│   ├── functions.js
+│   ├── logo
+│   │   ├── favicon.ico
+│   │   ├── github-mark.png
+│   │   ├── github-mark.svg
+│   │   ├── github-mark-white.png
+│   │   └── github-mark-white.svg
+│   ├── pages
+│   │   └── first.html
+│   └── style.css
+└── index.html
+```
 
-The purpose of the command is to replicate the tree of html files in an ouput directory:
+The purpose of the `copy_tree` command is to replicate the tree of html files in an ouput directory:
 
-        ```bash
-        ├── first
-        │   ├── file1.html
-        │   └── file2.html
-        ├── second
-        │   ├── file1.html
-        │   ├── file2.html
-        │   └── third
-        │      ├── file1.html
-        │      └── file2.html
-        ├── index_layout
-        │   └── pages
-        │       └── first.html
-        └── index.html
-        ```
+```bash
+├── first
+│   ├── file1.html
+│   └── file2.html
+├── second
+│   ├── file1.html
+│   ├── file2.html
+│   └── third
+│      ├── file1.html
+│      └── file2.html
+├── index_layout
+│   └── pages
+│       └── first.html
+└── index.html
+```
 
-To include the full `index_layout` folder in the output directory, use the option `-w index_layout` (**w**ith).
+**Important**: To include the full `index_layout` folder in the output directory, use the option `-w index_layout` (**w**ith). Otherwise, styles will be missing.
 
 ## Other tools ?
 
