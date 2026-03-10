@@ -29,10 +29,10 @@ This table was made using [https://plaintexttools.github.io/plain-text-table/](h
 
 ## Examples
 
-* [https://audrey-onfroy.github.io/hs](https://audrey-onfroy.github.io/hs) *not yet public*
-* [https://audrey-onfroy.github.io/hn](https://audrey-onfroy.github.io/hn) *not yet public*
-* [https://audrey-onfroy.github.io/mpnst](https://audrey-onfroy.github.io/mpnst) *not yet public*
-* [https://audrey-onfroy.github.io/12tips](https://audrey-onfroy.github.io/12tips) *not yet public*
+* [Mansour_et_al_NF1_nerves_2025](https://audrey-onfroy.github.io/Mansour_et_al_NF1_nerves_2025/)
+* [Radomska_et_al_2025_Science_Advances](https://audrey-onfroy.github.io/Radomska_et_al_2025_Science_Advances/)
+* [Onfroy_et_al_scRNASeq_HS_2025](https://audrey-onfroy.github.io/Onfroy_et_al_scRNASeq_HS_2025/)
+* [Onfroy_12tips_ACM_REP_25](https://audrey-onfroy.github.io/Onfroy_12tips_ACM_REP_25/)
 
 ## Repository content
 
